@@ -35,12 +35,12 @@
       <!-- 1. Hero Section -->
       <div class="hero min-h-screen pt-16" data-aos="fade-up">
           <div class="hero-content flex-col lg:flex-row-reverse">
-              <img src="images/hero-picture.png" class="max-w-xl rounded-lg shadow-2xl" alt="MVP Builder Dashboard" />
+              <img src="images/hero.png" class="max-w-xl w-full" alt="MVP Builder Dashboard" />
               <div>
-                  <h1 class="text-5xl font-bold">Your MVP, Built in 5 Days, Not Months</h1>
-                  <p class="py-6">I turn startup ideas into working MVPs for non-technical founders. No code required from you, no massive budget needed, just a working product you can launch and test with real users.</p>
+                  <h1 class="text-5xl font-bold">Your <span class="text-secondary">MVP built in 5 Days</span><br> Not Months</h1>
+                  <p class="py-6">I turn startup ideas into working MVPs for non-technical founders. No code required from you, no massive budget needed, just a working product you can launch and test with real users. Get a senior software engineer for half the price of one.</p>
                   <div class="flex flex-col sm:flex-row gap-4">
-                      <a href="#packages" class="btn btn-primary">Book Your Build Slot</a>
+                      <a href="https://cal.com/launchbrick/30min" class="btn btn-secondary">Book a Discovery Call</a>
                       <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
                   </div>
                   <div class="mt-6">
@@ -73,171 +73,42 @@
       <!-- 2. How It Works -->
       <div class="py-16 bg-base-100" id="how-it-works" data-aos="fade-up">
           <div class="container mx-auto px-4">
-              <h2 class="text-3xl font-bold text-center mb-12">How We Build Your MVP in 3 Simple Steps</h2>
+              <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
               
               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div class="card shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                  <div class="card" data-aos="fade-up" data-aos-delay="100">
                       <div class="card-body items-center text-center">
-                          <img src="images/idea.png" alt="Share Your Startup Idea" class="mb-4 w-full h-full object-cover rounded-lg">
-                          <h3 class="card-title">Step 1: Share Your Startup Idea</h3>
+                          <div class="tooltip">
+                              <div class="tooltip-content">
+                                  <h3 class="text-orange-400 -rotate-10 text-2xl font-black">Step 1: Share Your Startup Idea</h3>
+                              </div>
+                              <img src="images/idea.png" alt="Share Your Startup Idea" class="mb-4 w-full h-full object-contain rounded-lg" />
+                          </div>
                           <p>Schedule a call on Monday to discuss your startup concept. We ask insightful questions to fully understand your vision and business goals.</p>
                       </div>
                   </div>
                   
-                  <div class="card shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                  <div class="card" data-aos="fade-up" data-aos-delay="200">
                       <div class="card-body items-center text-center">
-                          <img src="images/building.png" alt="MVP Development Process" class="mb-4 w-full h-62 object-contain rounded-lg">
-                          <h3 class="card-title">Step 2: MVP Development Process</h3>
-                          <p>From Monday to Thursday, we develop a functional MVP with essential features to validate your startup idea effectively.</p>
-                      </div>
-                  </div>
-                  
-                  <div class="card shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                      <div class="card-body items-center text-center">
-                          <img src="images/delivery.png" alt="MVP Review and Launch" class="mb-4 w-full h-full object-cover rounded-lg">
-                          <h3 class="card-title">Step 3: MVP Review and Launch</h3>
-                          <p>On Thursday, we review the MVP together. By Friday, your product is ready for real user testing. Gather feedback, validate your concept, and iterate based on user data.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      <!-- 3. Packages -->
-      <div class="py-16 bg-base-200" id="packages" data-aos="fade-up">
-          <div class="container mx-auto px-4">
-              <h2 class="text-3xl font-bold text-center mb-4">Choose Your MVP Package</h2>
-              <p class="text-center mb-12 max-w-2xl mx-auto">Select the right package based on your startup's needs. All options include fast delivery and direct communication throughout the build.</p>
-              
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div class="card bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                      <div class="card-body">
-                          <h3 class="card-title text-xl">Starter MVP</h3>
-                          <div class="text-3xl font-bold my-4">$1,499</div>
-                          <p class="mb-4">Perfect for validating a simple idea or concept quickly. For example, directories, landing pages, or simple AI wrappers.</p>
-                          <ul class="space-y-2 mb-6">
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>MVP with 1-3 core features</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>3 core features</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>Basic user authentication</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>Admin dashboard</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>AI API integration</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>5 days delivery</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>No-code branding</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>100% money back guarantee</span>
-                              </li>
-                              <li class="flex items-center text-gray-400 line-through">
-                                  <i data-lucide="x" class="w-5 h-5 mr-2"></i>
-                                  <span>Multi-page web application</span>
-                              </li>
-                              <li class="flex items-center text-gray-400 line-through">
-                                  <i data-lucide="x" class="w-5 h-5 mr-2"></i>
-                                  <span>5-7 core features</span>
-                              </li>
-                              <li class="flex items-center text-gray-400 line-through">
-                                  <i data-lucide="x" class="w-5 h-5 mr-2"></i>
-                                  <span>User authentication & profiles</span>
-                              </li>
-                              <li class="flex items-center text-gray-400 line-through">
-                                  <i data-lucide="x" class="w-5 h-5 mr-2"></i>
-                                  <span>Stripe integration</span>
-                              </li>
-                              <li class="flex items-center text-gray-400 line-through">
-                                  <i data-lucide="x" class="w-5 h-5 mr-2"></i>
-                                  <span>Custom Brand by Maria Ba Design</span>
-                              </li>
-                          </ul>
-                          <a href="#cta" class="btn btn-outline btn-primary mt-auto">Select Starter</a>
-                      </div>
-                  </div>
-                  
-                  <div class="card bg-primary text-primary-content shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                      <div class="card-body">
-                          <div class="badge badge-secondary mb-2">MOST POPULAR</div>
-                          <h3 class="card-title text-xl">Growth MVP</h3>
-                          <div class="text-3xl font-bold my-4">$2,999</div>
-                          <p class="mb-4">Includes everything in Starter plus the complete package to launch and start acquiring users.</p>
-                          <ul class="space-y-2 mb-6">
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>AI API integration</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>5 days delivery</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>No-code branding</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>100% money back guarantee</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                  <span>Multi-page web application</span>
-                              </li>
-                              <li class="flex items-center">
-                                <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                <span>5-7 core features</span>
-                              </li>
-                              <li class="flex items-center">
-                                <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                <span>OAuth and Magic Link User authentication & profiles</span>
-                              </li>
-                              <li class="flex items-center">
-                                <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                <span>Admin dashboard</span>
-                              </li>
-                              <li class="flex items-center">
-                                <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                <span>Stripe integration</span>
-                              </li>
-                              <li class="flex items-center">
-                                <i data-lucide="crown" class="w-5 h-5 mr-2"></i>
-                                <span>Custom Brand by <a href="https://mariaba.com" class="link font-bold link-hover underline" target="_blank">Maria Ba Design</a></span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                  <span>3-week delivery</span>
-                              </li>
-                          </ul>
-                          <a href="#cta" class="btn bg-white text-primary mt-auto">Select Growth</a>
-                      </div>
-                  </div>
-                  <div class="card bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                      <div class="card-body">
-                          <h3 class="card-title text-xl">Scale MVP</h3>
-                          <div class="text-3xl font-bold my-4">Custom Pricing</div>
-                          <p class="mb-4">Advanced functionality for startups ready to scale.</p>
-                          <div class="custom-project-section mb-6">
-                              <h4 class="text-lg font-bold mb-2">Custom Project Solutions</h4>
-                              <p class="mb-4">I specialize in adapting to any project requirements, ensuring a tailored solution that meets your unique needs. Let's discuss how I can help bring your vision to life.</p>
-                              <a href="#contact" class="btn btn-primary">Book a Call</a>
+                          <div class="tooltip">
+                              <div class="tooltip-content">
+                                  <h3 class="text-orange-400 -rotate-10 text-2xl font-black">Step 2: MVP Development Process</h3>
+                              </div>
+                              <img src="images/building.png" alt="MVP Development Process" class="mb-4 w-full h-62 object-contain rounded-lg" />
                           </div>
+                          <p>From Monday to Thursday, we develop a functional MVP with essential features to validate your startup idea effectively. Get a senior software engineer for half the price of one.</p>
+                      </div>
+                  </div>
+                  
+                  <div class="card" data-aos="fade-up" data-aos-delay="300">
+                      <div class="card-body items-center text-center">
+                          <div class="tooltip">
+                              <div class="tooltip-content">
+                                  <h3 class="text-orange-400 -rotate-10 text-2xl font-black">Step 3: MVP Review and Launch</h3>
+                              </div>
+                              <img src="images/delivery.png" alt="MVP Review and Launch" class="mb-4 w-full h-full object-contain rounded-lg" />
+                          </div>
+                          <p>On Thursday, we review the MVP together. By Friday, your product is ready for real user testing. Gather feedback, validate your concept, and iterate based on user data.</p>
                       </div>
                   </div>
               </div>
@@ -248,44 +119,44 @@
       <div class="py-16 bg-base-100" id="projects" data-aos="fade-up">
           <div class="container mx-auto px-4">
               <h2 class="text-3xl font-bold text-center mb-4">MVPs I've Built</h2>
-              <p class="text-center mb-12 max-w-2xl mx-auto">Check out some recent projects I've built for founders just like you.</p>
+              <p class="text-center mb-12 max-w-2xl mx-auto">Check out some recent projects I've built for founders just like you. Get a senior software engineer for half the price of one.</p>
               
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <div class="card bg-base-200 shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                      <figure><img src="images/service1.png" alt="TaskFlow MVP" class="w-full h-52 object-cover" /></figure>
+                  <div class="card shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                      <figure><a href="https://lightningrails.com" target="_blank"><img src="images/lightning-rails.png" alt="TaskFlow MVP" class="w-full h-full object-cover" /></a></figure>
                       <div class="card-body">
-                          <h3 class="card-title">TaskFlow</h3>
-                          <p>Project management tool for remote teams, built in 3 weeks.</p>
+                          <h3 class="card-title">Lightning Rails</h3>
+                          <p>A SaaS product that helps founders build their Ruby on Rails projects</p>
                           <div class="flex flex-wrap gap-2 mt-2">
                               <div class="badge badge-outline">SaaS</div>
-                              <div class="badge badge-outline">React</div>
-                              <div class="badge badge-outline">Firebase</div>
+                              <div class="badge badge-outline">Ruby on Rails</div>
+                              <div class="badge badge-outline">Tailwind CSS</div>
                           </div>
                       </div>
                   </div>
                   
-                  <div class="card bg-base-200 shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                      <figure><img src="images/service2.png" alt="FitTrack MVP" class="w-full h-52 object-cover" /></figure>
+                  <div class="card shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                      <figure><a href="https://railspath.com" target="_blank"><img src="images/railspath.png" alt="FitTrack MVP" class="w-full h-full object-cover" /></a></figure>
                       <div class="card-body">
-                          <h3 class="card-title">FitTrack</h3>
-                          <p>Fitness tracking app with social features, launched and acquired users within 1 month.</p>
+                          <h3 class="card-title">Rails Path</h3>
+                          <p> The Duolingo of Ruby on Rails</p>
                           <div class="flex flex-wrap gap-2 mt-2">
-                              <div class="badge badge-outline">Mobile</div>
-                              <div class="badge badge-outline">React Native</div>
-                              <div class="badge badge-outline">AWS</div>
+                              <div class="badge badge-outline">SaaS</div>
+                              <div class="badge badge-outline">Ruby on Rails</div>
+                              <div class="badge badge-outline">Heroku</div>
                           </div>
                       </div>
                   </div>
                   
-                  <div class="card bg-base-200 shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                      <figure><img src="images/service3.png" alt="PropertyMatch MVP" class="w-full h-52 object-cover" /></figure>
+                  <div class="card shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                      <figure><a href="https://library.mariaba.comm" target="_blank"><img src="images/mariaba.png" alt="PropertyMatch MVP" class="w-full h-full object-cover" /></a></figure>
                       <div class="card-body">
-                          <h3 class="card-title">PropertyMatch</h3>
-                          <p>Real estate matchmaking platform that helped the founder secure $150K in funding.</p>
+                          <h3 class="card-title">Maria Ba Library</h3>
+                          <p>A library of Illustrations for Maria Ba Design sutdio</p>
                           <div class="flex flex-wrap gap-2 mt-2">
-                              <div class="badge badge-outline">PropTech</div>
-                              <div class="badge badge-outline">NextJS</div>
-                              <div class="badge badge-outline">MongoDB</div>
+                              <div class="badge badge-outline">Design</div>
+                              <div class="badge badge-outline">Stimulus</div>
+                              <div class="badge badge-outline">Ruby on Rails</div>
                           </div>
                       </div>
                   </div>
@@ -294,9 +165,9 @@
       </div>
 
       <!-- 5. Testimonials -->
-      <div class="py-16 bg-base-200" id="testimonials" data-aos="fade-up">
+      <div class="py-16 bg-primary" id="testimonials" data-aos="fade-up">
           <div class="container mx-auto px-4">
-              <h2 class="text-3xl font-bold text-center mb-12">What Founders Say</h2>
+              <h2 class="text-3xl font-bold text-center mb-12">Wall of love</h2>
               
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div class="card bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="100">
@@ -308,16 +179,23 @@
                               <i data-lucide="star"></i>
                               <i data-lucide="star"></i>
                           </div>
-                          <p class="mb-6">"I had an idea but zero technical skills. Within 3 weeks, I had a working MVP that I could show investors. They were shocked at how quickly we moved from concept to product."</p>
+                          <p class="mb-6">Daniel has helped us create a new brand design and website design, making everything easy, fast, comfortable, and effective.
+                              
+                              He has been by our side and guided us at all times, helping us make decisions and looking for solutions and alternatives.
+                              <br>
+                              For the next project, I won’t hesitate to call him — I highly recommend him. A great professional!!
+                              <br>
+                            Thank you so much for everything. <br>
+                            (translated from spanish)</p>
                           <div class="flex items-center">
                               <div class="avatar mr-4">
                                   <div class="w-12 rounded-full">
-                                      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb.webp" />
+                                      <img src="images/cristina.png" />
                                   </div>
                               </div>
                               <div>
-                                  <h4 class="font-bold">Sarah Johnson</h4>
-                                  <p class="text-sm text-gray-600">Founder, TaskFlow</p>
+                                  <h4 class="font-bold">Cristina</h4>
+                                  <p class="text-sm text-gray-600 font-bold underline"><a href="https://labtestonline.com" target="_blank">Sociedad Española de Medicina, <a href="https://labtestonline.com" target="_blank">labtestonline.com</a></a></p>
                               </div>
                           </div>
                       </div>
@@ -332,16 +210,18 @@
                               <i data-lucide="star"></i>
                               <i data-lucide="star"></i>
                           </div>
-                          <p class="mb-6">"Working with MVP Builder saved me at least 3 months of development time and tens of thousands in costs. The product was exactly what I needed to validate my market."</p>
+                          <p class="mb-6">Daniel is an excellent professional, with a lot of initiative and great ability to manage teams. Always attentive and available to find the best solution for each client.
+                              <br>
+                              We’ve worked together on several projects, and it's always a pleasure. I recommend him 1000%!</p>
                           <div class="flex items-center">
                               <div class="avatar mr-4">
                                   <div class="w-12 rounded-full">
-                                      <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" />
+                                      <img src="images/carlota.png" />
                                   </div>
                               </div>
                               <div>
-                                  <h4 class="font-bold">Michael Chen</h4>
-                                  <p class="text-sm text-gray-600">Founder, FitTrack</p>
+                                  <h4 class="font-bold">Carlota Porta</h4>
+                                  <p class="text-sm text-gray-600 font-bold underline"><a href="https://kaori-media.com" target="_blank">Kaori Media Consulting</a></p>
                               </div>
                           </div>
                       </div>
@@ -356,16 +236,16 @@
                               <i data-lucide="star"></i>
                               <i data-lucide="star"></i>
                           </div>
-                          <p class="mb-6">"As a non-technical founder, I was stuck until I found this service. The communication was clear, the timeline was exact, and the final product exceeded my expectations."</p>
+                          <p class="mb-6">Daniel is the creator behind the new design of our app. He successfully captured and translated our vision into a clean, engaging, and dynamic MVP. I would absolutely recommend him to any startup or entrepreneur looking to bring their product idea to life with impact.</p>
                           <div class="flex items-center">
                               <div class="avatar mr-4">
                                   <div class="w-12 rounded-full">
-                                      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" />
+                                      <img src="images/adriana.png" />
                                   </div>
                               </div>
                               <div>
-                                  <h4 class="font-bold">Emma Rodriguez</h4>
-                                  <p class="text-sm text-gray-600">Founder, PropertyMatch</p>
+                                  <h4 class="font-bold">Adriana Romero</h4>
+                                  <p class="text-sm text-gray-600 font-bold underline"><a href="https://equinoxurbanhousing.com" target="_blank">Equinox Urban Housing</a></p>
                               </div>
                           </div>
                       </div>
@@ -381,50 +261,57 @@
                   <div class="h-auto">
                       <h2 class="text-base font-semibold leading-7 text-primary">Questions?</h2>
                       <p class="mt-2 text-3xl font-bold tracking-tight">Frequently Asked Questions</p>
-                      <p class="mt-6 text-lg leading-8">Everything you need to know about the MVP building process.</p>
+                      <p class="mt-6 text-lg leading-8">Everything you need to know about our new service packages.</p>
                   </div>
                   <div class="h-auto lg:col-span-2">
                       <div class="join join-vertical w-full">
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="100">
                               <input type="radio" name="my-accordion-4" checked="checked" />
-                              <div class="collapse-title text-xl font-medium">How long does it take to build an MVP?</div>
+                              <div class="collapse-title text-xl font-medium">How long does it take to complete a project?</div>
                               <div class="collapse-content">
-                                  <p>Depending on the package you choose and complexity of your idea, I typically deliver MVPs in 2-4 weeks. The Starter package takes about 2 weeks, Growth takes 3 weeks, and Scale takes around 4 weeks. This timeline includes planning, building, and testing.</p>
+                                  <p>The timeline varies based on the package you select and the complexity of your project. Our Basic package typically takes 3 weeks, the Advanced package takes 5 weeks, and the Premium package can take up to 7 weeks. This includes all phases from planning to testing.</p>
                               </div>
                           </div>
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="200">
                               <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">What if I have no technical background?</div>
+                              <div class="collapse-title text-xl font-medium">Do I need any technical skills?</div>
                               <div class="collapse-content">
-                                  <p>That's exactly who this service is for! You don't need any technical knowledge - just a clear idea of what problem you're solving and for whom. I'll handle all the technical aspects from architecture to deployment, explaining everything in non-technical terms.</p>
+                                  <p>No technical skills are required. Our service is designed for clients without a technical background. We will guide you through the process and handle all technical aspects, ensuring you understand each step in simple terms.</p>
                               </div>
                           </div>
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="300">
                               <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">What happens after my MVP is built?</div>
+                              <div class="collapse-title text-xl font-medium">What support is available after project completion?</div>
                               <div class="collapse-content">
-                                  <p>After delivery, you'll receive access to the deployed application and its codebase. I also provide a handover session where I'll walk you through how everything works. If you need ongoing support or additional features, we can discuss a maintenance plan or future development sprints.</p>
+                                  <p>Upon completion, you will receive full access to your project and a comprehensive walkthrough. I am happy to offer a fixed monthly subscription for unlimited development requests at $1200/month (Subject to terms and conditions). Additionally, every app is built with technologies that are easy to find developers for, using Tailwind for the front end and Ruby for the backend. I use my own boilerplate, which has more than 200 developers who would be happy to jump in and participate in freelance missions. I am also happy to recommend some other developers.</p>
                               </div>
                           </div>
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="400">
                               <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">What technologies do you use?</div>
+                              <div class="collapse-title text-xl font-medium">Which technologies are used in your packages?</div>
                               <div class="collapse-content">
-                                  <p>I typically build MVPs using modern, scalable tech stacks that include React, Next.js, Node.js, and various databases depending on your needs (MongoDB, PostgreSQL, Firebase). The specific technologies are chosen based on your project requirements and future scalability needs.</p>
+                                  <p>We utilize a range of modern technologies tailored to your project needs, including Tailwind for the front end and Ruby for the backend. These technologies are chosen for their ease of use and the availability of developers. Our boilerplate is supported by a community of over 200 developers ready to assist in freelance missions.</p>
                               </div>
                           </div>
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="500">
                               <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">What's your payment structure?</div>
+                              <div class="collapse-title text-xl font-medium">How is the payment structured?</div>
                               <div class="collapse-content">
-                                  <p>I require a 50% deposit to start work, with the remaining 50% due upon project completion and before the final handover. This ensures we're both committed to the project while minimizing your risk.</p>
+                                  <p>We require a 40% deposit to initiate the project, with the remaining 60% due upon completion and before the final handover. This structure ensures mutual commitment and minimizes risk.</p>
                               </div>
                           </div>
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="600">
                               <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">How many revision rounds are included?</div>
+                              <div class="collapse-title text-xl font-medium">Are revisions included in the packages?</div>
                               <div class="collapse-content">
-                                  <p>All packages include two rounds of revisions after the initial delivery. This allows you to test the MVP and request changes based on your testing. Additional revision rounds can be arranged at an hourly rate if needed.</p>
+                                  <p>Each package includes up to three rounds of revisions post-delivery, allowing you to refine the project based on feedback. Additional revisions can be arranged at an hourly rate if necessary.</p>
+                              </div>
+                          </div>
+                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="700">
+                              <input type="radio" name="my-accordion-4" />
+                              <div class="collapse-title text-xl font-medium">Why is there no meetings or calls after the first discovery call?</div>
+                              <div class="collapse-content">
+                                  <p>After the initial discovery call, all communication is handled asynchronously through Trello boards. This approach allows me to focus all my time on development, keeping prices low. Clients can track the progress of each feature and provide feedback from day one. Asynchronous communication also ensures that project advancements continue smoothly, even across different time zones.</p>
                               </div>
                           </div>
                       </div>
@@ -438,12 +325,12 @@
           <div class="container mx-auto px-4">
               <div class="max-w-3xl mx-auto text-center">
                   <h2 class="text-3xl font-bold mb-4">Ready to Build Your MVP?</h2>
-                  <p class="mb-8">I only take on 3 new projects each month to ensure quality and focus. Secure your build slot now before the month fills up.</p>
+                  <p class="mb-8">I only take on 3 new projects each month to ensure quality and focus. Secure your build slot now before the month fills up. Get a senior software engineer for half the price of one.</p>
                   <div class="card bg-base-100 text-neutral max-w-md mx-auto" data-aos="fade-up" data-aos-delay="100">
                       <div class="card-body">
                           <h3 class="card-title text-xl mb-4">Book Your Discovery Call</h3>
                           <p class="mb-4">Let's discuss your idea and find the right package for your needs.</p>
-                          <a href="#" class="btn btn-primary btn-block">Schedule Your Call</a>
+                          <a href="https://cal.com/launchbrick/30min" class="btn btn-primary btn-block">Schedule Your Call</a>
                           <p class="mt-4 text-sm">No commitment required for the initial consultation</p>
                       </div>
                   </div>
