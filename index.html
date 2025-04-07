@@ -14,64 +14,66 @@
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
 
-  <body data-theme="bumblebee" onload="AOS.init();">
+  <body data-theme="cupcake" onload="AOS.init();">
       <!-- Navbar -->
-      <div class="navbar bg-white fixed top-0 left-0 right-0 z-50" data-aos="fade-down">
-          <div class="flex-1">
-              <img src="images/logo.png" alt="MVP Builder Logo" class="w-10 h-10">
-              <a href="/" class="btn btn-ghost text-xl">Launch Brick</a>
+      <nav class="navbar bg-white fixed top-0 left-0 right-0 z-50" data-aos="fade-down">
+          <div class="container mx-auto flex justify-between items-center px-4">
+              <div class="flex items-center">
+                  <img src="images/logo.png" alt="MVP Builder Logo" class="w-10 h-10">
+                  <a href="/" class="btn btn-ghost text-xl ml-2">Launch Brick</a>
+              </div>
+              <div class="flex-none hidden lg:block">
+                  <ul class="menu menu-horizontal px-1">
+                      <li><a href="#how-it-works">How It Works</a></li>
+                      <li><a href="#packages">Packages</a></li>
+                      <li><a href="#projects">Projects</a></li>
+                      <li><a href="#testimonials">Testimonials</a></li>
+                      <li><a href="#faq">FAQ</a></li>
+                  </ul>
+              </div>
           </div>
-          <div class="flex-none">
-              <ul class="menu menu-horizontal px-1">
-                  <li><a href="#how-it-works">How It Works</a></li>
-                  <li><a href="#packages">Packages</a></li>
-                  <li><a href="#projects">Projects</a></li>
-                  <li><a href="#testimonials">Testimonials</a></li>
-                  <li><a href="#faq">FAQ</a></li>
-              </ul>
-          </div>
-      </div>
+      </nav>
 
       <!-- 1. Hero Section -->
-      <div class="hero min-h-screen pt-16" data-aos="fade-up">
-          <div class="hero-content flex-col lg:flex-row-reverse">
-              <img src="images/hero.png" class="max-w-xl w-full" alt="MVP Builder Dashboard" />
-              <div>
-                  <h1 class="text-5xl font-bold">Your <span class="text-secondary">MVP built in 5 Days</span><br> Not Months</h1>
+      <section class="hero min-h-screen pt-16" data-aos="fade-up">
+          <div class="container mx-auto flex flex-col lg:flex-row-reverse items-center px-4">
+              <img src="images/hero.png" class="max-w-xl w-full p-10" alt="MVP Builder Dashboard" />
+              <div class="text-center lg:text-left lg:mr-8">
+                  <h1 class="text-5xl font-bold">Your <span class="text-secondary">MVP built in 5 Days</span><br> - Not Months</h1>
                   <p class="py-6">I turn startup ideas into working MVPs for non-technical founders. No code required from you, no massive budget needed, just a working product you can launch and test with real users. Get a senior software engineer for half the price of one.</p>
-                  <div class="flex flex-col sm:flex-row gap-4">
+                  <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                       <a href="https://cal.com/launchbrick/30min" class="btn btn-secondary">Book a Discovery Call</a>
                       <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
                   </div>
                   <div class="mt-6">
-                      <p class="text-sm text-gray-600">Trusted by indie hackers and first-time founders</p>
-                      <div class="flex mt-2">
+                      <p class="text-sm text-gray-600">Trusted by indie hackers and founders</p>
+                      <div class="flex mt-2 justify-center lg:justify-start">
                           <div class="avatar-group -space-x-4">
                               <div class="avatar">
                                   <div class="w-8">
-                                      <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                      <img src="images/cristina.png" alt="Customer 1" />
                                   </div>
                               </div>
                               <div class="avatar">
                                   <div class="w-8">
-                                      <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                      <img src="images/carlota.png" alt="Customer 2" />
                                   </div>
                               </div>
                               <div class="avatar">
                                   <div class="w-8">
-                                      <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                      <img src="images/adriana.png" alt="Customer 3" />
                                   </div>
                               </div>
                           </div>
-                          <span class="ml-3 text-gray-600">50+ MVPs delivered</span>
+                          <span class="ml-3 text-gray-600 flex items-center">50+ MVPs delivered</span>
                       </div>
                   </div>
               </div>
           </div>
-      </div>
+      </section>
 
       <!-- 2. How It Works -->
-      <div class="py-16 bg-base-100" id="how-it-works" data-aos="fade-up">
+      <section class="py-16 bg-base-100" id="how-it-works" data-aos="fade-up">
           <div class="container mx-auto px-4">
               <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
               
@@ -80,11 +82,12 @@
                       <div class="card-body items-center text-center">
                           <div class="tooltip">
                               <div class="tooltip-content">
-                                  <h3 class="text-orange-400 -rotate-10 text-2xl font-black">Step 1: Share Your Startup Idea</h3>
+                                  <h3 class="text-primary text-3xl font-extrabold mb-2">Step 1</h3>
+                                  <h4 class="text-base-content text-xl font-semibold mb-4">Share Your Startup Idea</h4>
                               </div>
-                              <img src="images/idea.png" alt="Share Your Startup Idea" class="mb-4 w-full h-full object-contain rounded-lg" />
+                              <img src="images/idea.png" alt="Share Your Startup Idea" class="mb-4 w-full h-62 object-contain rounded-lg" />
                           </div>
-                          <p>Schedule a call on Monday to discuss your startup concept. We ask insightful questions to fully understand your vision and business goals.</p>
+                          <p class="text-base-content text-base">Schedule a call on Monday to discuss your startup concept. We ask insightful questions to fully understand your vision and business goals.</p>
                       </div>
                   </div>
                   
@@ -92,11 +95,12 @@
                       <div class="card-body items-center text-center">
                           <div class="tooltip">
                               <div class="tooltip-content">
-                                  <h3 class="text-orange-400 -rotate-10 text-2xl font-black">Step 2: MVP Development Process</h3>
+                                  <h3 class="text-primary text-3xl font-extrabold mb-2">Step 2</h3>
+                                  <h4 class="text-base-content text-xl font-semibold mb-4">MVP Development Process</h4>
                               </div>
                               <img src="images/building.png" alt="MVP Development Process" class="mb-4 w-full h-62 object-contain rounded-lg" />
                           </div>
-                          <p>From Monday to Thursday, we develop a functional MVP with essential features to validate your startup idea effectively. Get a senior software engineer for half the price of one.</p>
+                          <p class="text-base-content text-base">From Monday to Thursday, we develop a functional MVP with essential features to validate your startup idea effectively. Get a senior software engineer for half the price of one.</p>
                       </div>
                   </div>
                   
@@ -104,19 +108,20 @@
                       <div class="card-body items-center text-center">
                           <div class="tooltip">
                               <div class="tooltip-content">
-                                  <h3 class="text-orange-400 -rotate-10 text-2xl font-black">Step 3: MVP Review and Launch</h3>
+                                  <h3 class="text-primary text-3xl font-extrabold mb-2">Step 3</h3>
+                                  <h4 class="text-base-content text-xl font-semibold mb-4">MVP Review and Launch</h4>
                               </div>
-                              <img src="images/delivery.png" alt="MVP Review and Launch" class="mb-4 w-full h-full object-contain rounded-lg" />
+                              <img src="images/delivery.png" alt="MVP Review and Launch" class="mb-4 w-full h-62 object-contain rounded-lg" />
                           </div>
-                          <p>On Thursday, we review the MVP together. By Friday, your product is ready for real user testing. Gather feedback, validate your concept, and iterate based on user data.</p>
+                          <p class="text-base-content text-base">On Thursday, we review the MVP together. By Friday, your product is ready for real user testing. Gather feedback, validate your concept, and iterate based on user data.</p>
                       </div>
                   </div>
               </div>
           </div>
-      </div>
+      </section>
 
       <!-- 3. Packages -->
-      <div class="py-16 bg-secondary" id="packages" data-aos="fade-up">
+      <section class="py-16" id="packages" data-aos="fade-up">
           <div class="container mx-auto px-4">
               <h2 class="text-3xl font-bold text-center mb-4">Choose Your MVP Package</h2>
               <p class="text-center mb-12 max-w-2xl mx-auto">Select the right package based on your startup's needs. All options include fast delivery and direct communication throughout the build.</p>
@@ -200,15 +205,15 @@
                                   <i data-lucide="check" class="w-5 h-5 mr-2 text-primary-content"></i>
                                   <span>Stripe integration</span>
                               </li>
-                              <li class="flex items-center text-gray-400 line-through">
+                              <li class="flex items-center text-gray-600 line-through">
                                   <i data-lucide="x" class="w-5 h-5 mr-2"></i>
                                   <span>5-7 core features</span>
                               </li>
-                              <li class="flex items-center text-gray-400 line-through">
+                              <li class="flex items-center text-gray-600 line-through">
                                   <i data-lucide="x" class="w-5 h-5 mr-2"></i>
                                   <span>User OAuth and magic link authentication</span>
                               </li>
-                              <li class="flex items-center text-gray-400 line-through">
+                              <li class="flex items-center text-gray-600 line-through">
                                   <i data-lucide="x" class="w-5 h-5 mr-2"></i>
                                   <span>Custom Brand by Maria Ba Design</span>
                               </li>
@@ -273,10 +278,10 @@
                   </div>
               </div>
           </div>
-      </div>
+      </section>
 
       <!-- 4. Past Projects -->
-      <div class="py-16 bg-base-100" id="projects" data-aos="fade-up">
+      <section class="py-16 bg-base-100" id="projects" data-aos="fade-up">
           <div class="container mx-auto px-4">
               <h2 class="text-3xl font-bold text-center mb-4">MVPs I've Built</h2>
               <p class="text-center mb-12 max-w-2xl mx-auto">Check out some recent projects I've built for founders just like you. Get a senior software engineer for half the price of one.</p>
@@ -322,10 +327,10 @@
                   </div>
               </div>
           </div>
-      </div>
+      </section>
 
       <!-- 5. Testimonials -->
-      <div class="py-16 bg-primary" id="testimonials" data-aos="fade-up">
+      <section class="py-16 bg-primary" id="testimonials" data-aos="fade-up">
           <div class="container mx-auto px-4">
               <h2 class="text-3xl font-bold text-center mb-12">Wall of love</h2>
               
@@ -412,10 +417,10 @@
                   </div>
               </div>
           </div>
-      </div>
+      </section>
 
       <!-- 6. FAQ -->
-      <div class="py-16 bg-base-100" id="faq" data-aos="fade-up">
+      <section class="py-16 bg-base-100" id="faq" data-aos="fade-up">
           <div class="container mx-auto px-4">
               <div class="grid gap-4 lg:grid-cols-3 lg:gap-8">
                   <div class="h-auto">
@@ -501,8 +506,8 @@
       <!-- Footer -->
       <footer class="footer bg-neutral text-neutral-content p-10" data-aos="fade-up">
           <aside>
-              <i data-lucide="code" class="w-12 h-12"></i>
-              <p>MVP Builder<br/>Turning ideas into products since 2020</p>
+              <img src="images/logo.png" alt="Launch Brick Logo" class="w-12 h-12" />
+              <p><span class="font-bold"></span>Launch Brick</span> - Turning ideas into products since 2019</p>
           </aside>
           <nav>
               <h6 class="footer-title">Connect</h6>
@@ -519,11 +524,11 @@
               </div>
           </nav>
       </footer>
+    </body>
+      </html>
       <script>
         lucide.createIcons();
       </script>
       <script>
         (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8WDOXySFzbMEemqLdDNLv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
       </script>
-  </body>
-</html>
