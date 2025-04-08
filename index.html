@@ -3,8 +3,8 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>MVP Builder - Fast MVPs for Non-Technical Founders</title>
-      <meta name="description" content="Get your startup MVP built fast, without code or hassle. Perfect for non-technical founders and indie hackers.">
+      <title>MVP Builder - Subscription-Based MVPs for Non-Technical Founders</title>
+      <meta name="description" content="Your technical co-founder without the equity. Get features shipped every week with my MVP-as-a-Subscription model. Perfect for non-technical founders.">
       <link rel="icon" type="image/x-icon" href="images/favicon.ico">
       <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
       <script src="https://cdn.tailwindcss.com"></script>
@@ -12,6 +12,7 @@
       <script src="https://unpkg.com/lucide@latest"></script>
       <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script src="calculator.js"></script>
   </head>
 
   <body data-theme="cupcake" onload="AOS.init();">
@@ -24,26 +25,28 @@
               </div>
               <div class="flex-none hidden lg:block">
                   <ul class="menu menu-horizontal px-1">
+                      <li><a href="#about">About Me</a></li>
                       <li><a href="#how-it-works">How It Works</a></li>
-                      <li><a href="#packages">Packages</a></li>
-                      <li><a href="#projects">Projects</a></li>
+                      <li><a href="#packages">Subscription Plans</a></li>
                       <li><a href="#testimonials">Testimonials</a></li>
                       <li><a href="#faq">FAQ</a></li>
+                      <li><a href="https://cal.com/launchbrick/30min" class="btn btn-primary btn-sm">Book a Call</a></li>
                   </ul>
               </div>
           </div>
       </nav>
 
       <!-- 1. Hero Section -->
-      <section class="hero min-h-screen pt-16" data-aos="fade-up">
+      <section class="hero min-h-screen pt-16 pb-24" data-aos="fade-up">
           <div class="container mx-auto flex flex-col lg:flex-row-reverse items-center px-4">
               <img src="images/hero.png" class="max-w-xl w-full p-10" alt="MVP Builder Dashboard" />
               <div class="text-center lg:text-left lg:mr-8">
-                  <h1 class="text-5xl font-bold">Your <span class="text-secondary">MVP built in 5 Days</span><br> - Not Months</h1>
-                  <p class="py-6">I turn startup ideas into working MVPs for non-technical founders. No code required from you, no massive budget needed, just a working product you can launch and test with real users. Get a senior software engineer for half the price of one.</p>
+                  <div class="badge badge-secondary mb-4">NEW: SUBSCRIPTION MODEL</div>
+                  <h1 class="text-5xl font-bold">Launch Unlimited Startups Effortlessly with me as your <span class="text-secondary">Technical Co-founder</span><br></h1>
+                  <p class="py-6">Get features shipped every week with my MVP-as-a-Subscription model. No meetings, no hourly rates, no hassle. Perfect for non-technical founders.</p>
                   <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                      <a href="https://cal.com/launchbrick/30min" class="btn btn-secondary">Book a Discovery Call</a>
-                      <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
+                      <a href="#packages" class="btn btn-secondary">See Subscription Plans</a>
+                      <a href="https://cal.com/launchbrick/30min" class="btn btn-outline">Book a Call</a>
                   </div>
                   <div class="mt-6">
                       <p class="text-sm text-gray-600">Trusted by indie hackers and founders</p>
@@ -72,10 +75,43 @@
           </div>
       </section>
 
+      <section class="py-16 bg-base-200 mb-10">
+        <div class="container mx-auto px-4">
+        <div class="mt-8 text-center">
+            <div class="stats shadow flex justify-center">
+                <div class="stat mx-4">
+                    <div class="stat-figure text-primary">
+                        <i data-lucide="check-circle" class="w-8 h-8"></i>
+                    </div>
+                    <div class="stat-title">Weekly Delivery</div>
+                    <div class="stat-value text-primary">100%</div>
+                    <div class="stat-desc">Predictable progress</div>
+                </div>
+                <div class="stat mx-4">
+                    <div class="stat-figure text-secondary">
+                        <i data-lucide="calendar-clock" class="w-8 h-8"></i>
+                    </div>
+                    <div class="stat-title">No Lock-in</div>
+                    <div class="stat-value text-secondary">Pause</div>
+                    <div class="stat-desc">Anytime you need</div>
+                </div>
+                <div class="stat mx-4">
+                    <div class="stat-figure text-accent">
+                        <i data-lucide="trending-up" class="w-8 h-8"></i>
+                    </div>
+                    <div class="stat-title">Scale</div>
+                    <div class="stat-value text-accent">Up/Down</div>
+                    <div class="stat-desc">As your needs change</div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </section>
+
       <!-- 2. How It Works -->
-      <section class="py-16 bg-base-100" id="how-it-works" data-aos="fade-up">
+      <section class="py-24 bg-base-100" id="how-it-works" data-aos="fade-up">
           <div class="container mx-auto px-4">
-              <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+              <h2 class="text-3xl font-bold text-center mb-12">How a tech-cofunder subscription Works</h2>
               
               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div class="card" data-aos="fade-up" data-aos-delay="100">
@@ -83,11 +119,11 @@
                           <div class="tooltip">
                               <div class="tooltip-content">
                                   <h3 class="text-primary text-3xl font-extrabold mb-2">Step 1</h3>
-                                  <h4 class="text-base-content text-xl font-semibold mb-4">Share Your Startup Idea</h4>
+                                  <h4 class="text-base-content text-xl font-semibold mb-4">Select Your Plan & Onboard</h4>
                               </div>
                               <img src="images/idea.png" alt="Share Your Startup Idea" class="mb-4 w-full h-62 object-contain rounded-lg" />
                           </div>
-                          <p class="text-base-content text-base">Schedule a call on Monday to discuss your startup concept. We ask insightful questions to fully understand your vision and business goals.</p>
+                          <p class="text-base-content text-base">Choose a subscription tier that matches your needs. During onboarding, I'll help break down your project into properly sized tasks and set up your Trello workflow.</p>
                       </div>
                   </div>
                   
@@ -96,232 +132,295 @@
                           <div class="tooltip">
                               <div class="tooltip-content">
                                   <h3 class="text-primary text-3xl font-extrabold mb-2">Step 2</h3>
-                                  <h4 class="text-base-content text-xl font-semibold mb-4">MVP Development Process</h4>
+                                  <h4 class="text-base-content text-xl font-semibold mb-4">Weekly Development Cycles</h4>
                               </div>
                               <img src="images/building.png" alt="MVP Development Process" class="mb-4 w-full h-62 object-contain rounded-lg" />
                           </div>
-                          <p class="text-base-content text-base">From Monday to Thursday, we develop a functional MVP with essential features to validate your startup idea effectively. Get a senior software engineer for half the price of one.</p>
+                          <p class="text-base-content text-base">Each week, I not only work on your highest priority tasks but also challenge the features and advise on the most value-generating ones. With clear scope definitions, you'll always know what's being worked on and when it will be delivered. Track progress in real-time.</p>
                       </div>
                   </div>
-                  
                   <div class="card" data-aos="fade-up" data-aos-delay="300">
                       <div class="card-body items-center text-center">
                           <div class="tooltip">
                               <div class="tooltip-content">
                                   <h3 class="text-primary text-3xl font-extrabold mb-2">Step 3</h3>
-                                  <h4 class="text-base-content text-xl font-semibold mb-4">MVP Review and Launch</h4>
+                                  <h4 class="text-base-content text-xl font-semibold mb-4">Continuous Improvement</h4>
                               </div>
                               <img src="images/delivery.png" alt="MVP Review and Launch" class="mb-4 w-full h-62 object-contain rounded-lg" />
                           </div>
-                          <p class="text-base-content text-base">On Thursday, we review the MVP together. By Friday, your product is ready for real user testing. Gather feedback, validate your concept, and iterate based on user data.</p>
+                          <p class="text-base-content text-base">As your product evolves, add new tasks to your backlog. Scale up or down as needed, and pause when you want to take a break. Your subscription adapts to your growing business.</p>
                       </div>
                   </div>
               </div>
           </div>
       </section>
 
-      <!-- 3. Packages -->
-      <section class="py-16" id="packages" data-aos="fade-up">
+      <!-- About Me Section -->
+      <section class="py-24 bg-base-100 mt-10" id="about" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-10">
+                <div class="lg:w-1/3 flex justify-center">
+                    <div class="w-64 h-64 rounded-full bg-base-300 flex items-center justify-center overflow-hidden">
+                        <!-- Replace with actual image -->
+                        <img src="images/dani.png" alt="Daniel Rodriguez your technical co-founder" class="w-full h-full rounded-full object-cover object-top" />
+                        <!-- Placeholder text if no image is available -->
+                    </div>
+                </div>
+                <div class="lg:w-2/3">
+                    <h2 class="text-3xl font-bold mb-6">Meet Your Technical Co-founder</h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">
+                            Hi, I'm Dani! For the past 5 years, I've been teaching software engineering to aspiring developers, helping them build their skills and launch their careers in tech.
+                        </p>
+                        <p class="mb-4">
+                            I've built over 50 web applications for startups and businesses. My specialty is early-stage MVP development and market validation – helping founders turn ideas into working products quickly.
+                        </p>
+                        <p class="mb-4">
+                            I understand the challenges non-technical founders face. My subscription model gives you access to senior development skills without the complications of hiring a full-time CTO or the unpredictable costs of hourly contractors.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <div class="badge badge-primary">Ruby on Rails</div>
+                            <div class="badge badge-primary">Pitch definition</div>
+                            <div class="badge badge-primary">Tailwind CSS</div>
+                            <div class="badge badge-primary">JavaScript</div>
+                            <div class="badge badge-primary">MVP Development</div>
+                            <div class="badge badge-primary">API Integration</div>
+                            <div class="badge badge-primary">Database Design</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      <!-- 3. Subscription Plans -->
+      <section class="py-24 bg-base-200" id="packages" data-aos="fade-up">
           <div class="container mx-auto px-4">
-              <h2 class="text-3xl font-bold text-center mb-4">Choose Your MVP Package</h2>
-              <p class="text-center mb-12 max-w-2xl mx-auto">Select the right package based on your startup's needs. All options include fast delivery and direct communication throughout the build.</p>
+              <div class="text-center max-w-3xl mx-auto mb-12">
+                  <h2 class="text-3xl font-bold mb-4">Effortless Pricing, Maximum Value</h2>
+                  <p class="text-lg">Get features shipped every week — no meetings, no hourly rates. Choose between cash-based plans or my new equity partnership.</p>
+                  <div class="badge badge-outline mt-4">NEW EQUITY OPTION</div>
+              </div>
               
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <!-- Horizontal Card for Landing Page Package -->
-                  <div class="card lg:card-side bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-body">
-                      <div class="flex flex-col gap-4">
-
-                        <h3 class="card-title text-xl">Landing Page Package</h3>
-                        <div class="text-3xl font-bold my-4">$400</div>
-                        <p class="mb-4">Ideal for startups needing a quick and effective online presence. This package includes:</p>
-                        <ul class="mb-6">
-                          <li class="flex items-center">
-                            <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                            <span>No-code branding</span>
-                          </li>
-                          <li class="flex items-center">
-                            <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                            <span>Copyrighting</span>
-                          </li>
-                          <li class="flex items-center">
-                            <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                            <span>Assets generation</span>
-                          </li>
-                          <li class="flex items-center">
-                            <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                            <span>Free hosting</span>
-                          </li>
-                          <li class="flex items-center">
-                            <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                            <span>Built with HTML, JS, and Tailwind</span>
-                          </li>
-                          <li class="flex items-center">
-                            <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                            <span>Built and published in 2-3 days</span>
-                          </li>
-                        </ul>
-                      </div>
-                          <a href="#cta" class="btn btn-outline btn-primary mt-auto">Select Landing Page</a>
-                      </div>
-                  </div>
-
-                  <div class="card bg-primary text-primary-content shadow-xl" data-aos="fade-up" data-aos-delay="200">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div class="card bg-primary text-primary-content shadow-xl relative hover:shadow-2xl transition-all" data-aos="fade-up" data-aos-delay="100">
+                      <div class="badge badge-secondary absolute -top-3 left-1/2 transform -translate-x-1/2">MOST POPULAR</div>
                       <div class="card-body">
-                          <div class="badge badge-secondary mb-2">MOST POPULAR</div>
-                          <h3 class="card-title text-xl">Starter MVP</h3>
-                          <div class="text-3xl font-bold my-4">$1,499</div>
-                          <p class="mb-4">Perfect for validating a simple idea or concept quickly. For example, directories, landing pages, or simple AI wrappers.</p>
+                          <h3 class="card-title text-xl">MVP Sprint</h3>
+                          <div class="text-3xl font-bold my-4">
+                              <span class="line-through text-neutral">$1,450</span>
+                              <span class="text-white ml-2">$950</span>
+                              <span class="text-sm font-normal">/month</span>
+                          </div>
+                          <div class="badge badge-accent mb-3">100% SATISFACTION GUARANTEE</div>
+                          <p class="mb-4">Perfect for founders who need steady progress on a single MVP project.</p>
                           <ul class="space-y-2 mb-6">
                               <li class="flex items-center">
                                   <i data-lucide="check" class="w-5 h-5 mr-2 text-primary-content"></i>
-                                  <span>MVP with 1-3 core features</span>
+                                  <span>1 active feature/task at a time</span>
                               </li>
                               <li class="flex items-center">
                                   <i data-lucide="check" class="w-5 h-5 mr-2 text-primary-content"></i>
-                                  <span>Basic user authentication</span>
+                                  <span>Unlimited backlog of tasks</span>
                               </li>
                               <li class="flex items-center">
                                   <i data-lucide="check" class="w-5 h-5 mr-2 text-primary-content"></i>
-                                  <span>Admin dashboard</span>
+                                  <span>Weekly delivery cycles</span>
                               </li>
                               <li class="flex items-center">
                                   <i data-lucide="check" class="w-5 h-5 mr-2 text-primary-content"></i>
-                                  <span>AI API integration</span>
+                                  <span>Trello workflow management</span>
                               </li>
                               <li class="flex items-center">
                                   <i data-lucide="check" class="w-5 h-5 mr-2 text-primary-content"></i>
-                                  <span>5 days delivery</span>
+                                  <span>Pause anytime</span>
                               </li>
                               <li class="flex items-center">
                                   <i data-lucide="check" class="w-5 h-5 mr-2 text-primary-content"></i>
-                                  <span>No-code branding</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary-content"></i>
-                                  <span>100% money back guarantee</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary-content"></i>
-                                  <span>Stripe integration</span>
-                              </li>
-                              <li class="flex items-center text-gray-600 line-through">
-                                  <i data-lucide="x" class="w-5 h-5 mr-2"></i>
-                                  <span>5-7 core features</span>
-                              </li>
-                              <li class="flex items-center text-gray-600 line-through">
-                                  <i data-lucide="x" class="w-5 h-5 mr-2"></i>
-                                  <span>User OAuth and magic link authentication</span>
-                              </li>
-                              <li class="flex items-center text-gray-600 line-through">
-                                  <i data-lucide="x" class="w-5 h-5 mr-2"></i>
-                                  <span>Custom Brand by Maria Ba Design</span>
+                                  <span>Ruby on Rails & Tailwind stack</span>
                               </li>
                           </ul>
-                          <a href="#cta" class="btn bg-white text-primary mt-auto">Select Starter</a>
+                          <a href="https://buy.stripe.com/fZe03l4O35Ga4Jq6oo?prefilled_promo_code=STARTERPROMO" class="btn bg-white text-primary mt-auto">Subscribe Now</a>
+                      </div>
+                  </div>
+
+                  <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all" data-aos="fade-up" data-aos-delay="200">
+                      <div class="card-body">
+                          <h3 class="card-title text-xl">CTO Pro</h3>
+                          <div class="text-3xl font-bold my-4">$2,000<span class="text-sm font-normal">/month</span></div>
+                          <div class="badge badge-accent mb-3">100% SATISFACTION GUARANTEE</div>
+                          <p class="mb-4">For founders who need faster progress with multiple features in development.</p>
+                          <ul class="space-y-2 mb-6">
+                              <li class="flex items-center">
+                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
+                                  <span>2 concurrent active tasks</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
+                                  <span>Unlimited backlog of tasks</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
+                                  <span>Priority delivery</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
+                                  <span>AI + API support included</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
+                                  <span>Trello workflow management</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
+                                  <span>Pause anytime</span>
+                              </li>
+                              <li class="flex items-center">
+                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
+                                  <span>Ruby on Rails & Tailwind stack</span>
+                              </li>
+                          </ul>
+                          <a href="https://buy.stripe.com/dR6bM30xNd8Cfo47st" class="btn btn-outline btn-primary mt-auto">Subscribe Now</a>
                       </div>
                   </div>
                   
-                  <div class="card bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                  <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all" data-aos="fade-up" data-aos-delay="300">
                       <div class="card-body">
-                          <h3 class="card-title text-xl">Growth MVP</h3>
-                          <div class="text-3xl font-bold my-4">$2,999</div>
-                          <p class="mb-4">Includes everything in Starter plus the complete package to launch and start acquiring users.</p>
+                          <h3 class="card-title text-xl">Equity Partnership</h3>
+                          <div class="text-3xl font-bold my-4">Equity <span class="text-sm font-normal">Based</span></div>
+                          <p class="mb-4">For ambitious founders who need a true technical co-founder without diluting cash resources.</p>
                           <ul class="space-y-2 mb-6">
                               <li class="flex items-center">
                                   <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>AI API integration</span>
+                                  <span>Unlimited development (up to 10 tasks/mo)</span>
                               </li>
                               <li class="flex items-center">
                                   <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>5 days delivery</span>
+                                  <span>3-5% equity stake (vested over 24 months)</span>
                               </li>
                               <li class="flex items-center">
                                   <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>No-code branding</span>
+                                  <span>Weekly strategy calls</span>
                               </li>
                               <li class="flex items-center">
                                   <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
-                                  <span>100% money back guarantee</span>
+                                  <span>Priority+ development</span>
                               </li>
                               <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                  <span>Multi-page web application</span>
+                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
+                                  <span>Pitch deck & investor preparation</span>
                               </li>
                               <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                  <span>5-7 core features</span>
+                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
+                                  <span>6-month minimum commitment</span>
                               </li>
                               <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                  <span>OAuth and Magic Link User authentication</span>
+                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
+                                  <span>Full technical architecture review</span>
                               </li>
                               <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                  <span>Admin dashboard</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                  <span>Stripe integration</span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="crown" class="w-5 h-5 mr-2"></i>
-                                  <span>Custom Brand by <a href="https://mariaba.com" class="link font-bold link-hover underline" target="_blank">Maria Ba Design</a></span>
-                              </li>
-                              <li class="flex items-center">
-                                  <i data-lucide="check" class="w-5 h-5 mr-2"></i>
-                                  <span>3-week delivery</span>
+                                  <i data-lucide="check" class="w-5 h-5 mr-2 text-primary"></i>
+                                  <span>All tech stack options available</span>
                               </li>
                           </ul>
-                          <a href="#cta" class="btn btn-outline btn-primary mt-auto">Select Growth</a>
+                          <a href="https://cal.com/launchbrick/30min" class="btn btn-outline btn-primary mt-auto">Apply Now</a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="mt-12 bg-base-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto" data-aos="fade-up">
+                  <h3 class="font-bold text-xl mb-3">How the Equity Partnership Works</h3>
+                  <p class="mb-4">For founders who are serious about building a long-term business and prefer to preserve cash, my equity option provides deeper commitment and alignment.</p>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <div class="flex flex-col items-center text-center">
+                          <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-3">
+                              <i data-lucide="handshake" class="w-6 h-6 text-white"></i>
+                          </div>
+                          <h4 class="font-semibold">Vesting Structure</h4>
+                          <p class="text-sm">3-5% equity vested monthly over 24 months with a 6-month cliff. Percentage based on project scope and potential.</p>
+                      </div>
+                      <div class="flex flex-col items-center text-center">
+                          <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-3">
+                              <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
+                          </div>
+                          <h4 class="font-semibold">Legal Framework</h4>
+                          <p class="text-sm">Simple equity agreement with clear IP ownership, vesting terms, and deliverables. Transparent and founder-friendly.</p>
+                      </div>
+                      <div class="flex flex-col items-center text-center">
+                          <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-3">
+                              <i data-lucide="rocket" class="w-6 h-6 text-white"></i>
+                          </div>
+                          <h4 class="font-semibold">Beyond Development</h4>
+                          <p class="text-sm">Includes strategic input, fundraising support, and technical roadmapping — true co-founder value, not just coding.</p>
                       </div>
                   </div>
               </div>
           </div>
       </section>
 
-      <!-- 4. Past Projects -->
-      <section class="py-16 bg-base-100" id="projects" data-aos="fade-up">
+      <!-- 5. Task Definition -->
+      <section class="py-24 bg-base-100 mt-10">
           <div class="container mx-auto px-4">
-              <h2 class="text-3xl font-bold text-center mb-4">MVPs I've Built</h2>
-              <p class="text-center mb-12 max-w-2xl mx-auto">Check out some recent projects I've built for founders just like you. Get a senior software engineer for half the price of one.</p>
+              <h2 class="text-3xl font-bold text-center mb-4">What Counts as a Task?</h2>
+              <p class="text-center mb-12 max-w-2xl mx-auto">To keep things simple, I've defined what makes up a single task in your subscription. Here's how I break it down:</p>
               
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <div class="card shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                      <figure><a href="https://lightningrails.com" target="_blank"><img src="images/lightning-rails.png" alt="TaskFlow MVP" class="w-full h-full object-cover" /></a></figure>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div class="card bg-base-200 shadow-xl" data-aos="fade-up" data-aos-delay="100">
                       <div class="card-body">
-                          <h3 class="card-title">Lightning Rails</h3>
-                          <p>A SaaS product that helps founders build their Ruby on Rails projects</p>
-                          <div class="flex flex-wrap gap-2 mt-2">
-                              <div class="badge badge-outline">SaaS</div>
-                              <div class="badge badge-outline">Ruby on Rails</div>
-                              <div class="badge badge-outline">Tailwind CSS</div>
-                          </div>
+                          <h3 class="card-title text-success flex items-center">
+                              <i data-lucide="check-circle" class="w-6 h-6 mr-2"></i>
+                              Examples of Single Tasks
+                          </h3>
+                          <ul class="mt-4 space-y-2">
+                              <li class="flex items-start">
+                                  <i data-lucide="check" class="w-5 h-5 text-success mt-0.5 mr-2 flex-shrink-0"></i>
+                                  <span>Adding a user profile page with basic details and edit functionality</span>
+                              </li>
+                              <li class="flex items-start">
+                                  <i data-lucide="check" class="w-5 h-5 text-success mt-0.5 mr-2 flex-shrink-0"></i>
+                                  <span>Creating a simple form with validation and submission functionality</span>
+                              </li>
+                              <li class="flex items-start">
+                                  <i data-lucide="check" class="w-5 h-5 text-success mt-0.5 mr-2 flex-shrink-0"></i>
+                                  <span>Implementing email notifications for specific user actions</span>
+                              </li>
+                              <li class="flex items-start">
+                                  <i data-lucide="check" class="w-5 h-5 text-success mt-0.5 mr-2 flex-shrink-0"></i>
+                                  <span>Building an admin dashboard to view and manage users</span>
+                              </li>
+                              <li class="flex items-start">
+                                  <i data-lucide="check" class="w-5 h-5 text-success mt-0.5 mr-2 flex-shrink-0"></i>
+                                  <span>Integrating a third-party API (like Stripe for payments)</span>
+                              </li>
+                          </ul>
                       </div>
                   </div>
                   
-                  <div class="card shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                      <figure><a href="https://railspath.com" target="_blank"><img src="images/railspath.png" alt="FitTrack MVP" class="w-full h-full object-cover" /></a></figure>
+                  <div class="card bg-base-200 shadow-xl" data-aos="fade-up" data-aos-delay="200">
                       <div class="card-body">
-                          <h3 class="card-title">Rails Path</h3>
-                          <p> The Duolingo of Ruby on Rails</p>
-                          <div class="flex flex-wrap gap-2 mt-2">
-                              <div class="badge badge-outline">SaaS</div>
-                              <div class="badge badge-outline">Ruby on Rails</div>
-                              <div class="badge badge-outline">Heroku</div>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <div class="card shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                      <figure><a href="https://library.mariaba.comm" target="_blank"><img src="images/mariaba.png" alt="PropertyMatch MVP" class="w-full h-full object-cover" /></a></figure>
-                      <div class="card-body">
-                          <h3 class="card-title">Maria Ba Library</h3>
-                          <p>A library of Illustrations for Maria Ba Design sutdio</p>
-                          <div class="flex flex-wrap gap-2 mt-2">
-                              <div class="badge badge-outline">Design</div>
-                              <div class="badge badge-outline">Stimulus</div>
-                              <div class="badge badge-outline">Ruby on Rails</div>
+                          <h3 class="card-title text-error flex items-center">
+                              <i data-lucide="alert-circle" class="w-6 h-6 mr-2"></i>
+                              Too Big for One Task
+                          </h3>
+                          <ul class="mt-4 space-y-2">
+                              <li class="flex items-start">
+                                  <i data-lucide="x" class="w-5 h-5 text-error mt-0.5 mr-2 flex-shrink-0"></i>
+                                  <span>Building a complete messaging system with chat rooms (this would be 2-3 tasks)</span>
+                              </li>
+                              <li class="flex items-start">
+                                  <i data-lucide="x" class="w-5 h-5 text-error mt-0.5 mr-2 flex-shrink-0"></i>
+                                  <span>Creating an entire e-commerce checkout flow (this would be multiple tasks)</span>
+                              </li>
+                              <li class="flex items-start">
+                                  <i data-lucide="x" class="w-5 h-5 text-error mt-0.5 mr-2 flex-shrink-0"></i>
+                                  <span>Developing a complex reporting dashboard with multiple charts (this would be 2-3 tasks)</span>
+                              </li>
+                              <li class="flex items-start">
+                                  <i data-lucide="x" class="w-5 h-5 text-error mt-0.5 mr-2 flex-shrink-0"></i>
+                                  <span>Building a complete membership system with different access levels (this would be multiple tasks)</span>
+                              </li>
+                          </ul>
+                          <div class="mt-4 bg-base-300 p-4 rounded-lg">
+                              <p class="text-sm">Don't worry! During onboarding, I'll help you break down your project into properly sized tasks that fit within your subscription.</p>
                           </div>
                       </div>
                   </div>
@@ -330,7 +429,7 @@
       </section>
 
       <!-- 5. Testimonials -->
-      <section class="py-16 bg-primary" id="testimonials" data-aos="fade-up">
+      <section class="py-24 bg-primary mt-10" id="testimonials" data-aos="fade-up">
           <div class="container mx-auto px-4">
               <h2 class="text-3xl font-bold text-center mb-12">Wall of love</h2>
               
@@ -420,81 +519,111 @@
       </section>
 
       <!-- 6. FAQ -->
-      <section class="py-16 bg-base-100" id="faq" data-aos="fade-up">
+      <section class="py-24 bg-base-100 mt-10" id="faq" data-aos="fade-up">
           <div class="container mx-auto px-4">
               <div class="grid gap-4 lg:grid-cols-3 lg:gap-8">
                   <div class="h-auto">
                       <h2 class="text-base font-semibold leading-7 text-primary">Questions?</h2>
                       <p class="mt-2 text-3xl font-bold tracking-tight">Frequently Asked Questions</p>
-                      <p class="mt-6 text-lg leading-8">Everything you need to know about our new service packages.</p>
+                      <p class="mt-6 text-lg leading-8">Everything you need to know about my subscription-based MVP service.</p>
                   </div>
                   <div class="h-auto lg:col-span-2">
                       <div class="join join-vertical w-full">
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="100">
                               <input type="radio" name="my-accordion-4" checked="checked" />
-                              <div class="collapse-title text-xl font-medium">How long does it take to complete a project?</div>
+                              <div class="collapse-title text-xl font-medium">How does the subscription model differ from traditional development?</div>
                               <div class="collapse-content">
-                                  <p>The timeline varies based on the package you select and the complexity of your project. Our Basic package typically takes 3 weeks, the Advanced package takes 5 weeks, and the Premium package can take up to 7 weeks. This includes all phases from planning to testing.</p>
+                                  <p>My subscription model offers predictable weekly progress with clear expectations. Unlike traditional hourly models where costs can spiral, you'll pay a fixed monthly fee for a defined number of development tasks. This approach eliminates scope creep while still allowing flexibility to adapt your product as you learn from users.</p>
                               </div>
                           </div>
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="200">
                               <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">Do I need any technical skills?</div>
+                              <div class="collapse-title text-xl font-medium">Can I pause my subscription if needed?</div>
                               <div class="collapse-content">
-                                  <p>No technical skills are required. Our service is designed for clients without a technical background. We will guide you through the process and handle all technical aspects, ensuring you understand each step in simple terms.</p>
+                                  <p>Yes! I understand startup development isn't always linear. You can pause your subscription anytime - for example, when you need time to gather user feedback or during fundraising periods. When you're ready to continue development, simply resume your subscription and I'll pick up where I left off.</p>
                               </div>
                           </div>
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="300">
                               <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">What support is available after project completion?</div>
+                              <div class="collapse-title text-xl font-medium">What if I need more capacity in a specific month?</div>
                               <div class="collapse-content">
-                                  <p>Upon completion, you will receive full access to your project and a comprehensive walkthrough. I am happy to offer a fixed monthly subscription for unlimited development requests at $1200/month (Subject to terms and conditions). Additionally, every app is built with technologies that are easy to find developers for, using Tailwind for the front end and Ruby for the backend. I use my own boilerplate, which has more than 200 developers who would be happy to jump in and participate in freelance missions. I am also happy to recommend some other developers.</p>
+                                  <p>You can temporarily upgrade to a higher tier for months when you need additional capacity. This provides flexibility for sprints or important launch periods. After that intense period, you can downgrade to your regular tier. This scalability ensures you only pay for the capacity you need.</p>
                               </div>
                           </div>
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="400">
                               <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">Which technologies are used in your packages?</div>
+                              <div class="collapse-title text-xl font-medium">Which technologies are used in your subscription service?</div>
                               <div class="collapse-content">
-                                  <p>We utilize a range of modern technologies tailored to your project needs, including Tailwind for the front end and Ruby for the backend. These technologies are chosen for their ease of use and the availability of developers. Our boilerplate is supported by a community of over 200 developers ready to assist in freelance missions.</p>
+                                  <p>I utilize Ruby on Rails for backend development and Tailwind CSS for frontend, creating a perfect balance of development speed and scalability. These technologies enable rapid feature deployment while maintaining code quality. Since these are widely used frameworks, you'll never be locked in - there are thousands of developers who can work with this stack if needed in the future.</p>
                               </div>
                           </div>
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="500">
                               <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">How is the payment structured?</div>
+                              <div class="collapse-title text-xl font-medium">How is the subscription payment structured?</div>
                               <div class="collapse-content">
-                                  <p>We require a 40% deposit to initiate the project, with the remaining 60% due upon completion and before the final handover. This structure ensures mutual commitment and minimizes risk.</p>
+                                  <p>Subscriptions are billed monthly with no long-term contracts required. I offer a 10% discount for quarterly commitments (3 months paid upfront). All plans require the first month paid upfront. After that, you'll be billed automatically on the same day each month for as long as you want to continue service.</p>
+                              </div>
+                          </div>
+                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="550">
+                              <input type="radio" name="my-accordion-4" />
+                              <div class="collapse-title text-xl font-medium">Do you offer a satisfaction guarantee?</div>
+                              <div class="collapse-content">
+                                  <p>Absolutely! I offer a 100% satisfaction guarantee on your first month. If you're not completely satisfied with the quality of work or my process within the first 30 days, I'll refund your payment in full. I believe in building trust through results, and this guarantee demonstrates my confidence in delivering value from day one. No questions asked, no complicated processes.</p>
                               </div>
                           </div>
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="600">
                               <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">Are revisions included in the packages?</div>
+                              <div class="collapse-title text-xl font-medium">What happens if I need changes to completed tasks?</div>
                               <div class="collapse-content">
-                                  <p>Each package includes up to three rounds of revisions post-delivery, allowing you to refine the project based on feedback. Additional revisions can be arranged at an hourly rate if necessary.</p>
+                                  <p>Minor revisions and bug fixes to recently completed tasks are included in your subscription. For larger changes or new functionality for previously completed features, you would add these as new tasks to your backlog. This ensures continuous improvement while maintaining clear expectations about what's included.</p>
+                              </div>
+                          </div>
+                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="650">
+                              <input type="radio" name="my-accordion-4" />
+                              <div class="collapse-title text-xl font-medium">How does the equity partnership option work?</div>
+                              <div class="collapse-content">
+                                  <p>The equity partnership is designed for founders who are ready to bring on a technical co-founder but want to preserve cash. Here's a detailed breakdown:</p>
+                                  <ul class="list-disc pl-6 mt-2 space-y-2">
+                                      <li><strong>Equity Terms:</strong> 3-5% equity vested over 24 months with a 6-month cliff (meaning no equity is granted until after 6 months of collaboration). The specific percentage depends on project scope, complexity, and growth potential.</li>
+                                      <li><strong>What You Get:</strong> Up to 10 tasks per month, weekly strategy calls, pitch deck and fundraising support, architecture planning, and technical mentorship.</li>
+                                      <li><strong>Legal Structure:</strong> I use a standard SAFE (Simple Agreement for Future Equity) or equivalent document that protects both parties. All IP is owned by your company from day one.</li>
+                                      <li><strong>Legal Structure:</strong> We use a standard SAFE (Simple Agreement for Future Equity) or equivalent document that protects both parties. All IP is owned by your company from day one.</li>
+                                      <li><strong>Commitment:</strong> 6-month minimum engagement to ensure enough time to build meaningful value. The partnership can be extended beyond the initial term by mutual agreement.</li>
+                                      <li><strong>Exit Strategy:</strong> Clear terms for scenarios like acquisition, additional funding rounds, or if either party needs to end the relationship.</li>
+                                  </ul>
+                                  <p class="mt-3">Our equity model aligns our success with yours. If your startup thrives, we both win. This creates a deeper level of commitment than a simple service provider relationship.</p>
                               </div>
                           </div>
                           <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="700">
                               <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">Why is there no meetings or calls after the first discovery call?</div>
+                              <div class="collapse-title text-xl font-medium">Why is there no meetings or calls after onboarding?</div>
                               <div class="collapse-content">
-                                  <p>After the initial discovery call, all communication is handled asynchronously through Trello boards. This approach allows me to focus all my time on development, keeping prices low. Clients can track the progress of each feature and provide feedback from day one. Asynchronous communication also ensures that project advancements continue smoothly, even across different time zones.</p>
+                                  <p>After initial onboarding, all communication is handled asynchronously through Trello boards. This approach allows me to focus development time on actually building your product, keeping prices significantly lower than traditional agencies. You'll track progress in real-time through your Trello board, with daily updates and clear task status. Asynchronous communication also ensures smooth progress across different time zones.</p>
+                              </div>
+                          </div>
+                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="800">
+                              <input type="radio" name="my-accordion-4" />
+                              <div class="collapse-title text-xl font-medium">Do I own the code created during my subscription?</div>
+                              <div class="collapse-content">
+                                  <p>Absolutely. You retain 100% ownership of all code and intellectual property developed during your subscription. When you begin your subscription, you'll receive access to the GitHub repository where your code lives. This ensures complete transparency and means you'll always have full access to your project, even if you decide to pause or cancel your subscription.</p>
                               </div>
                           </div>
                       </div>
                   </div>
               </div>
           </div>
-      </div>
+      </section>
 
       <!-- 7. Final CTA -->
-      <div class="py-16 bg-primary text-primary-content" id="cta" data-aos="fade-up">
+      <div class="py-24 bg-primary text-primary-content mt-10" id="cta" data-aos="fade-up">
           <div class="container mx-auto px-4">
               <div class="max-w-3xl mx-auto text-center">
-                  <h2 class="text-3xl font-bold mb-4">Ready to Build Your MVP?</h2>
-                  <p class="mb-8">I only take on 3 new projects each month to ensure quality and focus. Secure your build slot now before the month fills up. Get a senior software engineer for half the price of one.</p>
+                  <h2 class="text-3xl font-bold mb-4">Ready to Subscribe to Your MVP Journey?</h2>
+                  <p class="mb-8">I only accept 5 active subscribers per month to ensure quality and focus. Secure your subscription now before all slots are filled.</p>
                   <div class="card bg-base-100 text-neutral max-w-md mx-auto" data-aos="fade-up" data-aos-delay="100">
                       <div class="card-body">
-                          <h3 class="card-title text-xl mb-4">Book Your Discovery Call</h3>
-                          <p class="mb-4">Let's discuss your idea and find the right package for your needs.</p>
+                          <h3 class="card-title text-xl mb-4">Book Your Subscription Call</h3>
+                          <p class="mb-4">Let's discuss your MVP needs and find the right subscription plan for your startup.</p>
                           <a href="https://cal.com/launchbrick/30min" class="btn btn-primary btn-block">Schedule Your Call</a>
                           <p class="mt-4 text-sm">No commitment required for the initial consultation</p>
                       </div>
@@ -504,11 +633,26 @@
       </div>
 
       <!-- Footer -->
-      <footer class="footer bg-neutral text-neutral-content p-10" data-aos="fade-up">
+      <footer class="footer bg-neutral text-neutral-content p-16 mt-0" data-aos="fade-up">
           <aside>
               <img src="images/logo.png" alt="Launch Brick Logo" class="w-12 h-12" />
-              <p><span class="font-bold"></span>Launch Brick</span> - Turning ideas into products since 2019</p>
+              <p><span class="font-bold">Launch Brick</span> - Your subscription-based MVP partner since 2019</p>
           </aside>
+          <nav>
+              <h6 class="footer-title">Navigation</h6>
+              <a href="#" class="link link-hover">Home</a>
+              <a href="#about" class="link link-hover">About Me</a>
+              <a href="#how-it-works" class="link link-hover">How It Works</a>
+              <a href="#packages" class="link link-hover">Subscription Plans</a>
+              <a href="#testimonials" class="link link-hover">Testimonials</a>
+              <a href="#faq" class="link link-hover">FAQ</a>
+          </nav>
+          <nav>
+              <h6 class="footer-title">Legal</h6>
+              <a class="link link-hover">Terms of Service</a>
+              <a class="link link-hover">Privacy Policy</a>
+              <a class="link link-hover">Cookie Policy</a>
+          </nav>
           <nav>
               <h6 class="footer-title">Connect</h6>
               <div class="grid grid-flow-col gap-4">
@@ -524,11 +668,11 @@
               </div>
           </nav>
       </footer>
-    </body>
-      </html>
       <script>
         lucide.createIcons();
-      </script>
+       </script>
       <script>
         (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8WDOXySFzbMEemqLdDNLv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
       </script>
+  </body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP Cost Calculator</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="calculator.js"></script>
+</head>
+<body data-theme="cupcake" onload="AOS.init();">
+    <nav class="navbar bg-white fixed top-0 left-0 right-0 z-50" data-aos="fade-down">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="flex items-center">
+                <img src="images/logo.png" alt="MVP Builder Logo" class="w-10 h-10">
+                <a href="/" class="btn btn-ghost text-xl ml-2">Launch Brick</a>
+            </div>
+            <div class="flex-none hidden lg:block">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="py-16 bg-base-100 mt-16" id="calculator">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-3xl text-center font-bold mb-4">Build Your Custom MVP Package</h2>
+                <div class="text-3xl font-bold" id="top-price">$0</div>
+            </div>
+            <p class="text-center mb-8 max-w-3xl mx-auto">Select your app type and features to get an instant price estimate for your custom MVP build.</p>
+            
+            <div class="card bg-base-200 shadow-xl max-w-4xl mx-auto">
+                <div class="card-body">
+                    <!-- Progress Bar -->
+                    <div class="w-full mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm" id="step-indicator">Step 1 of 3: Select Your App Type</span>
+                            <span class="text-sm"><span id="selected-count">0</span> selections</span>
+                        </div>
+                        <progress class="progress progress-primary w-full" value="33" max="100" id="form-progress"></progress>
+                    </div>
+                    
+                    <!-- Step 1: App Type Selection -->
+                    <div id="step-1" class="space-y-4">
+                        <h3 class="text-xl font-semibold">What type of app do you want to build?</h3>
+                        <p class="text-sm text-gray-600 mb-4">This helps us understand your project scope and recommend the right features.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <label class="app-type-option border border-base-300 rounded-lg p-4 cursor-pointer hover:border-primary transition-all">
+                                <input type="radio" name="appType" value="directory" class="hidden app-type" />
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 mt-1 mr-3 bg-primary/10 rounded-full flex items-center justify-center">
+                                        <i data-lucide="list" class="w-4 h-4 text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-medium">Directory</span>
+                                        <p class="text-xs text-gray-600">Like boilerplatelist.com – A curated collection of items or resources</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="app-type-option border border-base-300 rounded-lg p-4 cursor-pointer hover:border-primary transition-all">
+                                <input type="radio" name="appType" value="saas" class="hidden app-type" />
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 mt-1 mr-3 bg-primary/10 rounded-full flex items-center justify-center">
+                                        <i data-lucide="layers" class="w-4 h-4 text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-medium">SaaS</span>
+                                        <p class="text-xs text-gray-600">Like datafa.st – A subscription-based software service</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="app-type-option border border-base-300 rounded-lg p-4 cursor-pointer hover:border-primary transition-all">
+                                <input type="radio" name="appType" value="marketplace" class="hidden app-type" />
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 mt-1 mr-3 bg-primary/10 rounded-full flex items-center justify-center">
+                                        <i data-lucide="shopping-cart" class="w-4 h-4 text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-medium">Marketplace</span>
+                                        <p class="text-xs text-gray-600">Like Airbnb – Connect buyers and sellers in one platform</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="app-type-option border border-base-300 rounded-lg p-4 cursor-pointer hover:border-primary transition-all">
+                                <input type="radio" name="appType" value="tool" class="hidden app-type" />
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 mt-1 mr-3 bg-primary/10 rounded-full flex items-center justify-center">
+                                        <i data-lucide="tool" class="w-4 h-4 text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-medium">Free Tool</span>
+                                        <p class="text-xs text-gray-600">Like a Keyword Research tool – Utility that solves a specific problem</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="app-type-option border border-base-300 rounded-lg p-4 cursor-pointer hover:border-primary transition-all">
+                                <input type="radio" name="appType" value="landing" class="hidden app-type" />
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 mt-1 mr-3 bg-primary/10 rounded-full flex items-center justify-center">
+                                        <i data-lucide="layout" class="w-4 h-4 text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-medium">Landing Page</span>
+                                        <p class="text-xs text-gray-600">To validate an idea with a waitlist – Simple page to capture interest</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="flex justify-end mt-6">
+                            <button type="button" id="next-step-1" class="btn btn-primary">Next: Select Features</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Features Selection -->
+                    <div id="step-2" class="space-y-4 hidden">
+                        <h3 class="text-xl font-semibold">Select Your Desired Features</h3>
+                        <p class="text-sm text-gray-600 mb-4">Choose the features you need for your <span id="selected-app-type" class="font-medium">application</span>. Each selection adjusts your estimated price.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="feature-group border border-base-300 rounded-lg p-4">
+                                <h4 class="font-medium mb-2">Authentication</h4>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="password_auth" class="checkbox checkbox-sm feature" data-price="300" />
+                                    <span class="label-text">Password Authentication</span>
+                                </label>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="github_oauth" class="checkbox checkbox-sm feature" data-price="200" />
+                                    <span class="label-text">OAuth Github</span>
+                                </label>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="google_oauth" class="checkbox checkbox-sm feature" data-price="200" />
+                                    <span class="label-text">OAuth Google</span>
+                                </label>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="magic_link" class="checkbox checkbox-sm feature" data-price="250" />
+                                    <span class="label-text">Magic Link Authentication</span>
+                                </label>
+                            </div>
+                            
+                            <div class="feature-group border border-base-300 rounded-lg p-4">
+                                <h4 class="font-medium mb-2">Payments</h4>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="stripe_one_time" class="checkbox checkbox-sm feature" data-price="300" />
+                                    <span class="label-text">Stripe One-time Payment</span>
+                                </label>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="stripe_subscription" class="checkbox checkbox-sm feature" data-price="400" />
+                                    <span class="label-text">Stripe Subscriptions</span>
+                                </label>
+                            </div>
+                            
+                            <div class="feature-group border border-base-300 rounded-lg p-4">
+                                <h4 class="font-medium mb-2">AI Features</h4>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="ai_prompt" class="checkbox checkbox-sm feature" data-price="350" />
+                                    <span class="label-text">AI API (One Prompt)</span>
+                                </label>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="ai_context" class="checkbox checkbox-sm feature" data-price="650" />
+                                    <span class="label-text">AI Context Training</span>
+                                </label>
+                            </div>
+                            
+                            <div class="feature-group border border-base-300 rounded-lg p-4">
+                                <h4 class="font-medium mb-2">Branding</h4>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="custom_branding" class="checkbox checkbox-sm feature" data-price="450" />
+                                    <span class="label-text">Custom Branding by MariaBa Studio</span>
+                                </label>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="template_branding" class="checkbox checkbox-sm feature" data-price="150" />
+                                    <span class="label-text">Template Branding</span>
+                                </label>
+                            </div>
+                            
+                            <div class="feature-group border border-base-300 rounded-lg p-4">
+                                <h4 class="font-medium mb-2">Core Features</h4>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="one_feature" class="checkbox checkbox-sm feature" data-price="500" />
+                                    <span class="label-text">1 Core Feature</span>
+                                    <div class="tooltip" data-tip="e.g., Book a flat">
+                                        <i data-lucide="info" class="w-4 h-4 text-gray-400"></i>
+                                    </div>
+                                </label>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="three_features" class="checkbox checkbox-sm feature" data-price="1200" />
+                                    <span class="label-text">3 Core Features</span>
+                                    <div class="tooltip" data-tip="e.g., Book a flat, AI chat, Book an experience">
+                                        <i data-lucide="info" class="w-4 h-4 text-gray-400"></i>
+                                    </div>
+                                </label>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="admin_dashboard" class="checkbox checkbox-sm feature" data-price="400" />
+                                    <span class="label-text">Admin Dashboard</span>
+                                </label>
+                            </div>
+                            
+                            <div class="feature-group border border-base-300 rounded-lg p-4">
+                                <h4 class="font-medium mb-2">Additional Features</h4>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="waitlist" class="checkbox checkbox-sm feature" data-price="150" />
+                                    <span class="label-text">Waitlist Integration</span>
+                                </label>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="support_chat" class="checkbox checkbox-sm feature" data-price="300" />
+                                    <span class="label-text">Support Chat</span>
+                                </label>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="file_upload" class="checkbox checkbox-sm feature" data-price="250" />
+                                    <span class="label-text">Upload Images/PDFs</span>
+                                </label>
+                                
+                                <label class="label cursor-pointer justify-start gap-2">
+                                    <input type="checkbox" name="features" value="file_download" class="checkbox checkbox-sm feature" data-price="200" />
+                                    <span class="label-text">Download Images/PDFs</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 bg-base-100 p-4 rounded-lg border border-base-300">
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg">Estimated Price</h4>
+                                    <p class="text-sm text-gray-600">Based on your selected features</p>
+                                </div>
+                                <div class="text-3xl font-bold" id="total-price">$0</div>
+                            </div>
+                            
+                            <div class="flex gap-4 justify-between">
+                                <button type="button" id="back-step-1" class="btn btn-outline">Previous</button>
+                                <button type="button" id="next-step-2" class="btn btn-primary">Next: Your Information</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Contact Information -->
+                    <div id="step-3" class="space-y-4 hidden">
+                        <h3 class="text-xl font-semibold">Your Information</h3>
+                        <p class="text-sm text-gray-600 mb-4">Please provide your contact details to receive your custom quote and discuss next steps.</p>
+                        
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Name</span>
+                                </label>
+                                <input type="text" id="contact-name" name="name" placeholder="Your name" class="input input-bordered w-full" required />
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Email</span>
+                                </label>
+                                <input type="email" id="contact-email" name="email" placeholder="your.email@example.com" class="input input-bordered w-full" required />
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">How did you hear about us?</span>
+                                </label>
+                                <select id="contact-source" name="source" class="select select-bordered w-full">
+                                    <option value="" disabled selected>Please select an option</option>
+                                    <option value="google">Google Search</option>
+                                    <option value="twitter">Twitter</option>
+                                    <option value="reddit">Reddit</option>
+                                    <option value="indiehackers">Indie Hackers</option>
+                                    <option value="friend">Friend Referral</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Additional Comments (Optional)</span>
+                                </label>
+                                <textarea id="contact-comments" name="comments" placeholder="Tell us more about your project needs" class="textarea textarea-bordered h-24"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 bg-base-100 p-4 rounded-lg border border-base-300">
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg">Your MVP Package</h4>
+                                    <p class="text-sm text-gray-600">Complete your information to discuss your custom build</p>
+                                </div>
+                                <div class="text-3xl font-bold" id="final-price">$0</div>
+                            </div>
+                            
+                            <div class="flex gap-4 justify-between">
+                                <button type="button" id="back-step-2" class="btn btn-outline">Previous</button>
+                                <button type="submit" id="submit-form" class="btn btn-primary">Request Quote</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
