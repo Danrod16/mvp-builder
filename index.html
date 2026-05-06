@@ -1,796 +1,627 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Launch Brick: Your Fractional CTO for SMEs & Solopreneurs</title>
-      <meta name="description" content="Build and launch your MVP faster with Launch Brick. Get expert CTO guidance and hands-on development, tailored for SMEs and solopreneurs. No meetings, no hourly rates—just results." />
-      <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-      <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
-      <script src="https://cdn.tailwindcss.com"></script>
-      <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-      <script src="https://unpkg.com/lucide@latest"></script>
-      <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      <script src="calculator.js"></script>
-      <script
-        defer
-        data-website-id="67f4ed3d9a49529a1019d979"
-        data-domain="launchbrick.com"
-        src="https://datafa.st/js/script.js">
-      </script>
-  </head>
-  
-  <body data-theme="lofi" onload="AOS.init();" class="bg-white">
-      <!-- Navbar -->
-      <nav class="navbar bg-white fixed top-0 left-0 right-0 z-50 p-6" data-aos="fade-down">
-          <div class="container mx-auto flex justify-between items-center px-4">
-              <div class="flex items-center">
-                  <a href="/" class="btn btn-ghost text-xl ml-2">
-                    <img src="images/logo.svg" alt="MVP Builder Logo" class="w-32">
-                  </a>
-              </div>
-              <div class="flex-none hidden lg:block">
-                  <ul class="menu menu-horizontal px-1">
-                      <li><a href="#about">About Me</a></li>
-                      <li><a href="#how-it-works">How It Works</a></li>
-                      <li><a href="#packages">Subscription Plans</a></li>
-                      <li><a href="#testimonials">Testimonials</a></li>
-                      <li><a href="#faq">FAQ</a></li>
-                      <li><a href="https://cal.com/lightningrails/launchbrick-chat" class="btn btn-primary btn-sm" target="_blank">Book a Call</a></li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>LaunchBrick — Custom AI Software for Small Business. Owned by You.</title>
+<meta name="description" content="LaunchBrick is a software agency building custom business software with private AI agents for SMEs. Replace your SaaS subscriptions with one unified app you own — delivered in weeks, not months."/>
+<meta name="keywords" content="custom business software, AI for small business, private AI agents, custom software development, software agency, replace SaaS subscriptions"/>
+<link rel="canonical" href="https://launchbrick.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="LaunchBrick — Custom AI Software for Small Business. Owned by You."/>
+<meta property="og:description" content="Custom software development with private AI agents for SMEs. Replace your SaaS subscriptions with one app you own."/>
+<meta property="og:url" content="https://launchbrick.com/"/>
+<meta property="og:image" content="https://launchbrick.com/images/hero-entrepreneur.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="LaunchBrick — Custom AI Software for Small Business"/>
+<meta name="twitter:description" content="Custom software development with private AI agents for SMEs. Owned by you."/>
+<meta name="twitter:image" content="https://launchbrick.com/images/hero-entrepreneur.jpg"/>
+<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script defer data-website-id="67f4ed3d9a49529a1019d979" data-domain="launchbrick.com" src="https://datafa.st/js/script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "LaunchBrick",
+  "url": "https://launchbrick.com/",
+  "logo": "https://launchbrick.com/images/logo.svg",
+  "description": "Software agency building custom business software with private AI agents for SMEs. Replace SaaS subscriptions with one unified app, owned by you.",
+  "sameAs": [
+    "https://x.com/daniel_rrsr",
+    "https://www.linkedin.com/in/daniel-rodriguez-romero/",
+    "https://github.com/Danrod16"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Daniel Rodriguez"
+  },
+  "areaServed": "Worldwide",
+  "knowsAbout": [
+    "custom business software",
+    "AI for small business",
+    "private AI agents",
+    "custom software development",
+    "replace SaaS subscriptions"
+  ]
+}
+</script>
+<style>
+  :root{
+    --primary:#17171c;
+    --black:#000000;
+    --ink:#212121;
+    --deep-green:#003c33;
+    --dark-navy:#071829;
+    --canvas:#ffffff;
+    --soft-stone:#eeece7;
+    --pale-green:#edfce9;
+    --pale-blue:#f1f5ff;
+    --hairline:#d9d9dd;
+    --border-light:#e5e7eb;
+    --card-border:#f2f2f2;
+    --muted:#93939f;
+    --slate:#75758a;
+    --body-muted:#616161;
+    --action-blue:#1863dc;
+    --coral:#ff7759;
+    --coral-soft:#ffad9b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--canvas);color:var(--ink);
+    font-family:'Inter','Unica77 Cohere Web',Arial,ui-sans-serif,system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;scroll-behavior:smooth;font-size:16px;line-height:1.5}
+  h1,h2,h3,h4{margin:0;font-weight:400;letter-spacing:-0.02em}
+  .display{font-family:'Space Grotesk','CohereText','Inter',ui-sans-serif,system-ui,sans-serif}
+  .ui{font-family:'Inter','Unica77 Cohere Web',Arial,ui-sans-serif,sans-serif}
+  .mono{font-family:'JetBrains Mono','CohereMono',Arial,ui-sans-serif,monospace;letter-spacing:0.28px;text-transform:uppercase;font-size:13px;color:var(--ink)}
+  p{margin:0;line-height:1.5;color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+  .narrow{max-width:1100px;margin:0 auto;padding:0 24px}
 
-      <!-- 1. Hero Section -->
-      <section class="hero min-h-screen pt-16 pb-16" data-aos="fade-up">
-          <div class="container mx-auto flex flex-col lg:flex-row-reverse items-center px-4">
-              <img src="images/hero.svg" class="max-w-xl w-full rounded-xl mb-4 sm:mb-0" alt="MVP Builder Dashboard" />
-              <div class="text-center lg:text-left lg:mr-8">
-                  <div class="badge badge-outline mb-4 border-secondary text-secondary">UPDATE: Only one membership spot left!</div>
-                  <h1 class="text-5xl font-bold">Build Your digital product with a Fractional CTO by Your Side</h1>
-                  <p class="py-6">Skip the hiring headaches and get expert product development, delivered fast. I help founders, SMEs, and solopreneurs turn ideas into real products—no meetings, no hourly rates, just steady progress every week.</p>
-                  <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                      <a href="#packages" class="btn btn-primary">See Subscription Plans</a>
-                      <a href="https://cal.com/lightningrails/launchbrick-chat" class="btn btn-outline">Book a Call</a>
-                  </div>
-                  <div class="mt-6">
-                      <p class="text-sm text-gray-600">Trusted by indie hackers, founders, and small business owners</p>
-                      <div class="flex mt-2 justify-center lg:justify-start">
-                          <div class="avatar-group -space-x-4">
-                              <div class="avatar">
-                                  <div class="w-8">
-                                      <img src="images/cristina.png" alt="Customer 1" />
-                                  </div>
-                              </div>
-                              <div class="avatar">
-                                  <div class="w-8">
-                                      <img src="images/carlota.png" alt="Customer 2" />
-                                  </div>
-                              </div>
-                              <div class="avatar">
-                                  <div class="w-8">
-                                      <img src="images/adriana.png" alt="Customer 3" />
-                                  </div>
-                              </div>
-                          </div>
-                          <span class="ml-3 text-gray-600 flex items-center">50+ apps launched for startups and small teams</span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+  /* ANNOUNCEMENT BAR */
+  .announce{background:var(--black);color:#fff;min-height:36px;display:flex;align-items:center;justify-content:center;font-size:12px;line-height:1.4;gap:8px;padding:8px 16px;text-align:center;flex-wrap:wrap}
+  .announce a{text-decoration:underline;text-underline-offset:2px}
+  .announce .close{margin-left:16px;opacity:.6;cursor:pointer;font-size:14px}
 
-      <!-- New Section: Types of Apps -->
-      <section class="py-24" id="types-of-apps" data-aos="fade-up">
-          <div class="container mx-auto px-4">
-              <h2 class="text-3xl font-bold text-center mb-12">What Can We Build Together?</h2>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div class="card bg-base-100 shadow-xl min-h-64">
-                    <div class="card-body flex flex-col justify-end items-start p-8">
-                      <a href="https://olicai.com" target="_blank" class="tooltip mb-4" data-tip="Olicai: AI Platform for Smart Bakeries">
-                        <img src="images/olicai-logo.png" alt="SaaS Applications" class="w-24 h-24" />
-                      </a>
-                      <h3 class="card-title text-xl mb-2">SaaS Applications</h3>
-                      <p class="text-base-content text-base">SaaS platforms that scale as you grow—built for your unique business needs.</p>
-                    </div>
-                  </div>
-                  <div class="card bg-base-100 shadow-xl  min-h-64">
-                    <div class="card-body flex flex-col justify-end items-start p-8">
-                      <img src="images/avenist-logo.png" alt="CRMs" class="w-24 h-24 mb-4 tooltip tooltip-right" data-tip="Avenist: CRM solutions for managing Real estate listings in Barcelona" />
-                      <h3 class="card-title text-xl mb-2">CRMs</h3>
-                      <p class="text-base-content text-base">Custom CRMs to help you manage customers, sales, or operations your way.</p>
-                    </div>
-                  </div>
-                  <div class="card bg-base-100 shadow-xl  min-h-64">
-                    <div class="card-body flex flex-col justify-end items-start p-8">
-                      <a href="https://conqueredself.com" target="_blank" class="tooltip tooltip-right w-24 h-24 mb-4" data-tip="ConqueredSelf: Conquer adictions through a game based recovery platform.">
-                        <img src="images/conqueredself-logo.svg" alt="Web-based games" class="w-24 h-24" />
-                      </a>
-                      <h3 class="card-title text-xl mb-2">Web-based games</h3>
-                      <p class="text-base-content text-base">Engaging web-based games to delight and retain your users.</p>
-                    </div>
-                  </div>
-                  <div class="card bg-base-100 shadow-xl  min-h-64">
-                    <div class="card-body flex flex-col justify-end items-start p-8">
-                      <a href="https://tariffsapi.com/?ref=launchbrick" target="_blank" class="tooltip tooltip-right w-24 h-24 mb-4" data-tip="TariffsAPI: Get the latest tariffs update with AI data sourcing">
-                        <img src="images/tariffs-logo.png" alt="AI Wrappers" class="w-24 h-24" />
-                      </a>
-                      <h3 class="card-title text-xl mb-2">AI Wrappers</h3>
-                      <p class="text-base-content text-base">AI-powered tools and integrations to make your product smarter and more efficient.</p>
-                    </div>
-                  </div>
-                  <div class="card bg-base-100 shadow-xl  min-h-64">
-                    <div class="card-body flex flex-col justify-end items-start p-8">
-                      <a href="https://papaya.com" target="_blank" class="tooltip tooltip-right w-24 h-24 mb-4" data-tip="Papaya: Built a custom Chrome extension to calculate domain ranking.">
-                        <img src="images/papaya-logo.png" alt="Chrome extensions development" class="w-24 h-24" />
-                      </a>
-                      <h3 class="card-title text-xl mb-2">Chrome Extensions</h3>
-                      <p class="text-base-content text-base">Chrome extensions that add real value for your users, tailored to your workflow.</p>
-                    </div>
-                  </div>
-                  <div class="card bg-base-100 shadow-xl  min-h-64">
-                    <div class="card-body flex flex-col justify-end items-start p-8">
-                      <a href="https://chromewebstore.google.com/detail/Papaya%20ranking:%20domain%20rank%20analysis/gefkkjihmfkognpmaikcopppcjdjngpn?hl=en-GB&utm_source=ext_sidebar" target="_blank" class="tooltip tooltip-right w-24 h-24 mb-4" data-tip="THC: Built a custom ERP system for healthy food delivery">
-                        <img src="images/thc-logo.png" alt="ERP Systems" class="w-24 h-24" />
-                      </a>
-                      <h3 class="card-title text-xl mb-2">ERP Systems</h3>
-                      <p class="text-base-content text-base">ERP systems that simplify and automate your business processes.</p>
-                    </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;background:var(--canvas);border-bottom:1px solid var(--border-light)}
+  .nav-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:16px 24px;max-width:1280px;margin:0 auto;gap:16px}
+  .nav-logo{display:flex;align-items:center;gap:10px}
+  .nav-logo img{height:28px;width:auto;display:block}
+  .nav-menu{display:flex;gap:28px;justify-content:center}
+  .nav-menu a{font-size:14px;color:var(--ink);font-weight:400}
+  .nav-menu a:hover{color:var(--action-blue)}
+  .nav-right{display:flex;gap:16px;align-items:center;justify-content:flex-end}
+  .nav-right .signin{font-size:14px;color:var(--ink)}
+  @media (max-width:860px){.nav-menu{display:none}.nav-inner{grid-template-columns:1fr auto}}
 
-      <!-- 2. How It Works -->
-      <section class="py-24" id="how-it-works" data-aos="fade-up">
-          <div class="container mx-auto px-4">
-              <h2 class="text-3xl font-bold text-center mb-12">How the Launch Brick Subscription Works</h2>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                  <div>
-                    <div class="card-body flex flex-col items-center">
-                      <div class="text-primary text-2xl font-bold mb-2">Step 1</div>
-                      <div class="font-semibold text-xl mb-4">Select Your Plan & Onboard</div>
-                      <img src="images/idea.svg" alt="Select Plan & Onboard" class="mx-auto mb-6 w-64 h-64 object-contain" />
-                      <p class="text-base-content">Choose a subscription tier that matches your needs. During onboarding, I'll help break down your project into properly sized tasks and set up your Trello workflow.</p>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="card-body flex flex-col items-center">
-                      <div class="text-primary text-2xl font-bold mb-2">Step 2</div>
-                      <div class="font-semibold text-xl mb-4">Weekly Development Cycles</div>
-                      <img src="images/building.svg" alt="Weekly Development Cycles" class="mx-auto mb-6 w-64 h-64 object-contain" />
-                      <p class="text-base-content">Each week, I not only work on your highest priority tasks but also challenge the features and advise on the most value-generating ones. With clear scope definitions, you'll always know what's being worked on and when it will be delivered. Track progress in real-time.</p>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="card-body flex flex-col items-center">
-                      <div class="text-primary text-2xl font-bold mb-2">Step 3</div>
-                      <div class="font-semibold text-xl mb-4">Continuous Improvement</div>
-                      <img src="images/delivery.svg" alt="Continuous Improvement" class="mx-auto mb-6 w-64 h-64 object-contain" />
-                      <p class="text-base-content">As your product evolves, add new tasks to your backlog. Scale up or down as needed, and pause when you want to take a break. Your subscription adapts to your growing business.</p>
-                    </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;font-size:14px;font-weight:500;line-height:1.4;cursor:pointer;border:none;transition:opacity .15s ease, background .15s ease;text-align:center}
+  .btn-primary{background:var(--primary);color:#fff;padding:12px 24px;border-radius:32px;border:2px solid transparent}
+  .btn-primary:hover{background:#2a2a32}
+  .btn-primary.on-dark{background:#fff;color:var(--primary)}
+  .btn-primary.on-dark:hover{background:#f0f0f0}
+  .btn-secondary{background:transparent;color:var(--ink);padding:8px 0;text-decoration:underline;text-underline-offset:4px;border-radius:0}
+  .btn-secondary:hover{color:var(--action-blue)}
+  .btn-secondary.on-dark{color:#fff}
+  .btn-pill-outline{background:transparent;color:var(--primary);padding:6px 14px;border:1px solid var(--ink);border-radius:30px;font-size:14px}
+  .btn-pill-outline:hover{background:var(--ink);color:#fff}
 
-      <!-- About Me Section -->
-      <section class="py-24 mt-10" id="about" data-aos="fade-up">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center gap-10">
-                <div class="lg:w-1/3 flex justify-center">
-                    <div class="w-64 h-64 flex overflow-hidden">
-                        <figure class="diff aspect-16/9 rounded-lg shadow-lg overflow-hidden" tabindex="0">
-                          <div class="diff-item-1" role="img">
-                            <img
-                            alt="Daniel Rodriguez your technical partner"
-                            src="images/dani-irl.png" class=" h-64 w-64" />
-                          </div>
-                          <div class="diff-item-2" role="img" tabindex="0">
-                            <img alt="Daniel Rodriguez your technical partner" src="images/dani.svg" class=" h-64 w-64 object-top bg-white" />
-                          </div>
-                          <div class="diff-resizer"></div>
-                        </figure>
-                    </div>
-                </div>
-                <div class="lg:w-2/3">
-                    <h2 class="text-3xl font-bold mb-6">Meet Your Fractional CTO</h2>
-                    <div class="prose max-w-none">
-                        <p class="mb-4">
-                            Hi, I'm Dani! For the past 5 years, I've been teaching software engineering to aspiring developers, helping them build their skills and launch their careers in tech.
-                        </p>
-                        <p class="mb-4">
-                            I've built over 50 web applications for startups, SME's, and solopreneurs. My specialty is early-stage MVP development and market validation – helping founders turn ideas into working products quickly as a Fractional CTO for SME's and solopreneurs.
-                        </p>
-                        <p class="mb-4">
-                            I understand the challenges non-technical founders, SME's, and solopreneurs face. My Fractional CTO services subscription gives you access to senior development skills without the complications of hiring a full-time CTO or the unpredictable costs of hourly contractors.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mt-6">
-                            <div class="badge badge-primary">Ruby on Rails</div>
-                            <div class="badge badge-primary">Pitch definition</div>
-                            <div class="badge badge-primary">Tailwind CSS</div>
-                            <div class="badge badge-primary">JavaScript</div>
-                            <div class="badge badge-primary">MVP Development</div>
-                            <div class="badge badge-primary">API Integration</div>
-                            <div class="badge badge-primary">Database Design</div>
-                        </div>
-                        <div class="flex flex-wrap gap-4 mt-6">
-                            <a href="https://malt.com/profile/daniel-rodriguez" target="_blank">
-                              <img src="images/malt.png" alt="Malt Badge" class="h-24 transition-transform transform hover:scale-110">
-                            </a>
-                            <a href="https://lewagon.com/" target="_blank">
-                              <img src="images/lewagon.png" alt="Lewagon Badge" class="h-24 transition-transform transform hover:scale-110">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-      <!-- 3. Subscription Plans -->
-      <section class="py-12 md:py-24" id="packages" data-aos="fade-up">
-          <div class="container mx-auto px-4">
-              <div class="text-center max-w-2xl md:max-w-3xl mx-auto mb-8 md:mb-12">
-                  <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 leading-tight">Effortless Pricing for Fractional CTO Services for SME's & Solopreneurs, Maximum Value</h2>
-                  <p class="text-sm md:text-base lg:text-lg mb-4 md:mb-6 leading-relaxed">Get features shipped every week — no meetings, no hourly rates. Choose between cash-based plans or my new equity partnership for Fractional CTO services for SME's and solopreneurs.</p>
-                  <div class="mt-3 md:mt-4 text-xs md:text-sm badge badge-outline min-h-8">All prices are in USD for Fractional CTO services for SME's and solopreneurs</div>
-              </div>
-              
-              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-                  <div class="card bg-base-100 shadow-xl relative">
-                    <div class="badge badge-secondary absolute -top-3 left-1/2 transform -translate-x-1/2 text-xs md:text-sm">MOST POPULAR</div>
-                    <div class="card-body p-4 md:p-6">
-                      <h3 class="card-title text-lg md:text-xl">MVP Sprint</h3>
-                      <div class="text-2xl md:text-3xl font-bold my-3 md:my-4">
-                        <span class="line-through text-base-300">$1,950</span>
-                        <span class="ml-2">$1,450</span>
-                        <span class="text-xs md:text-sm font-normal">/month*</span>
-                      </div>
-                      <span class="text-xs md:text-sm text-base-300 font-normal">*Applicable for the first 6 months</span>
-                      <div class="badge badge-accent mb-3 md:mb-4 text-xs md:text-sm">100% SATISFACTION GUARANTEE</div>
-                      <p class="mb-4 md:mb-6 text-sm md:text-base">Perfect for founders, SMEs, and solopreneurs who need steady progress on a single MVP project.</p>
-                      <ul class="space-y-2 md:space-y-3 mb-6 md:mb-8 text-sm md:text-base">
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary-content mt-0.5 flex-shrink-0"></i>
-                          <span>1 active feature/task at a time</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary-content mt-0.5 flex-shrink-0"></i>
-                          <span>Unlimited backlog of tasks</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary-content mt-0.5 flex-shrink-0"></i>
-                          <span>Weekly delivery cycles</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary-content mt-0.5 flex-shrink-0"></i>
-                          <span>Trello workflow management</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary-content mt-0.5 flex-shrink-0"></i>
-                          <span>Pause anytime</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary-content mt-0.5 flex-shrink-0"></i>
-                          <span>Ruby on Rails & Tailwind stack</span>
-                        </li>
-                      </ul>
-                      <div class="card-actions">
-                        <a href="https://cal.com/lightningrails/launchbrick-chat" class="btn btn-primary text-sm md:text-base w-full">Book A Call</a>
-                      </div>
-                    </div>
-                  </div>
+  /* HERO */
+  .hero{padding:96px 0 64px;background:var(--canvas)}
+  .hero h1{font-size:96px;line-height:1;letter-spacing:-1.92px;font-weight:400;text-align:center;max-width:1100px;margin:0 auto;color:var(--ink)}
+  .hero .lede{margin:32px auto 0;font-size:18px;line-height:1.4;color:var(--body-muted);max-width:640px;text-align:center}
+  .hero-actions{margin-top:40px;display:flex;gap:24px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .hero-social{margin-top:32px;display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}
+  .hero-social .avatars{display:flex}
+  .hero-social .avatars img{width:36px;height:36px;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-8px;background:#eee}
+  .hero-social .avatars img:first-child{margin-left:0}
+  .hero-social .copy{font-size:13px;color:var(--body-muted)}
+  .hero-media{margin-top:80px;display:grid;grid-template-columns:1.6fr 1fr;gap:24px;max-width:1280px;padding:0 24px;margin-left:auto;margin-right:auto}
+  .hero-media .card{border-radius:22px;overflow:hidden;background:var(--soft-stone)}
+  .hero-media .photo-card{position:relative;aspect-ratio:5/4;background-image:url('images/hero-entrepreneur.jpg');background-size:cover;background-position:center}
+  .hero-media .console-card{background:var(--primary);color:#fff;padding:32px;border-radius:22px;display:flex;flex-direction:column;justify-content:space-between;min-height:420px}
+  .console-head{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#aaa}
+  .console-dot{width:8px;height:8px;border-radius:50%;background:#16a34a;display:inline-block;margin-right:6px}
+  .console-body{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+  .console-msg{background:#27272f;border-radius:8px;padding:14px 16px;font-size:13px;line-height:1.5;color:#e4e4ea}
+  .console-msg.user{background:transparent;border:1px solid #2e2e36;color:#cfcfd6}
+  .console-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+  .console-chip{font-size:11px;padding:4px 10px;border-radius:32px;background:#2e2e36;color:#cfcfd6;font-family:'JetBrains Mono',monospace;letter-spacing:.4px}
+  .console-foot{display:flex;align-items:center;gap:8px;margin-top:20px;border-top:1px solid #2e2e36;padding-top:16px;font-size:12px;color:#93939f}
 
-                  <div class="card bg-base-100 shadow-xl">
-                    <div class="card-body p-4 md:p-6">
-                      <h3 class="card-title text-lg md:text-xl">MVP Pro</h3>
-                      <div class="text-2xl md:text-3xl font-bold my-3 md:my-4">$2,750<span class="text-xs md:text-sm font-normal">/month</span></div>
-                      <div class="badge badge-accent mb-3 md:mb-4 text-xs md:text-sm">100% SATISFACTION GUARANTEE</div>
-                      <p class="mb-4 md:mb-6 text-sm md:text-base">For SME's and solopreneurs who need faster progress with multiple features in development, powered by Fractional CTO services.</p>
-                      <ul class="space-y-2 md:space-y-3 mb-6 md:mb-8 text-sm md:text-base">
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>2 concurrent active tasks</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Unlimited backlog of tasks</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Priority delivery</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>AI + API support included</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Trello workflow management</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Pause anytime</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Ruby on Rails & Tailwind stack</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Custom Branding & unlimited design requests by <a href="#mariaba-partnership" class="link link-hover text-primary">MariaBA.com</a> (worth $1,400/month)</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Weekly meeting included</span>
-                        </li>
-                      </ul>
-                      <div class="card-actions">
-                        <a href="https://cal.com/lightningrails/launchbrick-chat" class="btn btn-primary mt-auto text-sm md:text-base w-full">Book A Call</a>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="card bg-base-100 shadow-xl">
-                    <div class="card-body p-4 md:p-6">
-                      <h3 class="card-title text-lg md:text-xl">Equity Partnership</h3>
-                      <div class="text-2xl md:text-3xl font-bold my-3 md:my-4">Equity <span class="text-xs md:text-sm font-normal">Based</span></div>
-                      <p class="mb-4 md:mb-6 text-sm md:text-base">For ambitious SME's and solopreneurs who need a true Fractional CTO partner without diluting cash resources.</p>
-                      <ul class="space-y-2 md:space-y-3 mb-6 md:mb-8 text-sm md:text-base">
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Unlimited development (up to 10 tasks/mo)</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>10-50% equity stake (vested over 24 months)</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Weekly strategy calls</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Priority+ development</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Pitch deck & investor preparation</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>6-month minimum commitment</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>Full technical architecture review</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-4 h-4 md:w-5 md:h-5 mr-2 text-primary mt-0.5 flex-shrink-0"></i>
-                          <span>All tech stack options available</span>
-                        </li>
-                      </ul>
-                      <div class="card-actions">
-                        <a href="https://cal.com/lightningrails/launchbrick-chat" class="btn btn-primary mt-auto text-sm md:text-base w-full">Book A Call</a>
-                      </div>
-                    </div>
-                  </div>
-              </div>
+  @media (max-width:900px){
+    .hero{padding:48px 0 32px}
+    .hero h1{font-size:44px;letter-spacing:-.6px}
+    .hero-media{grid-template-columns:1fr;gap:16px;margin-top:48px}
+    .hero-media .console-card{min-height:auto}
+    .hero-actions .btn-primary{width:100%;max-width:340px}
+  }
 
-              <!-- <div class="mt-12 bg-base-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto mb-24" data-aos="fade-up">
-                  <h3 class="font-bold text-xl mb-3">How the Equity Partnership Works</h3>
-                  <p class="mb-4">For SME's and solopreneurs who are serious about building a long-term business and prefer to preserve cash, my equity option provides deeper commitment and alignment as your Fractional CTO.</p>
-                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div class="flex flex-col items-center text-center">
-                          <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                            <img src="images/handshake.png" class="w-16 h-16" />
-                          </div>
-                          <h4 class="font-semibold">Vesting Structure</h4>
-                          <p class="text-sm">10-50% equity vested over 24 months with a 6-month cliff. The specific percentage depends on project scope, complexity, and growth potential. All as part of your Fractional CTO services for SME's and solopreneurs.</p>
-                      </div>
-                      <div class="flex flex-col items-center text-center">
-                          <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                            <img src="images/legal.png" class="w-16 h-16" />
-                          </div>
-                          <h4 class="font-semibold">Legal Framework</h4>
-                          <p class="text-sm">We use a standard SAFE (Simple Agreement for Future Equity) or equivalent document that protects both parties. All IP is owned by your company from day one, even with Fractional CTO services for SME's and solopreneurs.</p>
-                      </div>
-                      <div class="flex flex-col items-center text-center">
-                          <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3">
-                            <img src="images/rocket.png" class="w-16 h-16" />
-                          </div>
-                          <h4 class="font-semibold">Beyond Development</h4>
-                          <p class="text-sm">Includes strategic input, fundraising support, and technical roadmapping — true Fractional CTO partner value for SME's and solopreneurs, not just coding.</p>
-                    </div>
-                  </div>
-              </div> -->
+  /* TRUST STRIP */
+  .trust{padding:80px 0;text-align:center}
+  .trust .label{font-size:14px;color:var(--body-muted);margin-bottom:32px}
+  .trust .logos{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;opacity:.85}
+  .trust .logos img{height:32px;width:auto;max-width:140px;object-fit:contain;filter:grayscale(1);opacity:.7;transition:opacity .2s,filter .2s}
+  .trust .logos img:hover{opacity:1;filter:grayscale(0)}
+  .trust .logos .logo-label{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+  @media (max-width:640px){.trust .logos{gap:28px}.trust .logos img{height:26px}}
 
-      <!-- Partnership Section: Launch Brick + Maria BA -->
-      <section class="py-20 mt-10 rounded-lg" id="mariaba-partnership" data-aos="fade-up">
-          <div class="container mx-auto px-4">
-              <div class="flex flex-col lg:flex-row items-center justify-between gap-10 p-8 md:p-12">
-                  <div class="lg:w-3/5 text-center lg:text-left">
-                      <h2 class="text-4xl font-bold mb-3">Unlock <span class="text-secondary">Unlimited Design</span> with MVP Pro!</h2>
-                      <p class="text-lg mb-6">We've partnered with <a href="https://www.mariaba.com" target="_blank" class="link link-secondary font-bold hover:underline">MariaBA.com</a> to bring you an unbeatable offer. When you subscribe to our MVP Pro plan, you get <strong>full access to unlimited design requests</strong> – a service normally valued at $1,400/month, absolutely included!</p>
-                      
-                      <div class="mb-6">
-                          <h4 class="font-semibold text-xl mb-3">What you get with Maria BA:</h4>
-                          <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
-                              <span class="badge badge-lg badge-outline border-secondary text-secondary">Branding</span>
-                              <span class="badge badge-lg badge-outline border-secondary text-secondary">Illustrations</span>
-                              <span class="badge badge-lg badge-outline border-secondary text-secondary">Logo Design</span>
-                              <span class="badge badge-lg badge-outline border-secondary text-secondary">Social Media Assets</span>
-                              <span class="badge badge-lg badge-outline border-secondary text-secondary">Icons</span>
-                              <span class="badge badge-lg badge-outline border-secondary text-secondary">Slide Decks</span>
-                              <span class="badge badge-lg badge-outline border-secondary text-secondary">Landing Pages</span>
-                              <span class="badge badge-lg badge-outline border-secondary text-secondary">And More!</span>
-                          </div>
-                      </div>
-                      <p class="text-lg mb-6">Imagine having a senior designer ready for all your branding, UI mockups, social graphics, and presentation needs, all while your MVP is being built. That's the power of the MVP Pro + Maria BA bundle.</p>
-                      <a href="https://www.mariaba.com/?ref=launchbrick" target="_blank" class="btn btn-secondary btn-wide">Explore MariaBA.com</a>
-                  </div>
-                  <div class="lg:w-2/5 flex justify-center lg:justify-center">
-                      <img src="images/mariaba-benefits.png" alt="Maria BA Design Club Mockup" class="rounded-lg shadow-xl max-w-sm object-cover w-full" />
-                      <!-- TODO: Replace with a relevant image, e.g., a mockup similar to the design club image provided -->
-                  </div>
-              </div>
-          </div>
-      </section>
+  /* SECTION */
+  section.block{padding:80px 0}
+  .section-head{margin-bottom:64px;max-width:880px}
+  .section-head .mono{margin-bottom:24px;display:inline-block}
+  .section-head h2{font-size:60px;line-height:1;letter-spacing:-1.2px;color:var(--ink);font-weight:400}
+  .section-head .lede{margin-top:24px;font-size:18px;line-height:1.4;color:var(--body-muted);max-width:640px}
+  @media (max-width:900px){.section-head h2{font-size:36px;letter-spacing:-.6px}.section-head{margin-bottom:40px}section.block{padding:56px 0}}
 
-      <!-- 5. Task Definition -->
-      <section class="py-12 md:py-24 mt-10 rounded-lg">
-          <div class="container mx-auto px-4">
-              <h2 class="text-2xl md:text-3xl font-bold text-center mb-2 md:mb-4">What Counts as a Task?</h2>
-              <p class="text-center mb-6 md:mb-12 max-w-xl md:max-w-2xl mx-auto text-sm md:text-base">To keep things simple, here's how I define a single task in your subscription. This helps set clear expectations and ensures steady progress:</p>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                  <div class="card bg-base-100 shadow-xl h-64 md:h-96">
-                    <div class="card-body p-4 md:p-6">
-                      <h3 class="card-title text-success flex items-center text-base md:text-lg">
-                        <i data-lucide="check-circle" class="w-5 h-5 md:w-6 md:h-6 mr-2"></i>
-                        Examples of Single Tasks
-                      </h3>
-                      <ul class="mt-2 md:mt-4 space-y-1 md:space-y-2 text-xs md:text-base">
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-5 h-5 text-success mt-0.5 mr-2 flex-shrink-0"></i>
-                          <span>Adding a user profile page with basic details and edit functionality</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-5 h-5 text-success mt-0.5 mr-2 flex-shrink-0"></i>
-                          <span>Creating a simple form with validation and submission</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-5 h-5 text-success mt-0.5 mr-2 flex-shrink-0"></i>
-                          <span>Implementing email notifications for specific user actions</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-5 h-5 text-success mt-0.5 mr-2 flex-shrink-0"></i>
-                          <span>Building an admin dashboard to view and manage users</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="check" class="w-5 h-5 text-success mt-0.5 mr-2 flex-shrink-0"></i>
-                          <span>Integrating a third-party API (like Stripe for payments)</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="card bg-base-100 shadow-xl h-64 md:h-96">
-                    <div class="card-body p-4 md:p-6">
-                      <h3 class="card-title text-error flex items-center text-base md:text-lg">
-                        <i data-lucide="alert-circle" class="w-5 h-5 md:w-6 md:h-6 mr-2"></i>
-                        Too Big for One Task
-                      </h3>
-                      <ul class="mt-2 md:mt-4 space-y-1 md:space-y-2 text-xs md:text-base">
-                        <li class="flex items-start">
-                          <i data-lucide="x" class="w-5 h-5 text-error mt-0.5 mr-2 flex-shrink-0"></i>
-                          <span>Building a complete messaging system with chat rooms (this would be 2-3 tasks)</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="x" class="w-5 h-5 text-error mt-0.5 mr-2 flex-shrink-0"></i>
-                          <span>Creating an entire e-commerce checkout flow (this would be multiple tasks)</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="x" class="w-5 h-5 text-error mt-0.5 mr-2 flex-shrink-0"></i>
-                          <span>Developing a complex reporting dashboard with multiple charts (this would be 2-3 tasks)</span>
-                        </li>
-                        <li class="flex items-start">
-                          <i data-lucide="x" class="w-5 h-5 text-error mt-0.5 mr-2 flex-shrink-0"></i>
-                          <span>Building a complete membership system with different access levels (this would be multiple tasks)</span>
-                        </li>
-                      </ul>
-                      <div class="mt-2 md:mt-4 bg-base-300 p-2 md:p-4 rounded-lg">
-                        <p class="text-xs md:text-sm">Not sure how to break down your project? During onboarding, I'll help you split your ideas into manageable tasks that fit your subscription.</p>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+  /* PROBLEM */
+  .problem-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+  .problem-photo{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:5/4;background-image:url('images/desk-cluttered.jpg');background-size:cover;background-position:center}
+  .pain-list{display:flex;flex-direction:column}
+  .pain{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:24px 0;border-top:1px solid var(--hairline);align-items:start}
+  .pain:last-child{border-bottom:1px solid var(--hairline)}
+  .pain .num{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);letter-spacing:.28px;padding-top:4px}
+  .pain .txt{font-size:18px;color:var(--ink);line-height:1.4}
+  @media (max-width:900px){.problem-grid{grid-template-columns:1fr;gap:32px}.pain .txt{font-size:16px}}
 
-      <!-- 5. Testimonials -->
-      <section class="py-12 md:py-24 mt-10 rounded-lg" id="testimonials" data-aos="fade-up">
-          <div class="container mx-auto px-4">
-              <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Wall of love</h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-                <div class="card bg-base-100 shadow-xl min-h-64">
-                  <div class="card-body flex flex-col justify-between">
-                    <div>
-                      <div class="flex justify-center gap-0.5 text-warning mb-4">
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                      </div>
-                      <p class="mb-6">Daniel has helped us create a new brand design and website design, making everything easy, fast, comfortable, and effective as our Fractional CTO for SME's and solopreneurs.
-                        <br>
-                        He has been by our side and guided us at all times, helping us make decisions and looking for solutions and alternatives.
-                        <br>
-                        For the next project, I won't hesitate to call him — I highly recommend him. A great professional!!
-                        <br>
-                        Thank you so much for everything. <br>
-                        (translated from spanish)
-                      </p>
-                    </div>
-                    <div class="flex items-center mt-auto">
-                      <div class="avatar mr-4">
-                        <div class="w-12 rounded-full">
-                          <img src="images/cristina.png" />
-                        </div>
-                      </div>
-                      <div>
-                        <h4 class="font-bold">Cristina</h4>
-                        <p class="text-sm text-gray-600 font-bold underline"><a href="https://labtestonline.com" target="_blank">Sociedad Española de Medicina, <a href="https://labtestonline.com" target="_blank">labtestonline.com</a></a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card bg-base-100 shadow-xl min-h-64">
-                  <div class="card-body flex flex-col justify-between">
-                    <div>
-                      <div class="flex justify-center gap-0.5 text-warning mb-4">
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                      </div>
-                      <p class="mb-6">Daniel is an excellent professional, with a lot of initiative and great ability to manage teams as a Fractional CTO for SME's and solopreneurs. Always attentive and available to find the best solution for each client.
-                        <br>
-                        We've worked together on several projects, and it's always a pleasure. I recommend him 1000%!
-                      </p>
-                    </div>
-                    <div class="flex items-center mt-auto">
-                      <div class="avatar mr-4">
-                        <div class="w-12 rounded-full">
-                          <img src="images/carlota.png" />
-                        </div>
-                      </div>
-                      <div>
-                        <h4 class="font-bold">Carlota Porta</h4>
-                        <p class="text-sm text-gray-600 font-bold underline"><a href="https://kaori-media.com" target="_blank">Kaori Media Consulting</a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card bg-base-100 shadow-xl min-h-64">
-                  <div class="card-body flex flex-col justify-between">
-                    <div>
-                      <div class="flex justify-center gap-0.5 text-warning mb-4">
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                        <i data-lucide="star"></i>
-                      </div>
-                      <p class="mb-6">Daniel is the creator behind the new design of our app. He successfully captured and translated our vision into a clean, engaging, and dynamic MVP. I would absolutely recommend him to any SME or solopreneur looking to bring their product idea to life with impact, with the help of Fractional CTO services.</p>
-                    </div>
-                    <div class="flex items-center mt-auto">
-                      <div class="avatar mr-4">
-                        <div class="w-12 rounded-full">
-                          <img src="images/adriana.png" />
-                        </div>
-                      </div>
-                      <div>
-                        <h4 class="font-bold">Adriana Romero</h4>
-                        <p class="text-sm text-gray-600 font-bold underline"><a href="https://equinoxurbanhousing.com" target="_blank">Equinox Urban Housing</a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-      </section>
+  /* SOLUTION / PILLARS */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .pillar{background:var(--soft-stone);border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:14px;min-height:340px}
+  .pillar h3{font-size:24px;line-height:1.3;color:var(--ink);font-weight:400}
+  .pillar p{font-size:16px;line-height:1.5;color:var(--body-muted)}
+  .pillar .check-list{margin-top:auto;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--hairline);padding-top:16px}
+  .pillar .check-list ul{margin:0;padding:0;display:flex;flex-direction:column;gap:8px;list-style:none}
+  .pillar .check-list li{padding-left:24px;position:relative;font-size:14px;color:var(--ink)}
+  .pillar .check-list li::before{content:"✓";position:absolute;left:0;color:var(--ink);font-weight:500}
+  @media (max-width:900px){.pillars{grid-template-columns:1fr}.pillar{min-height:auto}}
 
-      <!-- 6. FAQ -->
-      <section class="py-24 mt-10 rounded-lg" id="faq" data-aos="fade-up">
-          <div class="container mx-auto px-4">
-              <div class="grid gap-4 lg:grid-cols-3 lg:gap-8">
-                  <div class="h-auto">
-                      <h2 class="text-base font-semibold leading-7 text-primary">Questions?</h2>
-                      <p class="mt-2 text-3xl font-bold tracking-tight">Frequently Asked Questions</p>
-                      <p class="mt-6 text-lg leading-8">Everything you need to know about my subscription-based MVP and Fractional CTO services for SME's and solopreneurs.</p>
-                  </div>
-                  <div class="h-auto lg:col-span-2 ">
-                      <div class="join join-vertical w-full bg-base-100 rounded-3xl">
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="100">
-                              <input type="radio" name="my-accordion-4" checked="checked" />
-                              <div class="collapse-title text-xl font-medium">How does the subscription model differ from traditional development or other Fractional CTO services for SME's and solopreneurs?</div>
-                              <div class="collapse-content">
-                                  <p>My subscription model offers predictable weekly progress with clear expectations. Unlike traditional hourly models where costs can spiral, you'll pay a fixed monthly fee for a defined number of development tasks with Fractional CTO services for SME's and solopreneurs. This approach eliminates scope creep while still allowing flexibility to adapt your product as you learn from users.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="200">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">Can I pause my subscription if needed?</div>
-                              <div class="collapse-content">
-                                  <p>Yes! I understand startup development isn't always linear. You can pause your subscription anytime - for example, when you need time to gather user feedback or during fundraising periods. When you're ready to continue development, simply resume your subscription and I'll pick up where I left off.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="300">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">What if I need more capacity in a specific month?</div>
-                              <div class="collapse-content">
-                                  <p>You can temporarily upgrade to a higher tier for months when you need additional capacity. This provides flexibility for sprints or important launch periods. After that intense period, you can downgrade to your regular tier. This scalability ensures you only pay for the capacity you need.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="400">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">Which technologies are used in your Fractional CTO services for SME's and solopreneurs?</div>
-                              <div class="collapse-content">
-                                  <p>I utilize Ruby on Rails for backend development and Tailwind CSS for frontend, creating a perfect balance of development speed and scalability. These technologies enable rapid feature deployment while maintaining code quality. Since these are widely used frameworks, you'll never be locked in - there are thousands of developers who can work with this stack if needed in the future. All as part of my Fractional CTO services for SME's and solopreneurs.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="500">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">How is the subscription payment structured?</div>
-                              <div class="collapse-content">
-                                  <p>Subscriptions are billed monthly with no long-term contracts required. I offer a 10% discount for quarterly commitments (3 months paid upfront). All plans require the first month paid upfront. After that, you'll be billed automatically on the same day each month for as long as you want to continue service.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="550">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">Do you offer a satisfaction guarantee?</div>
-                              <div class="collapse-content">
-                                  <p>Absolutely! I offer a 100% satisfaction guarantee on your first month. If you're not completely satisfied with the quality of work or my process within the first 30 days, I'll refund your payment in full. I believe in building trust through results, and this guarantee demonstrates my confidence in delivering value from day one. No questions asked, no complicated processes.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="600">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">What happens if I need changes to completed tasks?</div>
-                              <div class="collapse-content">
-                                  <p>Minor revisions and bug fixes to recently completed tasks are included in your subscription. For larger changes or new functionality for previously completed features, you would add these as new tasks to your backlog. This ensures continuous improvement while maintaining clear expectations about what's included.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="650">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">How does the equity partnership option work for Fractional CTO services for SME's and solopreneurs?</div>
-                              <div class="collapse-content">
-                                  <p>The equity partnership is designed for SME's and solopreneurs who are ready to bring on a Fractional CTO but want to preserve cash. Here's a detailed breakdown:</p>
-                                  <ul class="list-disc pl-6 mt-2 space-y-2">
-                                      <li><strong>What You Get:</strong> Up to 10 tasks per month, weekly strategy calls, pitch deck and fundraising support, architecture planning, and technical mentorship from your Fractional CTO for SME's and solopreneurs.</li>
-                                      <li><strong>Legal Structure:</strong> I use a standard SAFE (Simple Agreement for Future Equity) or equivalent document that protects both parties. All IP is owned by your company from day one, even with Fractional CTO services for SME's and solopreneurs.</li>
-                                      <li><strong>Commitment:</strong> 6-month minimum engagement to ensure enough time to build meaningful value. The partnership can be extended beyond the initial term by mutual agreement.</li>
-                                      <li><strong>Exit Strategy:</strong> Clear terms for scenarios like acquisition, additional funding rounds, or if either party needs to end the relationship.</li>
-                                  </ul>
-                                  <p class="mt-3">Our equity model aligns our success with yours. If your SME or solopreneur business thrives, we both win. This creates a deeper level of commitment than a simple service provider relationship, and is the core of my Fractional CTO services for SME's and solopreneurs.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="700">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">Why is there no meetings or calls after onboarding?</div>
-                              <div class="collapse-content">
-                                  <p>After initial onboarding, all communication is handled asynchronously through Trello boards. This approach allows me to focus development time on actually building your product, keeping prices significantly lower than traditional agencies. You'll track progress in real-time through your Trello board, with daily updates and clear task status. Asynchronous communication also ensures smooth progress across different time zones. Note: The MVP Pro plan includes one weekly meeting to discuss progress and strategy.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="800">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">Do I own the code created during my Fractional CTO subscription for SME's and solopreneurs?</div>
-                              <div class="collapse-content">
-                                  <p>Absolutely. You retain 100% ownership of all code and intellectual property developed during your Fractional CTO subscription for SME's and solopreneurs. When you begin your subscription, you'll receive access to the GitHub repository where your code lives. This ensures complete transparency and means you'll always have full access to your project, even if you decide to pause or cancel your subscription.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="850">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">How can I get in touch with questions?</div>
-                              <div class="collapse-content">
-                                  <p>The easiest way to reach us is through our chat bot available on every page. Just click the chat icon and I'll get back to you as soon as possible. You can also schedule a call through my calendar if you prefer a more in-depth conversation.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="900">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">What are usual fractional CTO rates? How does Launch Brick compare?</div>
-                              <div class="collapse-content">
-                                  <p>Typical fractional CTO rates can range from $4,000 to $15,000 per month depending on experience, engagement level, and region. Hiring a full-time CTO can cost $180,000+ per year plus equity. At Launch Brick, our Fractional CTO services for SME's and solopreneurs start at just $1,450/month, offering senior technical leadership, MVP strategy, and hands-on development at a fraction of the cost. This makes Launch Brick an unbeatable value for early-stage founders, SME's, and solopreneurs who need expert guidance without the overhead of a full-time CTO.</p>
-                              </div>
-                          </div>
-                          <div class="collapse collapse-arrow join-item border-base-300 border" data-aos="fade-up" data-aos-delay="950">
-                              <input type="radio" name="my-accordion-4" />
-                              <div class="collapse-title text-xl font-medium">What is a Fractional CTO? (Launch Brick's approach)</div>
-                              <div class="collapse-content">
-                                  <p>A Fractional CTO is a senior technology leader who works with your business on a part-time or subscription basis, providing strategic technical direction, architecture, and hands-on development. At Launch Brick, our Fractional CTO services are designed specifically for SME's and solopreneurs at the 0-to-1 stage—helping you go from idea to MVP and market validation quickly and efficiently. We focus on lean product development, rapid iteration, and ensuring your technology choices align with your business goals, so you can launch, learn, and grow with confidence—without the cost or commitment of a full-time CTO.</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+  /* HOW (DARK GREEN BAND) */
+  .how-band{background:var(--deep-green);color:#fff;border-radius:22px;padding:80px;margin:0 24px}
+  .how-band .section-head{margin-bottom:64px}
+  .how-band .section-head h2,.how-band .section-head .mono{color:#fff}
+  .how-band .section-head .lede{color:rgba(255,255,255,.7)}
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .step{padding:32px 24px 0;border-left:1px solid rgba(255,255,255,.18);position:relative}
+  .step:first-child{border-left:none;padding-left:0}
+  .step .step-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,.6);letter-spacing:.28px;margin-bottom:24px;text-transform:uppercase}
+  .step h3{font-size:24px;color:#fff;line-height:1.3;margin-bottom:12px;font-weight:400}
+  .step p{font-size:14px;line-height:1.5;color:rgba(255,255,255,.7)}
+  @media (max-width:900px){
+    .how-band{padding:48px 24px;margin:0}
+    .timeline{grid-template-columns:1fr}
+    .step{border-left:none;border-top:1px solid rgba(255,255,255,.18);padding:24px 0 0}
+    .step:first-child{border-top:none}
+  }
 
-      <!-- 7. Final CTA -->
-      <div class="py-24 bg-primary text-primary-content mt-10 rounded-lg" id="cta" data-aos="fade-up">
-          <div class="container mx-auto px-4">
-              <div class="max-w-3xl mx-auto text-center">
-                  <h2 class="text-3xl font-bold mb-4">Ready to Subscribe to Fractional CTO Services?</h2>
-                  <p class="mb-8">I only accept 2 active subscribers per month to ensure quality and focus. Secure your subscription now before all slots are filled.</p>
-                  <div class="card bg-base-100 text-neutral max-w-md mx-auto" data-aos="fade-up" data-aos-delay="100">
-                      <div class="card-body">
-                          <h3 class="card-title text-xl text-center mb-4">Book Your Call</h3>
-                          <p class="mb-4">Let's discuss your MVP needs and find the right Fractional CTO subscription plan for your SME or solopreneur business.</p>
-                          <a href="https://cal.com/lightningrails/launchbrick-chat" class="btn btn-primary btn-block">Schedule Your Call</a>
-                          <p class="mt-4 text-sm">No commitment required for the initial consultation</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
+  /* WHY GRID */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--hairline)}
+  .why-cell{padding:32px 24px;border-bottom:1px solid var(--hairline);border-right:1px solid var(--hairline);display:flex;flex-direction:column;gap:12px;min-height:200px}
+  .why-cell:nth-child(3n){border-right:none}
+  .why-cell .num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.28px;text-transform:uppercase}
+  .why-cell h3{font-size:24px;color:var(--ink);line-height:1.3;font-weight:400}
+  .why-cell p{font-size:14px;line-height:1.5;color:var(--body-muted)}
+  @media (max-width:900px){.why-grid{grid-template-columns:1fr}.why-cell{border-right:none;min-height:auto}}
+
+  /* CASE */
+  .case-card{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;background:var(--canvas);border:1px solid var(--card-border);border-radius:22px;padding:32px;overflow:hidden}
+  .case-illo{position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--soft-stone);background-image:url('images/case-tokfluence.png');background-size:cover;background-position:top center}
+  .case-illo .pulse-chip{position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:32px;background:rgba(255,255,255,.95);font-size:12px;font-weight:500;backdrop-filter:blur(8px)}
+  .case-illo .pulse-chip .pulse{width:6px;height:6px;border-radius:50%;background:var(--coral);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .case-content .mono{margin-bottom:16px;display:inline-block}
+  .case-content h3{font-size:32px;line-height:1.2;color:var(--ink);margin-bottom:14px;font-weight:400;letter-spacing:-.32px}
+  .case-content p{font-size:16px;line-height:1.5;color:var(--body-muted);margin-bottom:24px}
+  .case-stats{display:flex;gap:32px;border-top:1px solid var(--hairline);padding-top:20px;flex-wrap:wrap}
+  .case-stats div{display:flex;flex-direction:column;gap:4px}
+  .case-stats .v{font-family:'Space Grotesk',sans-serif;font-size:32px;color:var(--ink);line-height:1;letter-spacing:-.32px;font-weight:400}
+  .case-stats .k{font-size:12px;color:var(--muted)}
+  @media (max-width:900px){.case-card{grid-template-columns:1fr;padding:24px;gap:32px}.case-content h3{font-size:24px}}
+
+  /* TESTIMONIALS */
+  .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .testimonial{background:var(--soft-stone);border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:20px;min-height:320px}
+  .testimonial .quote{font-size:16px;line-height:1.5;color:var(--ink);flex:1}
+  .testimonial .who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--hairline);padding-top:16px}
+  .testimonial .who img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+  .testimonial .who .name{font-size:14px;color:var(--ink);font-weight:500}
+  .testimonial .who .role{font-size:12px;color:var(--body-muted)}
+  .testimonial .who .role a{text-decoration:underline;text-underline-offset:2px}
+  @media (max-width:900px){.testimonials-grid{grid-template-columns:1fr}.testimonial{min-height:auto}}
+
+  /* FAQ */
+  .faq-list{border-top:1px solid var(--hairline)}
+  .faq-item{border-bottom:1px solid var(--hairline)}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;padding:28px 0;cursor:pointer;gap:24px;list-style:none}
+  .faq-q::-webkit-details-marker{display:none}
+  .faq-q .q-text{font-size:22px;color:var(--ink);line-height:1.3;font-weight:400}
+  .faq-q .q-icon{flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1px solid var(--hairline);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:400;color:var(--ink);transition:transform .25s ease,background .25s ease}
+  details[open] .q-icon{transform:rotate(45deg);background:var(--ink);color:#fff;border-color:var(--ink)}
+  .faq-a{padding:0 56px 28px 0;font-size:16px;line-height:1.5;color:var(--body-muted)}
+  @media (max-width:640px){.faq-q .q-text{font-size:18px}.faq-a{padding-right:0}}
+
+  /* CONTACT FORM CTA */
+  .contact-band{background:var(--deep-green);border-radius:22px;padding:80px;margin:0 24px;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .contact-band h2{font-size:48px;line-height:1.2;letter-spacing:-.48px;color:#fff;font-weight:400}
+  .contact-band p{margin-top:16px;font-size:16px;line-height:1.5;color:rgba(255,255,255,.7);max-width:420px}
+  .contact-band .btn-primary{margin-top:24px;background:#fff;color:var(--primary)}
+  .contact-band .btn-primary:hover{background:#f0f0f0}
+  .contact-card{background:#fff;border-radius:22px;padding:32px;color:var(--ink)}
+  .contact-card .mono{margin-bottom:16px;display:inline-block}
+  .contact-card h3{font-size:24px;line-height:1.3;color:var(--ink);font-weight:400;margin-bottom:16px}
+  .form-row{display:flex;flex-direction:column;gap:12px}
+  .form-row input{font-family:inherit;font-size:14px;padding:12px 14px;border:1px solid var(--hairline);border-radius:4px;background:#fff;color:var(--ink);outline:none;transition:border-color .15s}
+  .form-row input:focus{border-color:var(--action-blue)}
+  .form-row .micro{font-size:12px;color:var(--muted);text-align:left;margin-top:4px}
+  .contact-card .btn-primary{width:100%}
+  @media (max-width:900px){.contact-band{grid-template-columns:1fr;padding:48px 24px;margin:0}.contact-band h2{font-size:32px}}
+
+  /* FOOTER */
+  footer{background:var(--primary);color:#fff;padding:80px 0 32px;margin-top:80px}
+  .foot-newsletter{padding-bottom:48px;border-bottom:1px solid #2a2a32;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+  .foot-newsletter .left .label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--coral);letter-spacing:.28px;text-transform:uppercase;margin-bottom:12px;display:block}
+  .foot-newsletter .left h3{font-size:32px;line-height:1.2;color:#fff;font-weight:400;letter-spacing:-.32px;max-width:420px}
+  .foot-newsletter .right{display:flex;gap:12px;align-items:center;border-bottom:1px solid #2a2a32;padding-bottom:8px}
+  .foot-newsletter .right input{flex:1;background:transparent;border:none;color:#fff;font-family:inherit;font-size:16px;padding:8px 0;outline:none}
+  .foot-newsletter .right input::placeholder{color:#93939f}
+  .foot-newsletter .right .arrow{width:36px;height:36px;border-radius:50%;border:1px solid #fff;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;background:transparent;font-size:14px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:48px;padding:48px 0 32px}
+  .foot-col h4{font-size:14px;color:#fff;margin-bottom:20px;font-weight:400;font-family:'JetBrains Mono',monospace;letter-spacing:.28px;text-transform:uppercase}
+  .foot-col a, .foot-col p{display:block;font-size:14px;line-height:1.7;color:#93939f;transition:color .15s}
+  .foot-col a:hover{color:#fff}
+  .foot-brand .nav-logo{filter:brightness(0) invert(1)}
+  .foot-brand p{margin-top:14px;font-size:14px;color:#93939f;max-width:340px;line-height:1.55}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #2a2a32;padding-top:24px;font-size:12px;color:#93939f;flex-wrap:wrap;gap:12px}
+  @media (max-width:760px){.foot-newsletter{grid-template-columns:1fr;gap:24px}.foot-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:480px){.foot-grid{grid-template-columns:1fr}}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announce">
+  <span>New: Private AI agents for SMEs, running on infrastructure you own.</span>
+  <a href="#solution">Learn more</a>
+  <span class="close" aria-label="Close">×</span>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="LaunchBrick home"><img src="images/logo.svg" alt="LaunchBrick — custom business software agency"/></a>
+    <div class="nav-menu">
+      <a href="#solution">Custom software</a>
+      <a href="#solution">Private AI</a>
+      <a href="#how">How it works</a>
+      <a href="#case">Case studies</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <a href="mailto:daniel@launchbrick.com" class="signin">Contact</a>
+      <a href="https://cal.com/lightningrails/launchbrick-chat" target="_blank" rel="noopener" class="btn btn-primary">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="wrap">
+    <h1 class="display">Custom AI software,<br/>built for your business.</h1>
+    <p class="lede">LaunchBrick is a software agency for SMEs. We build custom business software with private AI agents, replacing your stack of SaaS subscriptions with one app you own. Delivered in weeks, not months.</p>
+    <div class="hero-actions">
+      <a href="https://cal.com/lightningrails/launchbrick-chat" target="_blank" rel="noopener" class="btn btn-primary">Book a discovery call</a>
+      <a href="#how" class="btn btn-secondary">How it works →</a>
+    </div>
+    <div class="hero-social">
+      <div class="avatars">
+        <img src="images/cristina.png" alt="Cristina, LaunchBrick customer"/>
+        <img src="images/carlota.png" alt="Carlota Porta, LaunchBrick customer"/>
+        <img src="images/adriana.png" alt="Adriana Romero, LaunchBrick customer"/>
       </div>
+      <span class="copy">50+ apps shipped for founders, SMEs, and operators.</span>
+    </div>
+  </div>
+  <div class="hero-media">
+    <div class="card photo-card" role="img" aria-label="Small business owner running their custom software"></div>
+    <div class="console-card">
+      <div>
+        <div class="console-head">
+          <span><span class="console-dot"></span>agent.live</span>
+          <span class="mono" style="font-size:11px">v1.4.0</span>
+        </div>
+        <div class="console-body">
+          <div class="console-msg user">Forecast next month's stock for top 20 SKUs.</div>
+          <div class="console-msg">Drafted forecast based on 90 days of order data and supplier lead times. 3 SKUs flagged for early reorder. Shall I send the draft PO to your supplier portal?</div>
+        </div>
+        <div class="console-chips">
+          <span class="console-chip">forecasting</span>
+          <span class="console-chip">private</span>
+          <span class="console-chip">your data</span>
+        </div>
+      </div>
+      <div class="console-foot">
+        <span>Running on your private infrastructure</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Footer -->
-      <footer class="footer p-8 md:py-16 mt-0 rounded-lg" data-aos="fade-up">
-          <aside>
-              <img src="images/logo.svg" alt="Launch Brick Logo" class="w-8 h-8 md:w-12 md:h-12" />
-              <p><span class="font-bold">Launch Brick</span> - Your subscription-based MVP & Fractional CTO partner for SME's and solopreneurs since 2019</p>
-              <div class="flex flex-wrap gap-2 md:gap-4 mt-4 md:mt-6">
-                <a href="https://lightningrails.com/?ref='launchbrick" class="link link-hover">Powered by Lightningrails</a>
-              </div>
-              <p class="mt-2 md:mt-4 text-xs md:text-sm">BRIGHTWORKS DIGITAL PTE. LTD.<br>Business Registration: 202504662W<br>2 VENTURE DRIVE, #19-21<br>VISION EXCHANGE, SINGAPORE 608526</p>
-          </aside>
-          <nav>
-              <h6 class="footer-title">Navigation</h6>
-              <a href="#" class="link link-hover">Home</a>
-              <a href="#about" class="link link-hover">About Me</a>
-              <a href="#how-it-works" class="link link-hover">How It Works</a>
-              <a href="#packages" class="link link-hover">Subscription Plans</a>
-              <a href="#testimonials" class="link link-hover">Testimonials</a>
-              <a href="#faq" class="link link-hover">FAQ</a>
-          </nav>
-          <nav>
-            <h6 class="footer-title">Legal</h6>
-            <a href="legal/terms.html" class="link link-hover">Terms and Conditions</a>
-            <a href="legal/privacy.html" class="link link-hover">Privacy Policy</a>
-            <a href="legal/refund.html" class="link link-hover">Refund Policy</a>
-          </nav>
-          <nav>
-            <h6 class="footer-title">Other projects</h6>
-            <a href="https://lightningrails.com/?ref='launchbrick" class="link link-hover">Ruby on Rails Boilerplate</a>
-            <a href="https://mariaba.com/?ref='launchbrick" class="link link-hover">Maria BA: Unlimited design</a>
-            <a href="https://chromewebstore.google.com/detail/papaya-ranking-domain-ran/gefkkjihmfkognpmaikcopppcjdjngpn" class="link link-hover">Papaya Rank: Domain analysis</a>
-            <a href="https://library.mariaba.com" class="link link-hover">Free illustrations generator</a>
-          </nav>
-          <nav>
-              <h6 class="footer-title">Connect</h6>
-              <div class="grid grid-flow-col gap-4">
-                  <a href="https://x.com/daniel_rrsr" target="_blank">
-                      <i data-lucide="twitter" class="w-6 h-6"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/in/daniel-rodriguez-romero/" target="_blank">
-                      <i data-lucide="linkedin" class="w-6 h-6"></i>
-                  </a>
-                  <a href="https://github.com/Danrod16" target="_blank">
-                      <i data-lucide="github" class="w-6 h-6"></i>
-                  </a>
-              </div>
-              <div class="mt-4">
-                  <a class="btn btn-primary btn-sm" href="#" onclick="window.chatbase.open()">Chat With Us</a>
-              </div>
-          </nav>
-      </footer>
-      <script>
-        lucide.createIcons();
-       </script>
-      <script>
-        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8WDOXySFzbMEemqLdDNLv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-      </script>
-  </body>
+<!-- TRUST -->
+<section class="trust" aria-label="Customers and projects">
+  <div class="wrap">
+    <div class="label">Custom software shipped for operators across ecommerce, ops-heavy SMEs, and service businesses.</div>
+    <div class="logos">
+      <img src="images/olicai-logo.png" alt="Olicai — AI platform for smart bakeries"/>
+      <img src="images/avenist-logo.png" alt="Avenist — real estate CRM in Barcelona"/>
+      <img src="images/conqueredself-logo.svg" alt="ConqueredSelf — game-based recovery platform"/>
+      <img src="images/mariaba-logo.svg" alt="MariaBA — unlimited design subscription"/>
+      <img src="images/tariffs-logo.png" alt="TariffsAPI — AI-sourced tariff data"/>
+      <img src="images/papaya-logo.png" alt="Papaya — domain ranking Chrome extension"/>
+      <img src="images/thc-logo.png" alt="THC — healthy food delivery ERP"/>
+      <span class="logo-label">+ 50 more</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="block" id="problem" data-screen-label="02 Problem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">01 — The problem</span>
+      <h2>Your business runs on ten different SaaS subscriptions.</h2>
+      <p class="lede">Most SMEs pay 5–15 different SaaS vendors every month. Each one solves a slice of the problem, none of them talk to each other, and your customer data is scattered across servers you don't control.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-photo reveal" role="img" aria-label="Cluttered desk representing scattered SaaS tools"></div>
+      <div class="pain-list reveal">
+        <div class="pain"><div class="num">01</div><div class="txt">Payroll lives in one tool, support tickets in another, your customer data in a third — none of it adds up.</div></div>
+        <div class="pain"><div class="num">02</div><div class="txt">Every workflow needs an integration, a Zapier, a webhook, a duct-tape patch that breaks at 2am.</div></div>
+        <div class="pain"><div class="num">03</div><div class="txt">Your customer data is sitting on servers you don't control, exposed to LLMs you didn't choose.</div></div>
+        <div class="pain"><div class="num">04</div><div class="txt">Costs creep silently — $30 here, $200 there — until your stack costs more than a junior hire.</div></div>
+        <div class="pain"><div class="num">05</div><div class="txt">Nothing fits your business. You contort your process around the software, not the other way around.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION + PILLARS -->
+<section class="block" id="solution" data-screen-label="03 Solution">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">02 — The solution</span>
+      <h2>One custom app, built around your workflow.</h2>
+      <p class="lede">We design and build a single, custom business software application that replaces your patchwork of SaaS tools — CRM, ops, support, data, AI agents — running on your private infrastructure.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal">
+        <h3>Custom software development, fast</h3>
+        <p>We've built 50+ web apps. Our optimised stack and AI-assisted workflow ship production software in weeks, not the six-month enterprise crawl.</p>
+        <div class="check-list"><ul><li>CRM, payroll, ops</li><li>Internal tools</li><li>Customer-facing apps</li></ul></div>
+      </div>
+      <div class="pillar reveal">
+        <h3>Private AI agents, built in</h3>
+        <p>AI for small business that knows your business — agents trained on your data, running on infrastructure you own. No third-party LLMs reading your customer records.</p>
+        <div class="check-list"><ul><li>Private by default</li><li>Auditable workflows</li><li>Yours to extend</li></ul></div>
+      </div>
+      <div class="pillar reveal">
+        <h3>Owned infrastructure</h3>
+        <p>We host everything on private servers, in your name. No vendor lock-in, no subscription that doubles in price next year. You own the code and the keys.</p>
+        <div class="check-list"><ul><li>No lock-in</li><li>Your data, your servers</li><li>Source code yours</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="block" id="how" data-screen-label="04 How it works" style="padding-top:0">
+  <div class="how-band">
+    <div class="section-head">
+      <span class="mono">03 — How it works</span>
+      <h2>From first call to shipped, in weeks.</h2>
+      <p class="lede">A four-step process built around delivery, not deliverables. You get something working as fast as possible, then we keep adding to it.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="step"><div class="step-num">Week 01 · Discovery</div><h3>We learn your business.</h3><p>Two sessions. We map your workflow, the SaaS tools you're paying for, and the bottlenecks costing you hours every week. You get a written scope, no obligation.</p></div>
+      <div class="step"><div class="step-num">Week 02–06 · Build</div><h3>Custom app, delivered.</h3><p>We design, build, and iterate alongside you. Weekly demos, real software you can click. No mockups-as-deliverables, no theatre.</p></div>
+      <div class="step"><div class="step-num">Week 06–08 · Launch</div><h3>Live on your infra.</h3><p>We deploy to your private servers, migrate your data, train your team. The day you go live, you own the code, the database, and the keys.</p></div>
+      <div class="step"><div class="step-num">Ongoing · Grow</div><h3>Add features and AI agents.</h3><p>Need a new module? A private AI agent for support? Another integration? We stay on as your team, adding what you need as the business grows.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GRID -->
+<section class="block" id="why" data-screen-label="05 Why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">04 — Why LaunchBrick</span>
+      <h2>Six reasons SMEs pick our software agency.</h2>
+      <p class="lede">We're a small studio with a strong opinion about how custom software should be built — fast, private, and owned by the people who paid for it.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-cell reveal"><span class="num">01 — Speed</span><h3>Weeks, not months.</h3><p>Our optimised stack and AI-assisted workflow ship working software fast. First demo by week two, live by week eight.</p></div>
+      <div class="why-cell reveal"><span class="num">02 — Privacy</span><h3>Your data, your servers.</h3><p>Hosted on our private infrastructure under your name. No third-party LLMs in the loop, no SaaS vendor scraping your records.</p></div>
+      <div class="why-cell reveal"><span class="num">03 — Ownership</span><h3>You own the code.</h3><p>Source code, database, deployment keys — yours from day one. Walk away whenever. No lock-in clauses, ever.</p></div>
+      <div class="why-cell reveal"><span class="num">04 — Integrated AI</span><h3>Private AI agents built in.</h3><p>AI agents for support, data enrichment, and ops — designed into the product, not duct-taped over it.</p></div>
+      <div class="why-cell reveal"><span class="num">05 — Scalable</span><h3>Start small, grow with you.</h3><p>Ship one workflow, prove the value, add the next. We stay on as your team — no agency-handoff cliff.</p></div>
+      <div class="why-cell reveal"><span class="num">06 — One bill</span><h3>Replace SaaS subscriptions.</h3><p>Replace 5–15 vendors with one app and one invoice. Most clients save 40–70% on software in the first year.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE -->
+<section class="block" id="case" data-screen-label="06 Case study">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">05 — In the wild</span>
+      <h2>Built for real operators.</h2>
+    </div>
+    <div class="case-card reveal">
+      <div class="case-illo">
+        <span class="pulse-chip"><span class="pulse"></span> Coming soon</span>
+      </div>
+      <div class="case-content">
+        <span class="mono">Case study · Q2 2026</span>
+        <h3>How we replaced four SaaS tools with one custom app for a regional inventory operator.</h3>
+        <p>Stock, ordering, supplier comms, and a private AI agent for forecasting — consolidated into one application running on their own servers. Full case study landing soon.</p>
+        <div class="case-stats">
+          <div><span class="v">4 → 1</span><span class="k">Tools replaced</span></div>
+          <div><span class="v">7 wks</span><span class="k">To launch</span></div>
+          <div><span class="v">62%</span><span class="k">Software cost cut</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="block" id="testimonials" data-screen-label="07 Testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">06 — Wall of love</span>
+      <h2>Founders we've shipped for.</h2>
+      <p class="lede">Real customers, real software in production. Here's what they have to say about working with our software agency.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <p class="quote">"Daniel helped us create a new brand and website, making everything easy, fast, and effective. He guided us at all times, helping us make decisions and find solutions. For the next project, I won't hesitate to call him — a great professional."</p>
+        <div class="who">
+          <img src="images/cristina.png" alt="Cristina, Sociedad Española de Medicina"/>
+          <div>
+            <div class="name">Cristina</div>
+            <div class="role">Sociedad Española de Medicina · <a href="https://labtestonline.com" target="_blank" rel="noopener">labtestonline.com</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <p class="quote">"Daniel is an excellent professional with a lot of initiative and great ability to manage teams. Always attentive and available to find the best solution for each client. We've worked together on several projects and it's always a pleasure. I recommend him 1000%."</p>
+        <div class="who">
+          <img src="images/carlota.png" alt="Carlota Porta, Kaori Media Consulting"/>
+          <div>
+            <div class="name">Carlota Porta</div>
+            <div class="role"><a href="https://kaori-media.com" target="_blank" rel="noopener">Kaori Media Consulting</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <p class="quote">"Daniel is the creator behind the new design of our app. He successfully captured and translated our vision into a clean, engaging, dynamic MVP. I'd absolutely recommend him to any SME or solopreneur looking to bring a product idea to life."</p>
+        <div class="who">
+          <img src="images/adriana.png" alt="Adriana Romero, Equinox Urban Housing"/>
+          <div>
+            <div class="name">Adriana Romero</div>
+            <div class="role"><a href="https://equinoxurbanhousing.com" target="_blank" rel="noopener">Equinox Urban Housing</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" id="faq" data-screen-label="08 FAQ">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">07 — Questions</span>
+      <h2>The things you're probably thinking.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">How fast can you really deliver custom business software?</div><div class="q-icon">+</div></summary><div class="faq-a">Most projects ship a working v1 in 4–8 weeks. Our edge isn't magic — it's a focused stack we've shipped 50+ times, an AI-assisted build pipeline, and a refusal to spend three months on slide decks. We'll tell you on the discovery call exactly what we can hit.</div></details>
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">What about data privacy and private AI agents?</div><div class="q-icon">+</div></summary><div class="faq-a">Everything runs on private infrastructure under your business's name. Your customer data is never sent to OpenAI, Anthropic, or any third-party LLM you didn't explicitly approve. Private AI agents run locally on the same servers as your app — auditable, replaceable, and yours.</div></details>
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">Can you handle my specific industry?</div><div class="q-icon">+</div></summary><div class="faq-a">We've built for ecommerce, agencies, professional services, marketplaces, fintech wallets, and operations-heavy SMEs. Custom software development is industry-agnostic by definition — the question is whether your workflow is well enough understood to encode it. That's what discovery is for.</div></details>
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">Do I actually own the code?</div><div class="q-icon">+</div></summary><div class="faq-a">Yes — fully. Source code, database, deployment keys, infrastructure access. From the day we ship, you can walk away, hire another team, or run it yourself. No usage fees, no per-seat charges, no lock-in. Spelt out in plain English in our contract.</div></details>
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">What does it cost?</div><div class="q-icon">+</div></summary><div class="faq-a">Project-based, scoped after the discovery call. Most v1 builds land between $15k and $60k depending on scope, with optional ongoing support. We'll give you a fixed quote before you commit — no time-and-materials surprises.</div></details>
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">What if I just need part of my SaaS stack rebuilt?</div><div class="q-icon">+</div></summary><div class="faq-a">That's how most projects start. Pick the workflow that hurts most — payroll, support, ordering — we replace that first. Once it's live and you trust the process, we keep going and replace the next subscription.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT BAND -->
+<section class="block" id="contact" data-screen-label="09 Contact" style="padding-top:0">
+  <div class="contact-band" style="grid-template-columns:1fr;text-align:center;justify-items:center">
+    <div style="max-width:680px">
+      <span class="mono" style="color:rgba(255,255,255,.7)">08 — Let's talk</span>
+      <h2 style="margin-top:24px">Let's see if your stack is worth replacing.</h2>
+      <p style="margin-left:auto;margin-right:auto">30-minute discovery call. No slides. No obligation. We'll tell you whether custom software development is the right move — even if the answer is no.</p>
+      <a href="https://cal.com/lightningrails/launchbrick-chat" target="_blank" rel="noopener" class="btn btn-primary">Book a discovery call</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-newsletter">
+      <div class="left">
+        <span class="label">AI moves fast</span>
+        <h3>Get our quarterly note on building software in the AI era.</h3>
+      </div>
+      <div class="right">
+        <input type="email" placeholder="your@email.com"/>
+        <button class="arrow" aria-label="Subscribe">→</button>
+      </div>
+    </div>
+
+    <div class="foot-grid">
+      <div class="foot-col foot-brand">
+        <a href="/" aria-label="LaunchBrick home"><img src="images/logo.svg" alt="LaunchBrick logo" style="height:32px;width:auto;display:block;filter:brightness(0) invert(1)"/></a>
+        <p>Custom AI-powered business software for SMEs. Built fast, hosted privately, owned by you. Replace your SaaS subscriptions with one app.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <a href="#solution">Custom software</a>
+        <a href="#solution">Private AI agents</a>
+        <a href="#how">How it works</a>
+        <a href="#case">Case studies</a>
+        <a href="#testimonials">Testimonials</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="https://cal.com/lightningrails/launchbrick-chat" target="_blank" rel="noopener">Book a call</a>
+        <a href="mailto:daniel@launchbrick.com">daniel@launchbrick.com</a>
+        <a href="https://lightningrails.com/?ref=launchbrick" target="_blank" rel="noopener">Lightningrails</a>
+        <a href="https://mariaba.com/?ref=launchbrick" target="_blank" rel="noopener">MariaBA</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="legal/terms.html">Terms</a>
+        <a href="legal/privacy.html">Privacy</a>
+        <a href="legal/refund.html">Refund</a>
+        <p style="margin-top:12px">Brightworks Digital Pte. Ltd.</p>
+        <p>Singapore · 202504662W</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 LaunchBrick · Bali · Singapore</div>
+      <div>Custom software · Private AI · Owned by you</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelector('.announce .close')?.addEventListener('click', (e)=>{
+    e.target.closest('.announce').style.display='none';
+  });
+</script>
+
+<script>
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8WDOXySFzbMEemqLdDNLv";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+</body>
 </html>
