@@ -260,6 +260,16 @@
   .ai-infra .ai-repo-body .ai-p{color:var(--ai-coral)}
   .ai-infra .ai-repo-body .ai-c{color:var(--ai-muted)}
   .ai-infra .ai-repo-body .ai-me{color:var(--ai-ink)}
+  .ai-infra .ai-browser{width:210px;border:1px solid var(--ai-hairline);background:var(--ai-paper);border-radius:12px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+  .ai-infra .ai-browser-top{display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid var(--ai-hairline);background:#fafaf6}
+  .ai-infra .ai-url{margin-left:6px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.04em;color:var(--ai-body);background:#fff;border:1px solid var(--ai-hairline);border-radius:30px;padding:2px 10px;flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ai-infra .ai-browser-body{padding:12px;display:flex;flex-direction:column;gap:7px;align-items:flex-start}
+  .ai-infra .ai-hero-line{display:block;height:6px;border-radius:4px;background:#e7e3d6}
+  .ai-infra .ai-hero-line.a{width:78%}
+  .ai-infra .ai-hero-line.b{width:54%}
+  .ai-infra .ai-hero-row{display:flex;align-items:center;gap:6px;margin-top:3px}
+  .ai-infra .ai-hero-btn{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;background:var(--ai-ink);color:#fff;padding:5px 9px;border-radius:30px}
+  .ai-infra .ai-hero-ghost{width:42px;height:6px;border-radius:4px;background:#e7e3d6}
   .ai-infra .ai-caret{display:inline-block;width:6px;height:11px;background:var(--ai-ink);vertical-align:-1px;animation:ai-blink 1s steps(1) infinite}
   @keyframes ai-blink{50%{opacity:0}}
   .ai-infra .ai-tool{width:54px;height:54px;border-radius:14px;background:var(--ai-paper);border:1px solid var(--ai-hairline);display:flex;align-items:center;justify-content:center;transition:border-color .2s,transform .2s,background .2s}
@@ -292,6 +302,10 @@
     .ai-infra .ai-cloud{width:170px;height:115px}
     .ai-infra .ai-repo{width:180px}
     .ai-infra .ai-repo-body{font-size:9px;padding:8px 10px 10px}
+    .ai-infra .ai-browser{width:160px}
+    .ai-infra .ai-url{font-size:8.5px;padding:2px 8px}
+    .ai-infra .ai-browser-body{padding:10px;gap:6px}
+    .ai-infra .ai-hero-btn{font-size:7.5px;padding:4px 8px}
     .ai-infra .ai-tool{width:44px;height:44px}
     .ai-infra .ai-tool svg{width:19px;height:19px}
     .ai-infra .ai-tool-wrap .ai-pill{font-size:8.5px}
@@ -312,6 +326,12 @@
     .ai-infra .ai-repo{width:144px}
     .ai-infra .ai-repo-body{font-size:8px;line-height:1.5;padding:7px 9px 9px}
     .ai-infra .ai-repo-name{font-size:8.5px}
+    .ai-infra .ai-browser{width:130px}
+    .ai-infra .ai-url{font-size:7.5px;padding:1px 7px}
+    .ai-infra .ai-browser-body{padding:8px;gap:5px}
+    .ai-infra .ai-hero-line{height:5px}
+    .ai-infra .ai-hero-btn{font-size:6.5px;padding:3px 7px}
+    .ai-infra .ai-hero-ghost{width:32px;height:5px}
     .ai-infra .ai-tool{width:38px;height:38px;border-radius:10px}
     .ai-infra .ai-tool svg{width:16px;height:16px}
     .ai-infra .ai-tool-wrap .ai-pill{font-size:7.5px}
@@ -529,7 +549,11 @@
   .sticky-cta .text strong{font-weight:500;letter-spacing:-.01em}
   .sticky-cta .text .sub{color:rgba(255,255,255,.6);font-size:12px;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;text-transform:uppercase}
   .sticky-cta .btn{padding:10px 18px;font-size:13px}
-  @media (max-width:640px){.sticky-cta .text .sub{display:none}.sticky-cta{padding:8px 8px 8px 16px}}
+  @media (max-width:640px){
+    .sticky-cta{left:16px;right:16px;transform:translateY(120%);padding:8px 8px 8px 16px;max-width:none;justify-content:space-between}
+    .sticky-cta.show{transform:translateY(0)}
+    .sticky-cta .text .sub{display:none}
+  }
 
   /* FOOTER (matches parent site) */
   footer{background:var(--primary);color:#fff;padding:80px 0 32px;margin-top:96px}
@@ -662,7 +686,7 @@
         <span class="ai-scale">Click a node</span>
       </div>
       <h3 class="ai-title">One brain. <em>Your tools.</em> Connected.</h3>
-      <p class="ai-sub">A minimal map of the AI stack we build with you, model in the middle, memory above, prompts on the left, tools below.</p>
+      <p class="ai-sub">A minimal map of the AI stack we build with you, model in the middle, memory above, prompts on the left, tools below, and the web app you ship sitting on top.</p>
 
       <div class="ai-stage" id="aiStage">
         <div class="ai-stage-inner">
@@ -670,6 +694,7 @@
             <defs>
               <path id="ai-p-repo" d="M 240 175 C 360 230, 430 270, 500 295"/>
               <path id="ai-p-mem"  d="M 860 175 C 760 220, 680 260, 600 295"/>
+              <path id="ai-p-app"  d="M 580 300 C 700 240, 700 130, 555 70"/>
               <path id="ai-p-t1"   d="M 550 380 C 540 460, 280 470, 200 510"/>
               <path id="ai-p-t2"   d="M 550 380 C 540 480, 420 490, 380 510"/>
               <path id="ai-p-t3"   d="M 550 380 C 560 480, 660 490, 720 510"/>
@@ -677,6 +702,7 @@
             </defs>
             <use href="#ai-p-repo" class="ai-line" data-edge="repo"/>
             <use href="#ai-p-mem"  class="ai-line" data-edge="mem"/>
+            <use href="#ai-p-app"  class="ai-line" data-edge="app"/>
             <use href="#ai-p-t1"   class="ai-line" data-edge="t1"/>
             <use href="#ai-p-t2"   class="ai-line" data-edge="t2"/>
             <use href="#ai-p-t3"   class="ai-line" data-edge="t3"/>
@@ -694,6 +720,13 @@
             </circle>
             <circle r="2" class="ai-flow green" opacity=".5">
               <animateMotion dur="3.8s" begin="1.9s" repeatCount="indefinite"><mpath href="#ai-p-mem"/></animateMotion>
+            </circle>
+
+            <circle r="3" class="ai-flow">
+              <animateMotion dur="3.6s" repeatCount="indefinite"><mpath href="#ai-p-app"/></animateMotion>
+            </circle>
+            <circle r="2" class="ai-flow" opacity=".5">
+              <animateMotion dur="3.6s" begin="1.8s" repeatCount="indefinite"><mpath href="#ai-p-app"/></animateMotion>
             </circle>
 
             <circle r="2.6" class="ai-flow"><animateMotion dur="3s"   repeatCount="indefinite"><mpath href="#ai-p-t1"/></animateMotion></circle>
@@ -740,6 +773,23 @@
                     <circle cx="140" cy="64" r="2.5"/>
                   </g>
                 </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-node on" data-id="app" style="left:50%;top:12%;">
+            <div class="ai-browser">
+              <div class="ai-browser-top">
+                <span class="ai-dot"></span><span class="ai-dot"></span><span class="ai-dot"></span>
+                <span class="ai-url">your-app.com</span>
+              </div>
+              <div class="ai-browser-body">
+                <span class="ai-hero-line a"></span>
+                <span class="ai-hero-line b"></span>
+                <div class="ai-hero-row">
+                  <span class="ai-hero-btn">Sign up</span>
+                  <span class="ai-hero-ghost"></span>
+                </div>
               </div>
             </div>
           </div>
@@ -814,7 +864,7 @@
         <div class="ai-badge" id="aiBadge">✳</div>
         <div class="ai-info-body">
           <span class="ai-k" id="aiK">Tap any node</span>
-          <span class="ai-v" id="aiV">Memory · Claude · Code · Tools, a complete stack you can actually maintain.</span>
+          <span class="ai-v" id="aiV">Memory · Claude · Code · Tools · Your web app, a complete stack you can actually maintain.</span>
         </div>
         <span class="ai-hint">Click any node →</span>
       </div>
@@ -827,26 +877,26 @@
   <div class="wrap">
     <div class="section-head reveal" style="margin-bottom:48px">
       <span class="mono">03 · How it works</span>
-      <h2>Two weeks remote. One weekend together. Sixty days after.</h2>
+      <h2>Three blocks on your calendar. Only one in person.</h2>
     </div>
     <div class="mech-steps reveal">
       <div class="mech-step">
-        <span class="badge">T-14 → T-1 days · Remote</span>
+        <span class="badge">T-14 → T-1 days · Remote · Optional</span>
         <div class="step-no">01</div>
-        <h3>We watch your real workflow for two weeks.</h3>
-        <p>You install a lightweight tracker on your laptop, your pick from a vetted list. It measures task type, time-on-tool, and switching cost. We see where your time actually goes, not where you think it goes.</p>
+        <h3>Optional: we watch your real workflow for two weeks.</h3>
+        <p>If you opt in, you install a lightweight tracker on your laptop, your pick from a vetted list. It measures task type, time-on-tool, and switching cost, so we see where your time actually goes, not where you think it goes. Prefer to skip it? We lock your 2–3 builds in the intake call instead.</p>
       </div>
       <div class="mech-step">
         <span class="badge">2 days · Canggu, Bali</span>
         <div class="step-no">02</div>
-        <h3>We ship 2–3 automations together.</h3>
-        <p>Saturday and Sunday, pair-built with Dani against your own data. Each founder works on their own bottlenecks. By Sunday 6pm, your agents are live in your own accounts.</p>
+        <h3>We ship 2–3 automations or web apps together.</h3>
+        <p>Saturday and Sunday, pair-built with Dani against your own data. Each founder works on their own bottlenecks. By Sunday 6pm, your automations, web apps, or internal tools are live in your own accounts.</p>
       </div>
       <div class="mech-step">
         <span class="badge">T+1 → T+60 days · Slack</span>
         <div class="step-no">03</div>
         <h3>We keep you running for 60 days.</h3>
-        <p>Things break. APIs change. You spot a new automation. A private cohort Slack stays open with real-human responses. The code stays yours forever.</p>
+        <p>Things break. APIs change. You spot a new build. A private cohort Slack stays open with real-human responses. The code stays yours forever.</p>
       </div>
     </div>
   </div>
@@ -907,8 +957,8 @@
           <h3>A Claude Code setup tuned to your business.</h3>
           <span class="tag">AI dev infra · Skills · Memory</span>
         </div>
-        <p>A real coding environment configured around how you work: per-project memory (CLAUDE.md) so Claude knows your stack, custom skills and slash commands for the moves you repeat, MCP connections to your tools. You leave knowing how to vibe-code your next idea on a Tuesday evening.</p>
-        <div class="flow"><span class="node">CLAUDE.md</span><span class="arrow">→</span><span class="node">Skills + commands</span><span class="arrow">→</span><span class="node">MCP tools</span></div>
+        <p>A real coding environment configured around how you work: Claude Code installed and wired to your stack, per-project memory (CLAUDE.md) so it knows your conventions, custom skills and slash commands for the moves you repeat, MCP connections to your tools. You leave knowing how to vibe-code your next idea on a Tuesday evening.</p>
+        <div class="flow"><span class="node">Claude Code</span><span class="arrow">→</span><span class="node">CLAUDE.md</span><span class="arrow">→</span><span class="node">Skills + commands</span><span class="arrow">→</span><span class="node">MCP tools</span></div>
       </div>
     </div>
   </div>
@@ -1253,9 +1303,10 @@
     const repoCmdEl = document.getElementById('aiRepoCmd');
 
     const NODES = {
-      core: { glyph:'✳', k:'Claude · The model',          v:'The brain in the middle — model-agnostic. We pick the best one for the job; swap any time as the landscape shifts.', edges:['repo','mem','t1','t2','t3','t4'], related:['core'] },
+      core: { glyph:'✳', k:'Claude · The model',          v:'The brain in the middle — model-agnostic. We pick the best one for the job; swap any time as the landscape shifts.', edges:['repo','mem','app','t1','t2','t3','t4'], related:['core'] },
       mem:  { glyph:'◍', k:'Memory · Your second brain',  v:'A linked graph of notes, docs and past conversations in the cloud. Claude reads from it so answers stay in your voice.', edges:['mem'], related:['mem','core'] },
       repo: { glyph:'›_',k:'Claude Code · The workshop',  v:'A repo where you prompt new automations into existence. Versioned, replayable, yours to edit.', edges:['repo'], related:['repo','core'] },
+      app:  { glyph:'◳', k:'Vibe-coded web app · What you ship', v:'The actual product that comes out: a deployed web app on your own domain, prompted into existence in Claude Code, owned and editable by you. Could be a landing page, an internal tool, a customer-facing MVP — whatever your weekend needs.', edges:['app'], related:['app','core'] },
       t1:   { glyph:'◖', k:'WhatsApp', v:'Reads new messages, drafts replies, books meetings — you approve, it sends.', edges:['t1'], related:['t1','core'] },
       t2:   { glyph:'✉', k:'Gmail',    v:'Triages your inbox, drafts replies in your voice, files what doesn’t need you.', edges:['t2'], related:['t2','core'] },
       t3:   { glyph:'▦', k:'Calendar', v:'Schedules, reschedules, and protects deep-work blocks across the week.', edges:['t3'], related:['t3','core'] },
@@ -1278,7 +1329,7 @@
         lines.forEach(l => l.classList.remove('active'));
         badge.textContent = '✳';
         kEl.textContent = 'Tap any node';
-        vEl.textContent = 'Memory · Claude · Code · Tools — a complete stack you can actually maintain.';
+        vEl.textContent = 'Memory · Claude · Code · Tools · Your web app — a complete stack you can actually maintain.';
         return;
       }
       stage.classList.add('dim');
