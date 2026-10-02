@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>LaunchBrick — Custom AI Software for Small Business. Owned by You.</title>
-<meta name="description" content="LaunchBrick is a software agency building custom business software with private AI agents for SMEs. Replace your SaaS subscriptions with one unified app you own — delivered in weeks, not months."/>
-<meta name="keywords" content="custom business software, AI for small business, private AI agents, custom software development, software agency, replace SaaS subscriptions"/>
+<title>LaunchBrick | AI Consulting That Ends With a Working System</title>
+<meta name="description" content="LaunchBrick is hands-on AI consulting for founders and small teams. We map your workflows, set up a working AI system on hardware you own, and train your team to run it."/>
+<meta name="keywords" content="AI consulting, AI consultant for small business, AI implementation, AI agents setup, Claude Code setup, AI automation consulting"/>
 <link rel="canonical" href="https://launchbrick.com/"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="LaunchBrick — Custom AI Software for Small Business. Owned by You."/>
-<meta property="og:description" content="Custom software development with private AI agents for SMEs. Replace your SaaS subscriptions with one app you own."/>
+<meta property="og:title" content="LaunchBrick | AI Consulting That Ends With a Working System"/>
+<meta property="og:description" content="Hands-on AI consulting. We set up a lead agent, a team of workers, and long-term memory inside your company, then train your team to run it."/>
 <meta property="og:url" content="https://launchbrick.com/"/>
 <meta property="og:image" content="https://launchbrick.com/images/hero-entrepreneur.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="LaunchBrick — Custom AI Software for Small Business"/>
-<meta name="twitter:description" content="Custom software development with private AI agents for SMEs. Owned by you."/>
+<meta name="twitter:title" content="LaunchBrick | AI Consulting for Founders and Small Teams"/>
+<meta name="twitter:description" content="We set up AI that does the work inside your company, then train your team to run it."/>
 <meta name="twitter:image" content="https://launchbrick.com/images/hero-entrepreneur.jpg"/>
 <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
   "name": "LaunchBrick",
   "url": "https://launchbrick.com/",
   "logo": "https://launchbrick.com/images/logo.svg",
-  "description": "Software agency building custom business software with private AI agents for SMEs. Replace SaaS subscriptions with one unified app, owned by you.",
+  "description": "Hands-on AI consulting for founders and small teams. We set up working AI systems on hardware you own and train your team to run them.",
   "sameAs": [
     "https://x.com/daniel_rrsr",
     "https://www.linkedin.com/in/daniel-rodriguez-romero/",
@@ -40,11 +40,11 @@
   },
   "areaServed": "Worldwide",
   "knowsAbout": [
-    "custom business software",
-    "AI for small business",
-    "private AI agents",
-    "custom software development",
-    "replace SaaS subscriptions"
+    "AI consulting",
+    "AI implementation",
+    "AI agents",
+    "Claude Code",
+    "AI training for teams"
   ]
 }
 </script>
@@ -97,6 +97,7 @@
   .nav-menu a:hover{color:var(--action-blue)}
   .nav-right{display:flex;gap:16px;align-items:center;justify-content:flex-end}
   .nav-right .signin{font-size:14px;color:var(--ink)}
+  .nav-right .btn{white-space:nowrap}
   @media (max-width:860px){.nav-menu{display:none}.nav-inner{grid-template-columns:1fr auto}}
 
   /* BUTTONS */
@@ -112,7 +113,11 @@
   .btn-pill-outline:hover{background:var(--ink);color:#fff}
 
   /* HERO */
-  .hero{padding:96px 0 64px;background:var(--canvas)}
+  .hero{padding:96px 0 64px;background:var(--canvas);position:relative;overflow:hidden}
+  .hero-waves{position:absolute;left:0;right:0;top:0;height:820px;z-index:0;pointer-events:none;opacity:1;
+    -webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,#000 70%,transparent 100%)}
+  .hero-waves canvas{width:100%;height:100%;display:block}
+  .hero>.wrap,.hero>.hero-media{position:relative;z-index:1}
   .hero h1{font-size:96px;line-height:1;letter-spacing:-1.92px;font-weight:400;text-align:center;max-width:1100px;margin:0 auto;color:var(--ink)}
   .hero .lede{margin:32px auto 0;font-size:18px;line-height:1.4;color:var(--body-muted);max-width:640px;text-align:center}
   .hero-actions{margin-top:40px;display:flex;gap:24px;justify-content:center;align-items:center;flex-wrap:wrap}
@@ -121,10 +126,105 @@
   .hero-social .avatars img{width:36px;height:36px;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-8px;background:#eee}
   .hero-social .avatars img:first-child{margin-left:0}
   .hero-social .copy{font-size:13px;color:var(--body-muted)}
-  .hero-media{margin-top:80px;display:grid;grid-template-columns:1.6fr 1fr;gap:24px;max-width:1280px;padding:0 24px;margin-left:auto;margin-right:auto}
-  .hero-media .card{border-radius:22px;overflow:hidden;background:var(--soft-stone)}
-  .hero-media .photo-card{position:relative;aspect-ratio:5/4;background-image:url('images/hero-entrepreneur.jpg');background-size:cover;background-position:center}
-  .hero-media .console-card{background:var(--primary);color:#fff;padding:32px;border-radius:22px;display:flex;flex-direction:column;justify-content:space-between;min-height:420px}
+  .hero-media{margin-top:80px;max-width:1280px;padding:0 24px;margin-left:auto;margin-right:auto;scroll-margin-top:80px}
+  .console-card{background:var(--primary);color:#fff;padding:32px;border-radius:22px;display:flex;flex-direction:column;justify-content:space-between;min-height:420px}
+
+  /* SETUP ILLUSTRATION (client schema) */
+  .setup{
+    --s-hair:#e5e3dd;--s-paper:#fff;--s-ink:#17171c;--s-body:#3d3d45;--s-muted:#93939f;
+    --s-coral:#ff7759;--s-green:#003c33;--s-mint:#e3efe9;--s-mint-line:#b9d2c5;
+    background:var(--s-paper);border:1px solid var(--card-border);border-radius:22px;padding:40px 48px 48px;overflow:hidden
+  }
+  .setup-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .setup-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--s-muted)}
+  .setup-title{font-family:'Space Grotesk','Inter',sans-serif;font-size:32px;line-height:1.1;letter-spacing:-.02em;margin:8px 0 6px;color:var(--s-ink);font-weight:400}
+  .setup-title em{font-style:normal;color:var(--s-coral)}
+  .setup-sub{font-size:14px;color:var(--s-body);max-width:600px;line-height:1.5}
+  .lb-stage{position:relative;margin-top:32px;padding-top:28px;border-top:1px solid var(--s-hair);
+    background:radial-gradient(circle at 1px 1px,#e8e6df 1px,transparent 1px) 0 0/28px 28px}
+  .lb-wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:0}
+  .lb-wire{fill:none;stroke:#c9c6bd;stroke-width:1.4}
+  .lb-wire.dash{stroke-dasharray:4 5}
+  .lb-wire.green{stroke:#9cc0ae}
+  .lb-dot{fill:var(--s-coral)}
+  .lb-dot.green{fill:#4f8f74}
+  .lb-dot.ink{fill:var(--s-ink)}
+  .lb-mono{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+  .lb-tag{position:absolute;z-index:2;transform:translate(-50%,-50%);background:var(--s-paper);border:1px solid var(--s-hair);border-radius:30px;padding:4px 10px;color:var(--s-body);white-space:nowrap}
+
+  .lb-top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding:0 3% 64px}
+  .lb-you{position:relative;width:340px;background:var(--s-paper);border:1px solid var(--s-hair);border-radius:14px;padding:14px 16px}
+  .lb-you-id{display:flex;align-items:center;gap:10px}
+  .lb-avatar{width:32px;height:32px;border-radius:50%;background:var(--s-ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500}
+  .lb-name{font-size:14px;color:var(--s-ink);font-weight:500;line-height:1.2}
+  .lb-meta{color:var(--s-muted)}
+  .lb-msg{margin-top:12px;font-size:13px;line-height:1.5;color:var(--s-body);background:#f6f5f1;border-radius:10px 10px 10px 2px;padding:10px 12px}
+  .lb-devices{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;margin-right:18%}
+  .lb-devices-row{display:flex;align-items:flex-end;gap:10px;background:var(--s-paper);padding:6px}
+  .lb-phone{width:26px;height:46px;border:1.5px solid var(--s-ink);border-radius:6px;position:relative}
+  .lb-phone::after{content:"";position:absolute;bottom:4px;left:50%;width:8px;height:2px;margin-left:-4px;border-radius:2px;background:var(--s-ink)}
+  .lb-laptop{width:72px;height:44px;border:1.5px solid var(--s-ink);border-radius:6px 6px 0 0;position:relative;margin-bottom:6px}
+  .lb-laptop::after{content:"";position:absolute;left:-10px;right:-10px;bottom:-7px;height:5px;border:1.5px solid var(--s-ink);border-radius:0 0 4px 4px;background:var(--s-paper)}
+  .lb-devices .lb-tag{position:static;transform:none}
+
+  .lb-box{position:relative;z-index:1;border:1.5px solid var(--s-ink);border-radius:22px;padding:64px 32px 96px;
+    display:grid;grid-template-columns:1.35fr 1fr .95fr;column-gap:32px;row-gap:64px}
+  .lb-box-lbl{position:absolute;top:-12px;left:28px;background:var(--s-ink);color:#fff;border-radius:30px;padding:5px 12px}
+  .lb-lead{grid-column:1;grid-row:1;justify-self:center;align-self:start;width:210px;background:var(--s-coral);color:#fff;border-radius:16px;padding:18px 18px 16px;
+    box-shadow:0 24px 60px -28px rgba(255,119,89,.6);position:relative}
+  .lb-lead::before{content:"";position:absolute;inset:-10px;border-radius:22px;border:1px dashed rgba(23,23,28,.18);pointer-events:none}
+  .lb-glyph{font-family:'Space Grotesk',sans-serif;font-size:28px;line-height:1}
+  .lb-lead-name{font-family:'Space Grotesk',sans-serif;font-size:24px;letter-spacing:-.02em;margin-top:6px;line-height:1.1}
+  .lb-lead .lb-mono{opacity:.9;margin-top:4px}
+
+  .lb-file{background:var(--s-paper);border:1px solid var(--s-hair);border-radius:12px;overflow:hidden}
+  .lb-file-top{display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid var(--s-hair);background:#fafaf6}
+  .lb-file-top i{width:8px;height:8px;border-radius:50%;background:#e3e1da}
+  .lb-file-top span{margin-left:6px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--s-body)}
+  .lb-rules{grid-column:2;grid-row:1;margin-top:44px;align-self:start}
+  .lb-rules ol{margin:0;padding:10px 12px 12px 30px;font-family:'JetBrains Mono',monospace;font-size:10.5px;line-height:1.75;color:var(--s-body)}
+  .lb-rules li::marker{color:var(--s-coral)}
+
+  .lb-workers{grid-column:1 / 3;grid-row:2;display:flex;gap:16px}
+  .lb-worker{flex:1;min-width:0;background:var(--s-paper);border:1px solid var(--s-hair);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+  .lb-worker.ghost{border-style:dashed;background:transparent;backdrop-filter:blur(1px)}
+  .lb-worker-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .lb-worker-name{font-size:14px;color:var(--s-ink);font-weight:500}
+  .lb-status{width:8px;height:8px;border-radius:50%;background:#16a34a}
+  .lb-status.busy{background:var(--s-coral);animation:pulse 1.6s infinite}
+  .lb-worker .lb-mono{color:var(--s-muted);letter-spacing:.04em;text-transform:none;font-size:10.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .lb-chips{display:flex;gap:4px;flex-wrap:wrap;margin-top:2px}
+  .lb-chip{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.06em;padding:2px 8px;border-radius:30px;background:#f1f0eb;color:var(--s-body)}
+  .lb-chip.ok{background:#e4f5e8;color:#166534}
+
+  .lb-mem{grid-column:3;grid-row:1 / 3;background:var(--s-mint);border:1px solid var(--s-mint-line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px}
+  .lb-mem-lbl{color:var(--s-green)}
+  .lb-mem ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+  .lb-mem li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--s-green);background:rgba(255,255,255,.65);border-radius:8px;padding:8px 10px}
+  .lb-mem li b{width:20px;height:20px;border-radius:6px;background:var(--s-green);color:#fff;font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .lb-log{margin-top:auto;border-top:1px dashed var(--s-mint-line);padding-top:12px;display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;font-size:10px;line-height:1.45;color:#3f6b5a}
+  .lb-log span{color:#7ba591}
+
+  @media (max-width:959px){
+    .setup{padding:28px 20px 24px}
+    .setup-title{font-size:26px}
+    .lb-wires,.lb-stage>.lb-tag{display:none}
+    .lb-top{flex-direction:column;align-items:stretch;gap:12px;padding:0 0 40px}
+    .lb-top::after{content:"";position:absolute;left:50%;bottom:6px;height:28px;border-left:1.5px dashed #c9c6bd}
+    .lb-you{width:auto}
+    .lb-devices{flex-direction:row;justify-content:center;margin-right:0}
+    .lb-box{grid-template-columns:1fr 1fr;padding:40px 16px 16px;gap:16px}
+    .lb-lead{grid-column:1;grid-row:auto;justify-self:stretch;width:auto}
+    .lb-rules{grid-column:2;grid-row:auto;margin-top:0}
+    .lb-workers{grid-column:1 / -1;grid-row:auto}
+    .lb-mem{grid-column:1 / -1;grid-row:auto}
+  }
+  @media (max-width:600px){
+    .lb-box{grid-template-columns:1fr}
+    .lb-rules{grid-column:1}
+    .lb-workers{flex-direction:column}
+    .lb-box-lbl{left:12px;letter-spacing:.04em;white-space:nowrap}
+  }
   .console-head{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#aaa}
   .console-dot{width:8px;height:8px;border-radius:50%;background:#16a34a;display:inline-block;margin-right:6px}
   .console-body{display:flex;flex-direction:column;gap:12px;margin-top:24px}
@@ -137,8 +237,8 @@
   @media (max-width:900px){
     .hero{padding:48px 0 32px}
     .hero h1{font-size:44px;letter-spacing:-.6px}
-    .hero-media{grid-template-columns:1fr;gap:16px;margin-top:48px}
-    .hero-media .console-card{min-height:auto}
+    .hero-media{margin-top:48px;padding:0 16px}
+    .console-card{min-height:auto}
     .hero-actions .btn-primary{width:100%;max-width:340px}
   }
 
@@ -178,7 +278,10 @@
   .pillar .check-list ul{margin:0;padding:0;display:flex;flex-direction:column;gap:8px;list-style:none}
   .pillar .check-list li{padding-left:24px;position:relative;font-size:14px;color:var(--ink)}
   .pillar .check-list li::before{content:"✓";position:absolute;left:0;color:var(--ink);font-weight:500}
-  @media (max-width:900px){.pillars{grid-template-columns:1fr}.pillar{min-height:auto}}
+  .pillars.four{grid-template-columns:repeat(4,1fr)}
+  .pillar .step-tag{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.28px;text-transform:uppercase}
+  @media (max-width:1100px){.pillars.four{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:900px){.pillars,.pillars.four{grid-template-columns:1fr}.pillar{min-height:auto}}
 
   /* HOW (DARK GREEN BAND) */
   .how-band{background:var(--deep-green);color:#fff;border-radius:22px;padding:80px;margin:0 24px}
@@ -209,9 +312,6 @@
 
   /* CASE */
   .case-card{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;background:var(--canvas);border:1px solid var(--card-border);border-radius:22px;padding:32px;overflow:hidden}
-  .case-illo{position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--soft-stone);background-image:url('images/case-tokfluence.png');background-size:cover;background-position:top center}
-  .case-illo .pulse-chip{position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:32px;background:rgba(255,255,255,.95);font-size:12px;font-weight:500;backdrop-filter:blur(8px)}
-  .case-illo .pulse-chip .pulse{width:6px;height:6px;border-radius:50%;background:var(--coral);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
   .case-content .mono{margin-bottom:16px;display:inline-block}
   .case-content h3{font-size:32px;line-height:1.2;color:var(--ink);margin-bottom:14px;font-weight:400;letter-spacing:-.32px}
@@ -231,7 +331,11 @@
   .testimonial .who .name{font-size:14px;color:var(--ink);font-weight:500}
   .testimonial .who .role{font-size:12px;color:var(--body-muted)}
   .testimonial .who .role a{text-decoration:underline;text-underline-offset:2px}
-  @media (max-width:900px){.testimonials-grid{grid-template-columns:1fr}.testimonial{min-height:auto}}
+  .testimonial.featured{grid-column:1 / -1;min-height:auto;background:var(--pale-green)}
+  .testimonial.featured .quote{font-family:'Space Grotesk',sans-serif;font-size:24px;line-height:1.35;letter-spacing:-.01em}
+  .testimonial.featured .who img{width:48px;height:48px;object-position:88% 30%}
+  .testimonial .stars{color:var(--coral);letter-spacing:2px;font-size:14px}
+  @media (max-width:900px){.testimonials-grid{grid-template-columns:1fr}.testimonial{min-height:auto}.testimonial.featured .quote{font-size:19px}}
 
   /* FAQ */
   .faq-list{border-top:1px solid var(--hairline)}
@@ -288,20 +392,20 @@
 
 <!-- ANNOUNCEMENT -->
 <div class="announce">
-  <span>New: Private AI agents for SMEs, running on infrastructure you own.</span>
-  <a href="#solution">Learn more</a>
+  <span>New: we now set up AI systems inside companies. See a real client setup.</span>
+  <a href="#setup">Take a look</a>
   <span class="close" aria-label="Close">×</span>
 </div>
 
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="LaunchBrick home"><img src="images/logo.svg" alt="LaunchBrick — custom business software agency"/></a>
+    <a href="/" class="nav-logo" aria-label="LaunchBrick home"><img src="images/logo.svg" alt="LaunchBrick, AI consulting"/></a>
     <div class="nav-menu">
-      <a href="#solution">Custom software</a>
-      <a href="#solution">Private AI</a>
+      <a href="#setup">The setup</a>
+      <a href="#system">What we install</a>
       <a href="#how">How it works</a>
-      <a href="#case">Case studies</a>
+      <a href="#case">Case study</a>
       <a href="/learn-ai-bali/">Learn AI in Bali</a>
       <a href="#faq">FAQ</a>
     </div>
@@ -314,59 +418,124 @@
 
 <!-- HERO -->
 <section class="hero" data-screen-label="01 Hero">
+  <div class="hero-waves" id="heroWaves" aria-hidden="true"></div>
   <div class="wrap">
-    <h1 class="display">Custom AI software,<br/>built for your business.</h1>
-    <p class="lede">LaunchBrick is a software agency for SMEs. We build custom business software with private AI agents, replacing your stack of SaaS subscriptions with one app you own. Delivered in weeks, not months.</p>
+    <h1 class="display">Your AI team,<br/>set up and running.</h1>
+    <p class="lede">LaunchBrick is hands-on AI consulting for founders and small teams. We map where your hours go, then install a working AI system on hardware you own: a lead agent that delegates, workers that ship, and a memory that never forgets. Then we teach your team to run it.</p>
     <div class="hero-actions">
       <a href="https://cal.com/lightningrails/launchbrick-chat" target="_blank" rel="noopener" class="btn btn-primary">Book a discovery call</a>
-      <a href="#how" class="btn btn-secondary">How it works →</a>
+      <a href="#system" class="btn btn-secondary">See what we install →</a>
     </div>
     <div class="hero-social">
       <div class="avatars">
-        <img src="images/cristina.png" alt="Cristina, LaunchBrick customer"/>
-        <img src="images/carlota.png" alt="Carlota Porta, LaunchBrick customer"/>
-        <img src="images/adriana.png" alt="Adriana Romero, LaunchBrick customer"/>
+        <img src="images/cristina.png" alt="Cristina, LaunchBrick client"/>
+        <img src="images/carlota.png" alt="Carlota Porta, LaunchBrick client"/>
+        <img src="images/adriana.png" alt="Adriana Romero, LaunchBrick client"/>
       </div>
-      <span class="copy">50+ apps shipped for founders, SMEs, and operators.</span>
+      <span class="copy">50+ apps shipped. Now we set up the AI that builds them.</span>
     </div>
   </div>
-  <div class="hero-media">
-    <div class="card photo-card" role="img" aria-label="Small business owner running their custom software"></div>
-    <div class="console-card">
-      <div>
-        <div class="console-head">
-          <span><span class="console-dot"></span>agent.live</span>
-          <span class="mono" style="font-size:11px">v1.4.0</span>
-        </div>
-        <div class="console-body">
-          <div class="console-msg user">Forecast next month's stock for top 20 SKUs.</div>
-          <div class="console-msg">Drafted forecast based on 90 days of order data and supplier lead times. 3 SKUs flagged for early reorder. Shall I send the draft PO to your supplier portal?</div>
-        </div>
-        <div class="console-chips">
-          <span class="console-chip">forecasting</span>
-          <span class="console-chip">private</span>
-          <span class="console-chip">your data</span>
-        </div>
+
+  <div class="hero-media" id="setup">
+    <div class="setup">
+      <div class="setup-head">
+        <span class="setup-eyebrow">A real client setup</span>
+        <span class="setup-eyebrow">Sketched with the client, rebuilt here</span>
       </div>
-      <div class="console-foot">
-        <span>Running on your private infrastructure</span>
+      <h3 class="setup-title">One lead agent. <em>A team of workers.</em> A memory that never forgets.</h3>
+      <p class="setup-sub">The founder briefs one agent from their phone. It splits the work, checks every result, and saves everything it learns. All of it runs on a Mac mini in their office.</p>
+
+      <div class="lb-stage" id="lbStage" role="img" aria-label="Diagram: a founder sends a request from the Claude Code app to a lead agent on a Mac mini. The lead agent follows a rulebook, assigns tasks to workers in separate worktrees, and logs everything to long-term memory. Workers also write to memory through a hook.">
+        <svg class="lb-wires" id="lbWires" aria-hidden="true"></svg>
+
+        <div class="lb-top">
+          <div class="lb-you" data-a="you">
+            <div class="lb-you-id">
+              <span class="lb-avatar">You</span>
+              <div><div class="lb-name">Founder</div><div class="lb-meta lb-mono">Brief from anywhere</div></div>
+            </div>
+            <div class="lb-msg">"Work on the home page. Then the sign-in, and when it's ready, show me a recording of the flow."</div>
+          </div>
+          <div class="lb-devices" data-a="devices">
+            <div class="lb-devices-row"><span class="lb-phone"></span><span class="lb-laptop"></span></div>
+            <span class="lb-tag lb-mono">Claude Code app</span>
+          </div>
+        </div>
+
+        <div class="lb-box" data-a="box">
+          <span class="lb-box-lbl lb-mono">Mac mini · your Claude subscription</span>
+
+          <div class="lb-lead" data-a="lead">
+            <div class="lb-glyph">✳</div>
+            <div class="lb-lead-name">Jarvis</div>
+            <div class="lb-mono">Lead agent · Fable 5.1</div>
+          </div>
+
+          <div class="lb-rules lb-file" data-a="rules">
+            <div class="lb-file-top"><i></i><i></i><i></i><span>lead-dev.md</span></div>
+            <ol>
+              <li>Pick the best model per task</li>
+              <li>Verify and roast every result</li>
+              <li>Scan for vulnerabilities</li>
+              <li>One worktree per worker</li>
+              <li>Queue tasks, 10 at a time</li>
+              <li>Every user story is a test</li>
+              <li>Every PR runs through CI</li>
+            </ol>
+          </div>
+
+          <div class="lb-workers">
+            <div class="lb-worker" data-a="w1">
+              <div class="lb-worker-top"><span class="lb-worker-name">Worker 1</span><span class="lb-status"></span></div>
+              <span class="lb-mono">worktree/home-page</span>
+              <div class="lb-chips"><span class="lb-chip ok">tests ✓</span><span class="lb-chip ok">CI ✓</span></div>
+            </div>
+            <div class="lb-worker" data-a="w2">
+              <div class="lb-worker-top"><span class="lb-worker-name">Worker 2</span><span class="lb-status busy"></span></div>
+              <span class="lb-mono">worktree/sign-in</span>
+              <div class="lb-chips"><span class="lb-chip">recording flow…</span></div>
+            </div>
+            <div class="lb-worker ghost" data-a="w3">
+              <div class="lb-worker-top"><span class="lb-worker-name">Worker n</span></div>
+              <span class="lb-mono">queue · up to 10</span>
+              <div class="lb-chips"><span class="lb-chip">waiting</span></div>
+            </div>
+          </div>
+
+          <div class="lb-mem" data-a="mem">
+            <span class="lb-mem-lbl lb-mono">Long-term memory</span>
+            <ul>
+              <li><b>✳</b>Every Claude session</li>
+              <li><b>@</b>Every email</li>
+              <li><b>◎</b>Every meeting transcript (Granola)</li>
+            </ul>
+            <div class="lb-log">
+              <div><span>10:42</span> decision: sign-in ships behind a flag</div>
+              <div><span>09:15</span> email: client wants a bolder logo</div>
+              <div><span>Mon</span> transcript: weekly planning call</div>
+            </div>
+          </div>
+        </div>
+
+        <span class="lb-tag lb-mono" id="lbHook" hidden>hook</span>
+        <span class="lb-tag lb-mono" id="lbAssign" hidden>assign</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TRUST -->
-<section class="trust" aria-label="Customers and projects">
+<section class="trust" aria-label="Clients and projects">
   <div class="wrap">
-    <div class="label">Custom software shipped for operators across ecommerce, ops-heavy SMEs, and service businesses.</div>
+    <div class="label">Before consulting, we built software for operators across ecommerce, services, and ops-heavy SMEs.</div>
     <div class="logos">
-      <img src="images/olicai-logo.png" alt="Olicai — AI platform for smart bakeries"/>
-      <img src="images/avenist-logo.png" alt="Avenist — real estate CRM in Barcelona"/>
-      <img src="images/conqueredself-logo.svg" alt="ConqueredSelf — game-based recovery platform"/>
-      <img src="images/mariaba-logo.svg" alt="MariaBA — unlimited design subscription"/>
-      <img src="images/tariffs-logo.png" alt="TariffsAPI — AI-sourced tariff data"/>
-      <img src="images/papaya-logo.png" alt="Papaya — domain ranking Chrome extension"/>
-      <img src="images/thc-logo.png" alt="THC — healthy food delivery ERP"/>
+      <img src="images/olicai-logo.png" alt="Olicai, AI platform for smart bakeries"/>
+      <img src="images/avenist-logo.png" alt="Avenist, real estate CRM in Barcelona"/>
+      <img src="images/conqueredself-logo.svg" alt="ConqueredSelf, game-based recovery platform"/>
+      <img src="images/mariaba-logo.svg" alt="MariaBA, unlimited design subscription"/>
+      <img src="images/tariffs-logo.png" alt="TariffsAPI, AI-sourced tariff data"/>
+      <img src="images/papaya-logo.png" alt="Papaya, domain ranking Chrome extension"/>
+      <img src="images/thc-logo.png" alt="THC, healthy food delivery ERP"/>
       <span class="logo-label">+ 50 more</span>
     </div>
   </div>
@@ -376,48 +545,57 @@
 <section class="block" id="problem" data-screen-label="02 Problem">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">01 — The problem</span>
-      <h2>Your business runs on ten different SaaS subscriptions.</h2>
-      <p class="lede">Most SMEs pay 5–15 different SaaS vendors every month. Each one solves a slice of the problem, none of them talk to each other, and your customer data is scattered across servers you don't control.</p>
+      <span class="mono">01 · The problem</span>
+      <h2>Everyone pays for AI. Almost nobody has it working.</h2>
+      <p class="lede">Your team has ChatGPT tabs, a Claude seat, maybe a Copilot license. Everyone uses them differently, nothing is connected, and every conversation starts from zero.</p>
     </div>
 
     <div class="problem-grid">
-      <div class="problem-photo reveal" role="img" aria-label="Cluttered desk representing scattered SaaS tools"></div>
+      <div class="problem-photo reveal" role="img" aria-label="Cluttered desk representing scattered AI tools"></div>
       <div class="pain-list reveal">
-        <div class="pain"><div class="num">01</div><div class="txt">Payroll lives in one tool, support tickets in another, your customer data in a third — none of it adds up.</div></div>
-        <div class="pain"><div class="num">02</div><div class="txt">Every workflow needs an integration, a Zapier, a webhook, a duct-tape patch that breaks at 2am.</div></div>
-        <div class="pain"><div class="num">03</div><div class="txt">Your customer data is sitting on servers you don't control, exposed to LLMs you didn't choose.</div></div>
-        <div class="pain"><div class="num">04</div><div class="txt">Costs creep silently — $30 here, $200 there — until your stack costs more than a junior hire.</div></div>
-        <div class="pain"><div class="num">05</div><div class="txt">Nothing fits your business. You contort your process around the software, not the other way around.</div></div>
+        <div class="pain"><div class="num">01</div><div class="txt">Every chat starts from scratch. The AI never remembers last week's meeting, the client email, or what you decided on Tuesday.</div></div>
+        <div class="pain"><div class="num">02</div><div class="txt">Nobody checks the output. One confident wrong answer and the team stops trusting the tool.</div></div>
+        <div class="pain"><div class="num">03</div><div class="txt">One person in the company gets AI. Everyone else copies prompts from LinkedIn.</div></div>
+        <div class="pain"><div class="num">04</div><div class="txt">Pilots never leave the pilot. You bought the tools, watched the demos, and nothing changed in how the work gets done.</div></div>
+        <div class="pain"><div class="num">05</div><div class="txt">Company data gets pasted into whatever tool is open, with no idea where it ends up.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOLUTION + PILLARS -->
-<section class="block" id="solution" data-screen-label="03 Solution">
+<!-- SYSTEM -->
+<section class="block" id="system" data-screen-label="03 System">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">02 — The solution</span>
-      <h2>One custom app, built around your workflow.</h2>
-      <p class="lede">We design and build a single, custom business software application that replaces your patchwork of SaaS tools — CRM, ops, support, data, AI agents — running on your private infrastructure.</p>
+      <span class="mono">02 · What we install</span>
+      <h2>Four parts. One system that does the work.</h2>
+      <p class="lede">This is the setup from the diagram above. That client runs a product team, but the same pattern works for support, ops, sales, and content. We adapt the rules, the bones stay the same.</p>
     </div>
 
-    <div class="pillars">
+    <div class="pillars four">
       <div class="pillar reveal">
-        <h3>Custom software development, fast</h3>
-        <p>We've built 50+ web apps. Our optimised stack and AI-assisted workflow ship production software in weeks, not the six-month enterprise crawl.</p>
-        <div class="check-list"><ul><li>CRM, payroll, ops</li><li>Internal tools</li><li>Customer-facing apps</li></ul></div>
+        <span class="step-tag">01 · Lead agent</span>
+        <h3>One agent you talk to</h3>
+        <p>You give it a goal in plain English, from your phone or laptop. It breaks the work down, picks the right model for each task, and hands it out.</p>
+        <div class="check-list"><ul><li>Brief it from anywhere</li><li>Best model per task</li><li>Queues up to 10 tasks</li></ul></div>
       </div>
       <div class="pillar reveal">
-        <h3>Private AI agents, built in</h3>
-        <p>AI for small business that knows your business — agents trained on your data, running on infrastructure you own. No third-party LLMs reading your customer records.</p>
-        <div class="check-list"><ul><li>Private by default</li><li>Auditable workflows</li><li>Yours to extend</li></ul></div>
+        <span class="step-tag">02 · Workers</span>
+        <h3>A team that runs in parallel</h3>
+        <p>Each worker gets one task and its own isolated workspace, so nobody steps on anybody's work. They keep going while you do something else.</p>
+        <div class="check-list"><ul><li>Own worktree each</li><li>Parallel by default</li><li>Report back when done</li></ul></div>
       </div>
       <div class="pillar reveal">
-        <h3>Owned infrastructure</h3>
-        <p>We host everything on private servers, in your name. No vendor lock-in, no subscription that doubles in price next year. You own the code and the keys.</p>
-        <div class="check-list"><ul><li>No lock-in</li><li>Your data, your servers</li><li>Source code yours</li></ul></div>
+        <span class="step-tag">03 · Guardrails</span>
+        <h3>Nothing ships unchecked</h3>
+        <p>The lead agent reviews every result before you see it. It scans for security holes, turns every user story into a test, and runs every change through CI.</p>
+        <div class="check-list"><ul><li>Every output verified</li><li>Security scans</li><li>Tests and CI on every PR</li></ul></div>
+      </div>
+      <div class="pillar reveal">
+        <span class="step-tag">04 · Memory</span>
+        <h3>It remembers everything</h3>
+        <p>Every session, email, and meeting transcript gets saved automatically. Your AI knows what was decided last month, and so does the next person you hire.</p>
+        <div class="check-list"><ul><li>Claude sessions</li><li>Email</li><li>Meeting notes (Granola)</li></ul></div>
       </div>
     </div>
   </div>
@@ -427,16 +605,16 @@
 <section class="block" id="how" data-screen-label="04 How it works" style="padding-top:0">
   <div class="how-band">
     <div class="section-head">
-      <span class="mono">03 — How it works</span>
-      <h2>From first call to shipped, in weeks.</h2>
-      <p class="lede">A four-step process built around delivery, not deliverables. You get something working as fast as possible, then we keep adding to it.</p>
+      <span class="mono">03 · How it works</span>
+      <h2>From first call to a system your team runs.</h2>
+      <p class="lede">Hands-on from day one. We build it with you, in your accounts, so nothing leaves when we do.</p>
     </div>
 
     <div class="timeline">
-      <div class="step"><div class="step-num">Week 01 · Discovery</div><h3>We learn your business.</h3><p>Two sessions. We map your workflow, the SaaS tools you're paying for, and the bottlenecks costing you hours every week. You get a written scope, no obligation.</p></div>
-      <div class="step"><div class="step-num">Week 02–06 · Build</div><h3>Custom app, delivered.</h3><p>We design, build, and iterate alongside you. Weekly demos, real software you can click. No mockups-as-deliverables, no theatre.</p></div>
-      <div class="step"><div class="step-num">Week 06–08 · Launch</div><h3>Live on your infra.</h3><p>We deploy to your private servers, migrate your data, train your team. The day you go live, you own the code, the database, and the keys.</p></div>
-      <div class="step"><div class="step-num">Ongoing · Grow</div><h3>Add features and AI agents.</h3><p>Need a new module? A private AI agent for support? Another integration? We stay on as your team, adding what you need as the business grows.</p></div>
+      <div class="step"><div class="step-num">Step 01 · Audit</div><h3>We map where the hours go.</h3><p>We sit with you and the people doing the work. We find the workflows where AI saves real time, and the ones where it shouldn't touch anything.</p></div>
+      <div class="step"><div class="step-num">Step 02 · Setup</div><h3>We install the system.</h3><p>Hardware, subscriptions, lead agent, workers, memory, hooks. All in your accounts, on a machine you own, with rules written for how your company works.</p></div>
+      <div class="step"><div class="step-num">Step 03 · Training</div><h3>Your team learns to run it.</h3><p>We work next to your team on real tasks until they can brief the lead agent, review its work, and fix it when it's wrong.</p></div>
+      <div class="step"><div class="step-num">Ongoing · Advisory</div><h3>We stay on call.</h3><p>Models change every few months. We keep your setup current, add new workflows, and step in when something breaks.</p></div>
     </div>
   </div>
 </section>
@@ -445,18 +623,18 @@
 <section class="block" id="why" data-screen-label="05 Why">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">04 — Why LaunchBrick</span>
-      <h2>Six reasons SMEs pick our software agency.</h2>
-      <p class="lede">We're a small studio with a strong opinion about how custom software should be built — fast, private, and owned by the people who paid for it.</p>
+      <span class="mono">04 · Why LaunchBrick</span>
+      <h2>Consultants who still ship.</h2>
+      <p class="lede">Most AI consultants hand you a strategy deck. We've built 50+ apps, and we run our own studio on the same setup we install for you.</p>
     </div>
 
     <div class="why-grid">
-      <div class="why-cell reveal"><span class="num">01 — Speed</span><h3>Weeks, not months.</h3><p>Our optimised stack and AI-assisted workflow ship working software fast. First demo by week two, live by week eight.</p></div>
-      <div class="why-cell reveal"><span class="num">02 — Privacy</span><h3>Your data, your servers.</h3><p>Hosted on our private infrastructure under your name. No third-party LLMs in the loop, no SaaS vendor scraping your records.</p></div>
-      <div class="why-cell reveal"><span class="num">03 — Ownership</span><h3>You own the code.</h3><p>Source code, database, deployment keys — yours from day one. Walk away whenever. No lock-in clauses, ever.</p></div>
-      <div class="why-cell reveal"><span class="num">04 — Integrated AI</span><h3>Private AI agents built in.</h3><p>AI agents for support, data enrichment, and ops — designed into the product, not duct-taped over it.</p></div>
-      <div class="why-cell reveal"><span class="num">05 — Scalable</span><h3>Start small, grow with you.</h3><p>Ship one workflow, prove the value, add the next. We stay on as your team — no agency-handoff cliff.</p></div>
-      <div class="why-cell reveal"><span class="num">06 — One bill</span><h3>Replace SaaS subscriptions.</h3><p>Replace 5–15 vendors with one app and one invoice. Most clients save 40–70% on software in the first year.</p></div>
+      <div class="why-cell reveal"><span class="num">01 · Builders</span><h3>We use it every day.</h3><p>This isn't theory. The system we install is the one we build our own products with.</p></div>
+      <div class="why-cell reveal"><span class="num">02 · Ownership</span><h3>Your machine, your accounts.</h3><p>Everything runs on hardware you own, under subscriptions in your name. No new SaaS, no middleman.</p></div>
+      <div class="why-cell reveal"><span class="num">03 · Safety</span><h3>Nothing ships unchecked.</h3><p>Every output is verified, scanned, and tested before it reaches you or your customers.</p></div>
+      <div class="why-cell reveal"><span class="num">04 · Memory</span><h3>It gets better every week.</h3><p>Emails, meetings, and sessions pile up into context your AI actually uses. Day 90 beats day one by a mile.</p></div>
+      <div class="why-cell reveal"><span class="num">05 · Model choice</span><h3>The right model per task.</h3><p>Big models for hard calls, fast cheap ones for grunt work. When a better model ships, we swap it in.</p></div>
+      <div class="why-cell reveal"><span class="num">06 · Handover</span><h3>Your team runs it, not us.</h3><p>We train your people until they don't need us. Advisory is optional, never a lock-in.</p></div>
     </div>
   </div>
 </section>
@@ -465,21 +643,38 @@
 <section class="block" id="case" data-screen-label="06 Case study">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">05 — In the wild</span>
-      <h2>Built for real operators.</h2>
+      <span class="mono">05 · In the wild</span>
+      <h2>A product team on one Mac mini.</h2>
     </div>
     <div class="case-card reveal">
-      <div class="case-illo">
-        <span class="pulse-chip"><span class="pulse"></span> Coming soon</span>
+      <div class="console-card">
+        <div>
+          <div class="console-head">
+            <span><span class="console-dot"></span>jarvis.live</span>
+            <span class="mono" style="font-size:11px;color:#93939f">from phone</span>
+          </div>
+          <div class="console-body">
+            <div class="console-msg user">Work on the sign-in. When it's ready, show me a recording of the flow.</div>
+            <div class="console-msg">Done. Split into three tasks across two workers. Tests passing, CI green, security scan clean. Recording of the full sign-in flow attached.</div>
+          </div>
+          <div class="console-chips">
+            <span class="console-chip">verified</span>
+            <span class="console-chip">ci green</span>
+            <span class="console-chip">saved to memory</span>
+          </div>
+        </div>
+        <div class="console-foot">
+          <span>Running on the client's Mac mini</span>
+        </div>
       </div>
       <div class="case-content">
-        <span class="mono">Case study · Q2 2026</span>
-        <h3>How we replaced four SaaS tools with one custom app for a regional inventory operator.</h3>
-        <p>Stock, ordering, supplier comms, and a private AI agent for forecasting — consolidated into one application running on their own servers. Full case study landing soon.</p>
+        <span class="mono">Client setup · 2026</span>
+        <h3>A founder who wanted a product team, without hiring one.</h3>
+        <p>We sat down together, sketched the system on a whiteboard, and set it up on a Mac mini running their own Claude subscription. Now they brief the lead agent from their phone. It splits the work across workers, checks everything against the rulebook, and logs every decision to memory.</p>
         <div class="case-stats">
-          <div><span class="v">4 → 1</span><span class="k">Tools replaced</span></div>
-          <div><span class="v">7 wks</span><span class="k">To launch</span></div>
-          <div><span class="v">62%</span><span class="k">Software cost cut</span></div>
+          <div><span class="v">1</span><span class="k">Mac mini</span></div>
+          <div><span class="v">10</span><span class="k">Tasks in flight</span></div>
+          <div><span class="v">0</span><span class="k">New SaaS tools</span></div>
         </div>
       </div>
     </div>
@@ -490,12 +685,24 @@
 <section class="block" id="testimonials" data-screen-label="07 Testimonials">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">06 — Wall of love</span>
-      <h2>Founders we've shipped for.</h2>
-      <p class="lede">Real customers, real software in production. Here's what they have to say about working with our software agency.</p>
+      <span class="mono">06 · Wall of love</span>
+      <h2>People we've worked with.</h2>
+      <p class="lede">From AI setups to products and brands. Here's what founders say about working with us.</p>
     </div>
     <div class="testimonials-grid">
+      <div class="testimonial featured reveal">
+        <span class="stars" aria-label="Five stars">★★★★★</span>
+        <p class="quote">"You listened to the need first, drew the architecture, then followed a clear line of advice on how you apply your own setup. Very, very clear. I had been researching intensively for four days and didn't want to buy a course, I was looking for one-to-one. You clearly master this. I'm satisfied. Five stars."</p>
+        <div class="who">
+          <img src="images/hady.jpg" alt="Hady Hobeich, co-founder of BuyLive"/>
+          <div>
+            <div class="name">Hady Hobeich</div>
+            <div class="role">Co-founder · <a href="https://buylive.com" target="_blank" rel="noopener">buylive.com</a></div>
+          </div>
+        </div>
+      </div>
       <div class="testimonial reveal">
+        <span class="stars" aria-label="Five stars">★★★★★</span>
         <p class="quote">"Daniel helped us create a new brand and website, making everything easy, fast, and effective. He guided us at all times, helping us make decisions and find solutions. For the next project, I won't hesitate to call him — a great professional."</p>
         <div class="who">
           <img src="images/cristina.png" alt="Cristina, Sociedad Española de Medicina"/>
@@ -506,6 +713,7 @@
         </div>
       </div>
       <div class="testimonial reveal">
+        <span class="stars" aria-label="Five stars">★★★★★</span>
         <p class="quote">"Daniel is an excellent professional with a lot of initiative and great ability to manage teams. Always attentive and available to find the best solution for each client. We've worked together on several projects and it's always a pleasure. I recommend him 1000%."</p>
         <div class="who">
           <img src="images/carlota.png" alt="Carlota Porta, Kaori Media Consulting"/>
@@ -516,6 +724,7 @@
         </div>
       </div>
       <div class="testimonial reveal">
+        <span class="stars" aria-label="Five stars">★★★★★</span>
         <p class="quote">"Daniel is the creator behind the new design of our app. He successfully captured and translated our vision into a clean, engaging, dynamic MVP. I'd absolutely recommend him to any SME or solopreneur looking to bring a product idea to life."</p>
         <div class="who">
           <img src="images/adriana.png" alt="Adriana Romero, Equinox Urban Housing"/>
@@ -533,16 +742,16 @@
 <section class="block" id="faq" data-screen-label="08 FAQ">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="mono">07 — Questions</span>
+      <span class="mono">07 · Questions</span>
       <h2>The things you're probably thinking.</h2>
     </div>
     <div class="faq-list">
-      <details class="faq-item"><summary class="faq-q"><div class="q-text">How fast can you really deliver custom business software?</div><div class="q-icon">+</div></summary><div class="faq-a">Most projects ship a working v1 in 4–8 weeks. Our edge isn't magic — it's a focused stack we've shipped 50+ times, an AI-assisted build pipeline, and a refusal to spend three months on slide decks. We'll tell you on the discovery call exactly what we can hit.</div></details>
-      <details class="faq-item"><summary class="faq-q"><div class="q-text">What about data privacy and private AI agents?</div><div class="q-icon">+</div></summary><div class="faq-a">Everything runs on private infrastructure under your business's name. Your customer data is never sent to OpenAI, Anthropic, or any third-party LLM you didn't explicitly approve. Private AI agents run locally on the same servers as your app — auditable, replaceable, and yours.</div></details>
-      <details class="faq-item"><summary class="faq-q"><div class="q-text">Can you handle my specific industry?</div><div class="q-icon">+</div></summary><div class="faq-a">We've built for ecommerce, agencies, professional services, marketplaces, fintech wallets, and operations-heavy SMEs. Custom software development is industry-agnostic by definition — the question is whether your workflow is well enough understood to encode it. That's what discovery is for.</div></details>
-      <details class="faq-item"><summary class="faq-q"><div class="q-text">Do I actually own the code?</div><div class="q-icon">+</div></summary><div class="faq-a">Yes — fully. Source code, database, deployment keys, infrastructure access. From the day we ship, you can walk away, hire another team, or run it yourself. No usage fees, no per-seat charges, no lock-in. Spelt out in plain English in our contract.</div></details>
-      <details class="faq-item"><summary class="faq-q"><div class="q-text">What does it cost?</div><div class="q-icon">+</div></summary><div class="faq-a">Project-based, scoped after the discovery call. Most v1 builds land between $15k and $60k depending on scope, with optional ongoing support. We'll give you a fixed quote before you commit — no time-and-materials surprises.</div></details>
-      <details class="faq-item"><summary class="faq-q"><div class="q-text">What if I just need part of my SaaS stack rebuilt?</div><div class="q-icon">+</div></summary><div class="faq-a">That's how most projects start. Pick the workflow that hurts most — payroll, support, ordering — we replace that first. Once it's live and you trust the process, we keep going and replace the next subscription.</div></details>
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">Do I need to be technical?</div><div class="q-icon">+</div></summary><div class="faq-a">No. You need to know your business. We handle the setup and train you to brief the lead agent in plain English. If you can write a clear brief for a new hire, you can run this.</div></details>
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">What hardware and subscriptions do I need?</div><div class="q-icon">+</div></summary><div class="faq-a">Usually one Mac mini and an AI subscription in your company's name, like Claude. We'll tell you exactly what to buy on the first call. You never pay us a software license.</div></details>
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">Is my data safe?</div><div class="q-icon">+</div></summary><div class="faq-a">The system runs on a machine you own, under accounts you control. We set up who can access what, and the lead agent scans every change for vulnerabilities before it ships. Nothing sits on our servers.</div></details>
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">We're not a software company. Is this for us?</div><div class="q-icon">+</div></summary><div class="faq-a">Yes. The example on this page runs a product team, but the same pattern works for support, ops, sales, and content. A lead agent, workers, guardrails, and memory fit any team with repeatable work.</div></details>
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">What does it cost?</div><div class="q-icon">+</div></summary><div class="faq-a">A fixed price for the audit and setup, scoped after the first call. Advisory after that is optional and monthly. You'll know the full number before you commit.</div></details>
+      <details class="faq-item"><summary class="faq-q"><div class="q-text">Do you still build custom software?</div><div class="q-icon">+</div></summary><div class="faq-a">Yes. If the audit shows you need a custom app, we can build it. Most clients find they need less software once their AI is set up properly.</div></details>
     </div>
   </div>
 </section>
@@ -551,9 +760,9 @@
 <section class="block" id="contact" data-screen-label="09 Contact" style="padding-top:0">
   <div class="contact-band" style="grid-template-columns:1fr;text-align:center;justify-items:center">
     <div style="max-width:680px">
-      <span class="mono" style="color:rgba(255,255,255,.7)">08 — Let's talk</span>
-      <h2 style="margin-top:24px">Let's see if your stack is worth replacing.</h2>
-      <p style="margin-left:auto;margin-right:auto">30-minute discovery call. No slides. No obligation. We'll tell you whether custom software development is the right move — even if the answer is no.</p>
+      <span class="mono" style="color:rgba(255,255,255,.7)">08 · Let's talk</span>
+      <h2 style="margin-top:24px">Let's find where AI fits in your company.</h2>
+      <p style="margin-left:auto;margin-right:auto">30-minute call. No slides. We'll look at how your team works and tell you what's worth handing to AI, even if the answer is "not much yet."</p>
       <a href="https://cal.com/lightningrails/launchbrick-chat" target="_blank" rel="noopener" class="btn btn-primary">Book a discovery call</a>
     </div>
   </div>
@@ -565,7 +774,7 @@
     <div class="foot-newsletter">
       <div class="left">
         <span class="label">AI moves fast</span>
-        <h3>Get our quarterly note on building software in the AI era.</h3>
+        <h3>Get our quarterly note on running a company with AI.</h3>
       </div>
       <div class="right">
         <input type="email" placeholder="your@email.com"/>
@@ -576,14 +785,14 @@
     <div class="foot-grid">
       <div class="foot-col foot-brand">
         <a href="/" aria-label="LaunchBrick home"><img src="images/logo.svg" alt="LaunchBrick logo" style="height:32px;width:auto;display:block;filter:brightness(0) invert(1)"/></a>
-        <p>Custom AI-powered business software for SMEs. Built fast, hosted privately, owned by you. Replace your SaaS subscriptions with one app.</p>
+        <p>Hands-on AI consulting for founders and small teams. We set up the system, train your team, and stay on call.</p>
       </div>
       <div class="foot-col">
-        <h4>Product</h4>
-        <a href="#solution">Custom software</a>
-        <a href="#solution">Private AI agents</a>
+        <h4>Services</h4>
+        <a href="#setup">The setup</a>
+        <a href="#system">What we install</a>
         <a href="#how">How it works</a>
-        <a href="#case">Case studies</a>
+        <a href="#case">Case study</a>
         <a href="#testimonials">Testimonials</a>
         <a href="/learn-ai-bali/">Learn AI in Bali</a>
       </div>
@@ -605,7 +814,7 @@
     </div>
     <div class="foot-bottom">
       <div>© 2026 LaunchBrick · Bali · Singapore</div>
-      <div>Custom software · Private AI · Owned by you</div>
+      <div>AI consulting · Setup · Training</div>
     </div>
   </div>
 </footer>
@@ -619,6 +828,187 @@
   document.querySelector('.announce .close')?.addEventListener('click', (e)=>{
     e.target.closest('.announce').style.display='none';
   });
+
+  // Hero background: Gradient Waves shader (port of reactbits.dev/backgrounds/gradient-waves, no ogl).
+  (() => {
+    const box = document.getElementById('heroWaves');
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl2', { alpha: true, premultipliedAlpha: true, antialias: false });
+    if (!box || !gl) return;
+    box.appendChild(canvas);
+
+    const vert = `#version 300 es
+in vec2 position;
+void main(){ gl_Position = vec4(position, 0.0, 1.0); }`;
+    const frag = `#version 300 es
+precision highp float;
+uniform vec2 iResolution;
+uniform float iTime;
+uniform vec2 uMouse;
+uniform vec3 uHorizonColor;
+uniform vec3 uWaveColor;
+uniform vec3 uCrestColor;
+out vec4 fragColor;
+const float uSpeed = 0.4, uAmplitude = 2.5, uWaveScale = 0.6, uWaveRatio = 0.9, uSwell = 35.0,
+  uTurbulence = 20.0, uTilt = 1.11, uZoom = 1.0, uHeight = 5.5, uFogDepth = 15.0, uSteps = 70.0,
+  uGrainIntensity = 0.05, uParallax = 0.5, MAX_DIST = 20000.0;
+
+float hash21(vec2 p){ vec3 p3 = fract(vec3(p.xyx) * 0.1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }
+float plasma(vec3 r, vec2 freq, vec4 tc){
+  float mx = r.x + tc.x; mx += uSwell * sin((r.y + mx) / 20.0 + tc.y);
+  float my = r.y - tc.z; my += uTurbulence * cos(r.x / 23.0 + tc.w);
+  return r.z - (sin(mx * freq.x) * uAmplitude + sin(my * freq.y) * uAmplitude + uHeight);
+}
+float raymarch(vec3 pos, vec3 dir, vec2 freq, vec4 tc){
+  float dist = 0.0;
+  for (int i = 0; i < 128; i++) {
+    if (float(i) >= uSteps) break;
+    float d = plasma(pos + dist * dir, freq, tc);
+    if (abs(d) < 0.1) break;
+    dist += 0.9 * d;
+    if (!(abs(dist) < MAX_DIST)) return MAX_DIST;
+  }
+  return dist;
+}
+void main(){
+  float T = iTime * uSpeed;
+  vec2 freq = vec2(uWaveScale / 7.0, (uWaveScale * uWaveRatio) / 3.0);
+  vec4 tc = vec4(T / 0.130, T / 0.810, T / 0.200, T / 0.710);
+  float c, s;
+  float vfov = (3.14159 / 2.3) / uZoom;
+  vec3 cam = vec3(0.0, 0.0, 30.0);
+  vec2 uv = (gl_FragCoord.xy / iResolution.xy) - 0.5;
+  uv.x *= iResolution.x / iResolution.y; uv.y *= -1.0;
+  vec3 dir = vec3(0.0, 0.0, -1.0);
+  float ulen = length(uv);
+  float xrot = vfov * ulen; c = cos(xrot); s = sin(xrot);
+  dir = mat3(1.0, 0.0, 0.0, 0.0, c, -s, 0.0, s, c) * dir;
+  vec2 nuv = ulen > 1e-5 ? uv / ulen : vec2(1.0, 0.0); c = nuv.x; s = nuv.y;
+  dir = mat3(c, -s, 0.0, s, c, 0.0, 0.0, 0.0, 1.0) * dir;
+  c = cos(uTilt); s = sin(uTilt);
+  dir = mat3(c, 0.0, s, 0.0, 1.0, 0.0, -s, 0.0, c) * dir;
+  float yaw = (uMouse.x - 0.5) * uParallax * 0.4, pitch = (uMouse.y - 0.5) * uParallax * 0.4;
+  c = cos(yaw); s = sin(yaw); dir = mat3(c, 0.0, s, 0.0, 1.0, 0.0, -s, 0.0, c) * dir;
+  c = cos(pitch); s = sin(pitch); dir = mat3(1.0, 0.0, 0.0, 0.0, c, -s, 0.0, s, c) * dir;
+  float dist = raymarch(cam, dir, freq, tc);
+  vec3 pos = cam + dist * dir;
+  float t = clamp(uFogDepth / max(dist, 0.001), 0.0, 1.0);
+  vec3 body = mix(uWaveColor, uCrestColor, clamp(pos.z * 0.08 + 0.5, 0.0, 1.0));
+  vec3 col = clamp(mix(uHorizonColor, body, t), 0.0, 1.0);
+  float alpha = t + (hash21(gl_FragCoord.xy + mod(iTime, 64.0) * 11.0) - 0.5) * uGrainIntensity;
+  alpha = clamp(alpha, 0.0, 1.0);
+  fragColor = vec4(col * alpha, alpha);
+}`;
+    const compile = (type, src) => { const sh = gl.createShader(type); gl.shaderSource(sh, src); gl.compileShader(sh); return sh; };
+    const prog = gl.createProgram();
+    gl.attachShader(prog, compile(gl.VERTEX_SHADER, vert));
+    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, frag));
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { box.remove(); return; }
+    gl.useProgram(prog);
+
+    const buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+    const loc = gl.getAttribLocation(prog, 'position');
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+    const u = (n) => gl.getUniformLocation(prog, n);
+    const uRes = u('iResolution'), uTime = u('iTime'), uMouse = u('uMouse');
+    const rgb = (h) => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16) / 255);
+    gl.uniform3fv(u('uHorizonColor'), rgb('#ffad9b'));
+    gl.uniform3fv(u('uWaveColor'), rgb('#ff7759'));
+    gl.uniform3fv(u('uCrestColor'), rgb('#ffffff'));
+    gl.clearColor(0, 0, 0, 0);
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mouse = [0.5, 0.5], target = [0.5, 0.5];
+    const t0 = performance.now();
+    let raf = 0, onScreen = true;
+
+    const render = (t) => {
+      gl.uniform1f(uTime, (t - t0) * 0.001);
+      mouse[0] += 0.05 * (target[0] - mouse[0]);
+      mouse[1] += 0.05 * (target[1] - mouse[1]);
+      gl.uniform2f(uMouse, mouse[0], mouse[1]);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    };
+    const loop = (t) => { render(t); raf = requestAnimationFrame(loop); };
+    const start = () => { if (!still && onScreen && !document.hidden && !raf) raf = requestAnimationFrame(loop); };
+    const stop = () => { cancelAnimationFrame(raf); raf = 0; };
+
+    new ResizeObserver(() => {
+      const r = box.getBoundingClientRect();
+      canvas.width = Math.max(1, Math.floor(r.width * dpr));
+      canvas.height = Math.max(1, Math.floor(r.height * dpr));
+      gl.viewport(0, 0, canvas.width, canvas.height);
+      gl.uniform2f(uRes, canvas.width, canvas.height);
+      render(performance.now());
+    }).observe(box);
+
+    new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; onScreen ? start() : stop(); }).observe(box);
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+    box.parentElement.addEventListener('pointermove', (e) => {
+      const r = box.getBoundingClientRect();
+      target[0] = (e.clientX - r.left) / r.width;
+      target[1] = 1 - (e.clientY - r.top) / r.height;
+    });
+    box.parentElement.addEventListener('pointerleave', () => { target[0] = 0.5; target[1] = 0.5; });
+    start();
+  })();
+
+  // Setup illustration: draw wires between nodes, redrawn on resize.
+  (() => {
+    const stage = document.getElementById('lbStage');
+    const svg = document.getElementById('lbWires');
+    if (!stage || !svg) return;
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const node = (k) => stage.querySelector(`[data-a="${k}"]`);
+    const tags = { hook: document.getElementById('lbHook'), assign: document.getElementById('lbAssign') };
+
+    function draw(){
+      if (getComputedStyle(svg).display === 'none') { svg.innerHTML = ''; return; }
+      const s = stage.getBoundingClientRect();
+      const r = (k) => { const b = node(k).getBoundingClientRect(); return { l:b.left-s.left, t:b.top-s.top, r:b.right-s.left, b:b.bottom-s.top, cx:(b.left+b.right)/2-s.left, cy:(b.top+b.bottom)/2-s.top }; };
+      const you = r('you'), dev = r('devices'), box = r('box'), lead = r('lead'), mem = r('mem');
+      const w = ['w1','w2','w3'].map(r);
+      const below = Math.max(...w.map(x => x.b));
+
+      const wires = [
+        { id:'you',  d:`M ${you.cx} ${you.b} C ${you.cx} ${you.b+60}, ${lead.cx} ${lead.t-70}, ${lead.cx} ${lead.t-12}`, dot:'ink', arrow:true },
+        { id:'dev',  d:`M ${dev.cx} ${dev.b+2} L ${dev.cx} ${box.t-2}`, arrow:true },
+        { id:'w1',   d:`M ${lead.cx-20} ${lead.b+12} C ${lead.cx-20} ${lead.b+50}, ${w[0].cx} ${w[0].t-50}, ${w[0].cx} ${w[0].t-2}`, dot:'coral', arrow:true },
+        { id:'w2',   d:`M ${lead.cx+20} ${lead.b+12} C ${lead.cx+20} ${lead.b+50}, ${w[1].cx} ${w[1].t-50}, ${w[1].cx} ${w[1].t-2}`, dot:'coral', arrow:true },
+        { id:'w3',   d:`M ${lead.cx+60} ${lead.b+12} C ${lead.cx+60} ${w[2].t-30}, ${w[2].cx} ${w[2].t-70}, ${w[2].cx} ${w[2].t-2}`, cls:'dash' },
+        { id:'mem',  d:`M ${lead.r+10} ${lead.t+18} C ${lead.r+120} ${lead.t-30}, ${mem.l-120} ${mem.t-10}, ${mem.l-2} ${mem.t+40}`, dot:'green', cls:'green', arrow:true },
+        { id:'hook', d:`M ${w[0].cx} ${w[0].b+2} C ${w[0].cx+40} ${below+90}, ${mem.l-160} ${below+70}, ${mem.l-2} ${mem.b-60}`, dot:'green', cls:'green', arrow:true }
+      ];
+
+      svg.setAttribute('viewBox', `0 0 ${s.width} ${s.height}`);
+      svg.innerHTML = `<defs>
+          <marker id="lbArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10" fill="none" stroke="#93939f" stroke-width="1.6"/></marker>
+        </defs>` +
+        wires.map(x => `<path id="lbw-${x.id}" class="lb-wire ${x.cls||''}" d="${x.d}" ${x.arrow?'marker-end="url(#lbArrow)"':''}/>`).join('') +
+        (still ? '' : wires.filter(x => x.dot).map((x, i) =>
+          `<circle r="3" class="lb-dot ${x.dot}"><animateMotion dur="${3 + i*0.3}s" repeatCount="indefinite"><mpath href="#lbw-${x.id}"/></animateMotion></circle>
+           <circle r="2" class="lb-dot ${x.dot}" opacity=".5"><animateMotion dur="${3 + i*0.3}s" begin="${1.5 + i*0.15}s" repeatCount="indefinite"><mpath href="#lbw-${x.id}"/></animateMotion></circle>`
+        ).join(''));
+
+      const place = (tag, id, at) => {
+        const p = svg.querySelector(`#lbw-${id}`);
+        const pt = p.getPointAtLength(p.getTotalLength() * at);
+        tag.style.left = pt.x + 'px'; tag.style.top = pt.y + 'px'; tag.hidden = false;
+      };
+      place(tags.hook, 'hook', 0.5);
+      place(tags.assign, 'w1', 0.45);
+    }
+
+    new ResizeObserver(draw).observe(stage);
+    document.fonts?.ready.then(draw);
+  })();
 </script>
 
 </body>
