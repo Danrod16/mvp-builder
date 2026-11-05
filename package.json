@@ -1,0 +1,17 @@
+{
+  "name": "launchbrick-site",
+  "private": true,
+  "description": "Static site for launchbrick.com. Eleventy builds dist/ for Docker and GitHub Pages.",
+  "scripts": {
+    "build": "eleventy",
+    "build:pages": "eleventy && node scripts/sync-github-pages.js",
+    "start": "eleventy --serve --port 8080",
+    "test": "npm run build:pages && node tests/meta.test.js && node tests/site.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

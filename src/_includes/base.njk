@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% set summary = description | metaDescription %}
+{% set fullTitle = title | pageTitle(page.url) %}
+<title>{{ fullTitle }}</title>
+<meta name="description" content="{{ summary }}">
+<link rel="canonical" href="{{ page.url | absolute }}">
+<meta name="theme-color" content="#FAF7F2">
+{% if noindex %}
+<meta name="robots" content="noindex, follow">
+{% endif %}
+<meta property="og:type" content="{{ ogType or 'website' }}">
+<meta property="og:site_name" content="LaunchBrick">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="{{ fullTitle }}">
+<meta property="og:description" content="{{ summary }}">
+<meta property="og:url" content="{{ page.url | absolute }}">
+<meta property="og:image" content="{{ (image or '/images/og.png') | absolute }}">
+<meta property="og:image:alt" content="{{ imageAlt or 'LaunchBrick on a warm off-white background. No people are shown.' }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ fullTitle }}">
+<meta name="twitter:description" content="{{ summary }}">
+<meta name="twitter:image" content="{{ (image or '/images/og.png') | absolute }}">
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<script defer data-website-id="67f4ed3d9a49529a1019d979" data-domain="launchbrick.com" src="https://datafa.st/js/script.js"></script>
+{% if jsonld == "home" %}
+<script type="application/ld+json">{{ schema | json | safe }}</script>
+{% endif %}
+{% if articleJson %}
+<script type="application/ld+json">{{ articleJson | json | safe }}</script>
+{% endif %}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{% include "header.njk" %}
+<main id="main" tabindex="-1">
+{{ content | safe }}
+</main>
+{% include "footer.njk" %}
+<script src="/js/site.js"></script>
+<noscript>
+<style>
+@media (max-width: 799px) {
+  #site-nav { display: flex !important; position: static; }
+}
+</style>
+</noscript>
+</body>
+</html>

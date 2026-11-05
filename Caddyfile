@@ -1,0 +1,19 @@
+{
+	admin off
+	auto_https off
+	persist_config off
+}
+
+:{$PORT:8080} {
+	root * /srv
+	encode gzip
+
+	handle /health {
+		header Content-Type text/plain
+		respond "ok" 200
+	}
+
+	handle {
+		file_server
+	}
+}
