@@ -100,7 +100,24 @@ assert.match(home, /https:\/\/cal\.com\/launchbrick\/15min/);
 assert.match(home, /Book a 15-min call/);
 assert.match(home, /A 15-minute call/);
 assert.match(home, /mailto:daniel@launchbrick\.com/);
-assert.match(home, /15-minute slot/);
+const sketches = [
+  "hero.png",
+  "how-it-works.png",
+  "package-starter.png",
+  "package-team.png",
+  "package-custom.png",
+  "proof-agent-org-chart.png",
+  "final-cta-calendar.png"
+];
+for (const name of sketches) {
+  assert.ok(home.includes(`/assets/illustrations/${name}`), name);
+  assert.ok(fs.existsSync(`dist/assets/illustrations/${name}`), name);
+  assert.ok(fs.existsSync(`assets/illustrations/${name}`), name);
+}
+const sketchTags = [...home.matchAll(/<img\b[^>]*class="sketch[^"]*"[^>]*>/g)].map((match) => match[0]);
+assert.equal(sketchTags.length, 7);
+assert.equal(sketchTags.filter((tag) => tag.includes('alt=""')).length, 6);
+assert.ok(sketchTags.some((tag) => tag.includes("Sketch of one orchestrator node fanning out to many agent nodes.")));
 
 const blog = read("blog/index.html");
 assert.match(blog, /<h1>Blog<\/h1>/);

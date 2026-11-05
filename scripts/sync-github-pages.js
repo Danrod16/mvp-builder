@@ -27,6 +27,7 @@ for (const file of ["index.html", "404.html", "sitemap.xml"]) copyFile(file);
 for (const dir of [
   "css",
   "js",
+  "assets",
   "blog",
   "work",
   "ai-automation-for-small-business",

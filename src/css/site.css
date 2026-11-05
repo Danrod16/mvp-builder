@@ -214,7 +214,7 @@ h1 { font-size: clamp(2.5rem, 6vw, 4.15rem); line-height: 1.08; letter-spacing: 
 .self-run { margin-top: 1.5rem; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 1rem; align-items: center; }
 .claim { margin-top: 1rem; font-weight: 600; color: var(--ink); }
 
-.package { display: flex; flex-direction: column; }
+.package { display: flex; flex-direction: column; background: #FAF7F2; }
 .package ul { margin: 0.5rem 0 1rem; padding-left: 1.15rem; }
 .package .price { margin-top: auto; }
 .package li + li { margin-top: 0.35rem; }
@@ -247,6 +247,10 @@ h1 { font-size: clamp(2.5rem, 6vw, 4.15rem); line-height: 1.08; letter-spacing: 
   text-align: center;
 }
 .final h2 { margin-bottom: 1.25rem; }
+.sketch { display: block; width: 100%; height: auto; background: #FAF7F2; }
+.how-sketch { margin: 0 0 1.5rem; }
+.package .sketch { height: 168px; object-fit: contain; margin-bottom: 0.25rem; }
+.cta-sketch { width: min(100%, 440px); margin: 0 auto 1.25rem; }
 .final .slot { margin: 0 auto 1.25rem; max-width: 280px; min-height: 140px; }
 .or { margin-top: 0.9rem; }
 
