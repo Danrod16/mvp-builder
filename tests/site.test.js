@@ -78,9 +78,11 @@ assert.doesNotMatch(home, /Most popular/i);
 assert.match(home, /package=starter/);
 assert.match(home, /package=team/);
 assert.match(home, /package=custom/);
-assert.ok((home.match(/\[DRAFT: pending Daniel review\]/g) || []).length >= 4);
-assert.match(home, /Result numbers stay blank/);
-assert.match(home, /project timeline stays blank/i);
+assert.doesNotMatch(home, /\[DRAFT|Most popular/i);
+assert.match(home, /PR &amp; media agency: outreach and contact research automated\./);
+assert.match(home, /Case study coming soon/);
+assert.match(home, /We set the timeline in the plan\./);
+assert.doesNotMatch(home, /weeks|months|typical range/i);
 
 for (const file of [
   "index.html",
@@ -142,8 +144,12 @@ for (const stub of [
   assert.equal((read(stub).match(/<h1[\s>]/g) || []).length, 1);
   assert.ok(meta(read(stub), "description").length <= 155);
 }
-assert.match(read("work/kaori-media/index.html"), /\[DRAFT: pending Daniel review\]/);
-assert.doesNotMatch(read("work/kaori-media/index.html"), /\d+\s*%|\$\d|\b\d+\s+hours\b/i);
+const kaori = read("work/kaori-media/index.html");
+assert.match(kaori, /Case study coming soon/);
+assert.match(kaori, /PR &amp; media agency: outreach and contact research automated\./);
+assert.doesNotMatch(kaori, /\[DRAFT|timeline|hours|%/i);
+assert.equal(fs.existsSync("dist/blog/POST_TEMPLATE/index.html"), false);
+assert.equal(fs.readdirSync("dist/blog").filter((name) => name !== "index.html").length, 0);
 
 const sitemap = read("sitemap.xml");
 assert.match(sitemap, /^<\?xml/);
