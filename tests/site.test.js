@@ -107,7 +107,13 @@ const sketches = [
   "package-team.png",
   "package-custom.png",
   "proof-agent-org-chart.png",
-  "final-cta-calendar.png"
+  "final-cta-calendar.png",
+  "problem-inbox.png",
+  "problem-supplier-sourcing.png",
+  "problem-finance-prep.png",
+  "problem-crm-upkeep.png",
+  "problem-content.png",
+  "problem-reports.png"
 ];
 for (const name of sketches) {
   assert.ok(home.includes(`/assets/illustrations/${name}`), name);
@@ -115,8 +121,8 @@ for (const name of sketches) {
   assert.ok(fs.existsSync(`assets/illustrations/${name}`), name);
 }
 const sketchTags = [...home.matchAll(/<img\b[^>]*class="sketch[^"]*"[^>]*>/g)].map((match) => match[0]);
-assert.equal(sketchTags.length, 7);
-assert.equal(sketchTags.filter((tag) => tag.includes('alt=""')).length, 6);
+assert.equal(sketchTags.length, 13);
+assert.equal(sketchTags.filter((tag) => tag.includes('alt=""')).length, 12);
 assert.ok(sketchTags.some((tag) => tag.includes("Sketch of one orchestrator node fanning out to many agent nodes.")));
 
 const blog = read("blog/index.html");

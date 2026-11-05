@@ -149,9 +149,10 @@ h1 { font-size: clamp(2.5rem, 6vw, 4.15rem); line-height: 1.08; letter-spacing: 
   border-radius: var(--radius);
   padding: 1.25rem;
 }
+.card { background: #FAF7F2; }
 .card h3, .package h3 { font-size: 1.2rem; margin: 0.85rem 0 0.4rem; }
+.problem-icon { height: 132px; object-fit: contain; margin-bottom: 0.15rem; }
 .card p, .package li, .case p, .self-card p { color: var(--muted); }
-.icon { width: 48px; height: 48px; display: block; }
 .section-link { margin-top: 1.5rem; }
 
 .steps {
