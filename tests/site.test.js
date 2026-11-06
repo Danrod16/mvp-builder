@@ -129,7 +129,9 @@ assert.ok(sketchTags.some((tag) => tag.includes("Sketch of one orchestrator node
 
 const blog = read("blog/index.html");
 assert.match(blog, /<h1>Blog<\/h1>/);
-assert.match(blog, /No posts yet/);
+assert.doesNotMatch(blog, /No posts yet/);
+assert.match(blog, /href="\/blog\/automate-inbox-with-ai-agents\/"/);
+assert.match(blog, /How to Automate Your Inbox with AI Agents \(Without Losing Control\)/);
 assert.doesNotMatch(blog, /name="robots" content="noindex/);
 assert.match(blog, /ai-automation-for-small-business/);
 assert.match(blog, /ai-agents-explained/);
@@ -149,7 +151,10 @@ assert.match(kaori, /Case study coming soon/);
 assert.match(kaori, /PR &amp; media agency: outreach and contact research automated\./);
 assert.doesNotMatch(kaori, /\[DRAFT|timeline|hours|%/i);
 assert.equal(fs.existsSync("dist/blog/POST_TEMPLATE/index.html"), false);
-assert.equal(fs.readdirSync("dist/blog").filter((name) => name !== "index.html").length, 0);
+assert.deepEqual(
+  fs.readdirSync("dist/blog").filter((name) => name !== "index.html").sort(),
+  ["automate-inbox-with-ai-agents"]
+);
 
 const sitemap = read("sitemap.xml");
 assert.match(sitemap, /^<\?xml/);
@@ -164,7 +169,56 @@ for (const loc of [
   assert.ok(sitemap.includes(`<loc>${loc}</loc>`), loc);
 }
 assert.doesNotMatch(sitemap, /kaori|ai-automation-for-small-business|ai-agents-explained|404/);
-assert.equal((sitemap.match(/<loc>/g) || []).length, 6);
+assert.ok(sitemap.includes("<loc>https://launchbrick.com/blog/automate-inbox-with-ai-agents/</loc>"));
+assert.equal((sitemap.match(/<loc>/g) || []).length, 7);
+
+const post = read("blog/automate-inbox-with-ai-agents/index.html");
+assert.equal((post.match(/<h1[\s>]/g) || []).length, 1);
+assert.match(post, /<h1>How to Automate Your Inbox with AI Agents \(Without Losing Control\)<\/h1>/);
+assert.equal(
+  meta(post, "description"),
+  "AI email automation that keeps you in control: agents triage your inbox, write daily briefs, and draft replies you approve first."
+);
+assert.ok(meta(post, "description").length <= 155);
+assert.match(post, /<link rel="canonical" href="https:\/\/launchbrick\.com\/blog\/automate-inbox-with-ai-agents\/">/);
+assert.match(post, /property="og:type" content="article"/);
+assert.match(post, /property="og:image" content="https:\/\/launchbrick\.com\/assets\/illustrations\/blog-hero-ai-inbox\.png"/);
+assert.match(post, /property="og:image:alt" content="Whiteboard sketch of a messy pile of envelopes on the left and a small robot calmly sorting mail into three tidy trays on the right"/);
+assert.match(post, /<time datetime="2026-11-06">2026-11-06<\/time>/);
+assert.match(
+  post,
+  /<img class="post-figure" src="\/assets\/illustrations\/blog-hero-ai-inbox\.png" alt="Whiteboard sketch of a messy pile of envelopes on the left and a small robot calmly sorting mail into three tidy trays on the right">/
+);
+assert.match(post, /https:\/\/cal\.com\/launchbrick\/15min/);
+assert.doesNotMatch(post, /cal\.com\/launchbrick\/30min|cal\.com\/PLACEHOLDER/);
+assert.doesNotMatch(post, /name="robots" content="noindex/);
+const postJson = [...post.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((match) =>
+  JSON.parse(match[1])
+);
+assert.equal(postJson.length, 1);
+assert.deepEqual(postJson[0]["@graph"].map((node) => node["@type"]), ["Article", "FAQPage"]);
+const articleLd = postJson[0]["@graph"][0];
+const faqLdPost = postJson[0]["@graph"][1];
+assert.equal(articleLd.headline, "How to Automate Your Inbox with AI Agents (Without Losing Control)");
+assert.equal(articleLd.datePublished, "2026-11-06");
+assert.equal(articleLd.mainEntityOfPage, "https://launchbrick.com/blog/automate-inbox-with-ai-agents/");
+assert.equal(articleLd.image.url, "https://launchbrick.com/assets/illustrations/blog-hero-ai-inbox.png");
+assert.equal(articleLd.description.length <= 155, true);
+assert.equal(faqLdPost.mainEntity.length, 4);
+const visiblePostFaq = [
+  ...post.matchAll(
+    /<details class="faq">\s*<summary><h3>([\s\S]*?)<\/h3><\/summary>\s*<p>([\s\S]*?)<\/p>\s*<\/details>/g
+  )
+];
+assert.equal(visiblePostFaq.length, 4);
+faqLdPost.mainEntity.forEach((item, index) => {
+  assert.equal(decode(visiblePostFaq[index][1]), item.name);
+  assert.equal(decode(visiblePostFaq[index][2]), item.acceptedAnswer.text);
+});
+assert.doesNotMatch(post, /Where does my data live\?/);
+assert.doesNotMatch(post, /50\+ apps/);
+assert.ok(fs.existsSync("dist/assets/illustrations/blog-hero-ai-inbox.png"));
+assert.ok(fs.existsSync("assets/illustrations/blog-hero-ai-inbox.png"));
 
 assert.match(read("learn-ai-bali/index.html"), /Learn AI in Bali/);
 assert.equal(fs.readFileSync("CNAME", "utf8").trim(), "launchbrick.com");
@@ -173,9 +227,22 @@ assert.equal(fs.existsSync("robots.txt"), false);
 assert.equal(fs.existsSync("dist/robots.txt"), false);
 assert.match(read("404.html"), /Page not found/);
 
-for (const rel of ["index.html", "404.html", "sitemap.xml", "css/site.css", "js/site.js", "blog/index.html"]) {
+for (const rel of [
+  "index.html",
+  "404.html",
+  "sitemap.xml",
+  "css/site.css",
+  "js/site.js",
+  "blog/index.html",
+  "blog/automate-inbox-with-ai-agents/index.html"
+]) {
   assert.equal(fs.readFileSync(rel, "utf8"), fs.readFileSync(path.join("dist", rel), "utf8"), rel);
 }
+assert.ok(
+  fs.readFileSync("assets/illustrations/blog-hero-ai-inbox.png").equals(
+    fs.readFileSync("dist/assets/illustrations/blog-hero-ai-inbox.png")
+  )
+);
 
 const imgs = home.match(/<img\b[^>]*>/g) || [];
 assert.ok(imgs.length >= 1);
@@ -186,7 +253,8 @@ env.addFilter("isoDate", isoDate);
 env.addFilter("absolute", absoluteUrl);
 env.addFilter("metaDescription", metaDescription);
 env.addFilter("json", (value) => JSON.stringify(value));
-const rendered = env.render("post.njk", {
+const postSource = fs.readFileSync("src/_includes/post.njk", "utf8").replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, "");
+const rendered = env.renderString(postSource, {
   title: "Inbox example",
   description: "A description under the limit.",
   date: "2026-11-05",
