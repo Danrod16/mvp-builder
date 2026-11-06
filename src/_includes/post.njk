@@ -1,0 +1,37 @@
+<article class="post">
+  <header class="page-head wrap">
+    <h1>{{ title }}</h1>
+    {% if date %}
+    <p class="dateline"><time datetime="{{ date | isoDate }}">{{ date | isoDate }}</time></p>
+    {% endif %}
+  </header>
+  <div class="wrap">
+    {% if image %}
+    <img class="post-figure" src="{{ image }}" alt="{{ imageAlt }}">
+    {% else %}
+    <div class="slot" aria-hidden="true">
+      <span class="slot-label">Illustration placeholder</span>
+      <span class="slot-caption">Whiteboard sketch. No photos of people.</span>
+    </div>
+    {% endif %}
+    <div class="post-body">
+      {{ content | safe }}
+    </div>
+    {% if faq and faq.length %}
+    <section class="post-faq" aria-labelledby="post-faq-title">
+      <h2 id="post-faq-title">Questions</h2>
+      {% for item in faq %}
+      <details class="faq">
+        <summary><h3>{{ item.q }}</h3></summary>
+        <p>{{ item.a }}</p>
+      </details>
+      {% endfor %}
+    </section>
+    {% endif %}
+    <aside class="final" aria-label="Book a call">
+      <h2>Want this set up in your own accounts?</h2>
+      <p><a class="btn btn-primary" href="{{ site.cal }}" target="_blank" rel="noopener noreferrer" data-cta="post" data-channel="cal" aria-label="Book a 15-minute call on Cal.com (opens in a new tab)">Book a 15-min call</a></p>
+      <p class="or">or <a href="mailto:{{ site.email }}" data-cta="post" data-channel="email">email us</a></p>
+    </aside>
+  </div>
+</article>

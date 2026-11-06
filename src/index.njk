@@ -1,0 +1,196 @@
+---
+layout: base.njk
+title: "Hand off the busywork. Keep the business. | LaunchBrick"
+description: "LaunchBrick finds the repetitive work eating your week and builds AI agents that do it inside accounts you own."
+permalink: /
+jsonld: home
+---
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Hand off the busywork. Keep the business.</h1>
+      <p class="lede">We find the repetitive work eating your week (inbox, sourcing, reports, follow-ups) and build AI agents that do it inside your own accounts.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="{{ site.cal }}" target="_blank" rel="noopener noreferrer" data-cta="hero" data-channel="cal" aria-label="Book a 15-minute call on Cal.com (opens in a new tab)">Book a 15-min call</a>
+        <a href="mailto:{{ site.email }}" data-cta="hero" data-channel="email">Prefer email? Write to us</a>
+      </div>
+      <ul class="trust">
+        <li>Runs in accounts you own</li>
+        <li>Your choice of AI provider</li>
+        <li>Fixed price before we start</li>
+      </ul>
+    </div>
+    <img class="sketch" src="/assets/illustrations/hero.png" alt="">
+  </div>
+</section>
+
+<section class="section" aria-labelledby="problems-title">
+  <div class="wrap">
+    <h2 id="problems-title">Problems we take off your plate</h2>
+    <div class="cards">
+      <article class="card">
+        <img class="sketch problem-icon" src="/assets/illustrations/problem-inbox.png" alt="">
+        <h3>Inbox &amp; DMs.</h3>
+        <p>Every morning starts with a brief: what's urgent, what can wait, drafts ready to send.</p>
+      </article>
+      <article class="card">
+        <img class="sketch problem-icon" src="/assets/illustrations/problem-supplier-sourcing.png" alt="">
+        <h3>Supplier sourcing.</h3>
+        <p>Agents find, compare and shortlist suppliers or contacts, and put them straight into a sheet.</p>
+      </article>
+      <article class="card">
+        <img class="sketch problem-icon" src="/assets/illustrations/problem-finance-prep.png" alt="">
+        <h3>Finance prep.</h3>
+        <p>Invoices and receipts sorted and categorised, ready for your accountant.</p>
+      </article>
+      <article class="card">
+        <img class="sketch problem-icon" src="/assets/illustrations/problem-crm-upkeep.png" alt="">
+        <h3>CRM upkeep.</h3>
+        <p>Calls, emails and meetings logged automatically. No more "I'll update it later".</p>
+      </article>
+      <article class="card">
+        <img class="sketch problem-icon" src="/assets/illustrations/problem-content.png" alt="">
+        <h3>Content.</h3>
+        <p>Drafts for posts and newsletters in your voice, and you approve them before anything goes out.</p>
+      </article>
+      <article class="card">
+        <img class="sketch problem-icon" src="/assets/illustrations/problem-reports.png" alt="">
+        <h3>Reports.</h3>
+        <p>Weekly numbers pulled from your tools into one readable summary.</p>
+      </article>
+    </div>
+    <p class="section-link"><a href="{{ site.cal }}" target="_blank" rel="noopener noreferrer" data-cta="problems" data-channel="cal">Not on the list? Tell us on the call<span class="visually-hidden"> on Cal.com (opens in a new tab)</span> <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+
+<section class="section" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <h2 id="how-title">How it works</h2>
+    <img class="sketch how-sketch" src="/assets/illustrations/how-it-works.png" alt="">
+    <div class="steps">
+      <article class="frame">
+        <p class="step-num">Step 1</p>
+        <h3>A 15-minute call.</h3>
+        <p>We map where your time goes and pick the workflows worth automating.</p>
+      </article>
+      <span class="step-arrow" aria-hidden="true">→</span>
+      <article class="frame">
+        <p class="step-num">Step 2</p>
+        <h3>A fixed-price plan.</h3>
+        <p>You get a written scope and one price before any work starts. No hourly surprises.</p>
+      </article>
+      <span class="step-arrow" aria-hidden="true">→</span>
+      <article class="frame">
+        <p class="step-num">Step 3</p>
+        <h3>A working system, then ongoing care.</h3>
+        <p>We build it in your accounts and train your team. Then an optional monthly AI-management membership keeps the agents tuned, monitored and up to date.</p>
+      </article>
+    </div>
+    <p class="steps-cta"><a class="btn btn-primary" href="{{ site.cal }}" target="_blank" rel="noopener noreferrer" data-cta="process" data-channel="cal" aria-label="Book a 15-minute call on Cal.com (opens in a new tab)">Book a 15-min call</a></p>
+  </div>
+</section>
+
+<section class="section" id="proof" aria-labelledby="proof-title">
+  <div class="wrap">
+    <h2 id="proof-title">Proof</h2>
+    <h3>Testimonials</h3>
+    <div class="quotes">
+      {% for person in testimonials %}
+      <article class="quote">
+        <blockquote><p>{{ person.quote }}</p></blockquote>
+        <div class="who">
+          <span class="monogram" aria-hidden="true">{{ person.initial }}</span>
+          <div>
+            <p class="name">{{ person.name }}</p>
+            <p class="role">{% if person.role %}{{ person.role }} · {% endif %}<a href="{{ person.href }}" target="_blank" rel="noopener noreferrer">{{ person.company }}<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <article class="case" id="kaori">
+      <h3>Kaori Media</h3>
+      <p class="kicker">PR &amp; media agency: outreach and contact research automated.</p>
+      <p class="section-link"><a href="/work/kaori-media/">Case study coming soon</a></p>
+    </article>
+
+    <div class="self-run">
+      <div class="self-card">
+        <h3>We run on it ourselves</h3>
+        <p>LaunchBrick runs its own business on a team of 25+ AI agents for engineering, research, design and ops, coordinated by one orchestrator. We sell what we use every day.</p>
+        <p class="claim">From the team behind 50+ shipped apps.</p>
+      </div>
+      <figure class="figure">
+        <img class="sketch" src="/assets/illustrations/proof-agent-org-chart.png" alt="Sketch of one orchestrator node fanning out to many agent nodes.">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="packages" aria-labelledby="packages-title">
+  <div class="wrap">
+    <h2 id="packages-title">Packages</h2>
+    <div class="packages">
+      <article class="package">
+        <img class="sketch" src="/assets/illustrations/package-starter.png" alt="">
+        <h3>Starter</h3>
+        <ul>
+          <li>One workflow automated end to end (e.g. inbox brief or weekly report)</li>
+          <li>Setup in your accounts</li>
+          <li>Handover + walkthrough</li>
+        </ul>
+        <p class="price">Price on call</p>
+        <a class="btn btn-primary" href="{{ site.cal }}?package=starter" target="_blank" rel="noopener noreferrer" data-cta="package-starter" data-channel="cal" aria-label="Book a 15-minute call on Cal.com for the Starter package (opens in a new tab)">Book a call</a>
+      </article>
+      <article class="package">
+        <img class="sketch" src="/assets/illustrations/package-team.png" alt="">
+        <h3>Team</h3>
+        <ul>
+          <li>Several connected agents across your tools, plus team training</li>
+          <li>Everything in Starter</li>
+          <li>Monthly AI-management membership option</li>
+        </ul>
+        <p class="price">Price on call</p>
+        <a class="btn btn-primary" href="{{ site.cal }}?package=team" target="_blank" rel="noopener noreferrer" data-cta="package-team" data-channel="cal" aria-label="Book a 15-minute call on Cal.com for the Team package (opens in a new tab)">Book a call</a>
+      </article>
+      <article class="package">
+        <img class="sketch" src="/assets/illustrations/package-custom.png" alt="">
+        <h3>Custom</h3>
+        <ul>
+          <li>An AI team with an orchestrator, workers and memory, or custom software</li>
+          <li>Everything in Team</li>
+          <li>Private server / on-premise option</li>
+        </ul>
+        <p class="price">Price on call</p>
+        <a class="btn btn-primary" href="{{ site.cal }}?package=custom" target="_blank" rel="noopener noreferrer" data-cta="package-custom" data-channel="cal" aria-label="Talk to us: book a 15-minute call on Cal.com for the Custom package (opens in a new tab)">Talk to us</a>
+      </article>
+    </div>
+    <p class="fine">Every project gets a fixed price agreed before work starts.</p>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <h2 id="faq-title">FAQ</h2>
+    <div class="faq-list">
+      {% for item in faq %}
+      <details class="faq">
+        <summary><h3>{{ item.q }}</h3></summary>
+        <p>{{ item.a }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="final-title">
+  <div class="wrap">
+    <div class="final">
+      <img class="sketch cta-sketch" src="/assets/illustrations/final-cta-calendar.png" alt="">
+      <h2 id="final-title">Find out what you could stop doing by hand.</h2>
+      <p><a class="btn btn-primary" href="{{ site.cal }}" target="_blank" rel="noopener noreferrer" data-cta="final" data-channel="cal" aria-label="Book a 15-minute call on Cal.com (opens in a new tab)">Book a 15-min call</a></p>
+      <p class="or">or <a href="mailto:{{ site.email }}" data-cta="final" data-channel="email">email us</a></p>
+    </div>
+  </div>
+</section>

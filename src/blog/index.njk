@@ -1,0 +1,30 @@
+---
+layout: base.njk
+title: Blog
+description: "Notes from LaunchBrick on AI agents for repetitive work. Posts go up after they are approved."
+permalink: /blog/
+---
+<header class="page-head wrap">
+  <h1>Blog</h1>
+  <p class="page-intro">Notes on AI agents that take repetitive work off small businesses. A post goes live only after it is approved.</p>
+</header>
+<div class="wrap stack">
+  <h2>Posts</h2>
+  {% if collections.posts.length == 0 %}
+  <p class="empty">No posts yet.</p>
+  {% else %}
+  <ul class="post-list">
+    {% for post in collections.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      <p>{{ post.data.description }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <h2>Planned guides</h2>
+  <ul class="planned">
+    <li><a href="/ai-automation-for-small-business/">AI automation for small business</a> (not written yet)</li>
+    <li><a href="/ai-agents-explained/">AI agents explained</a> (not written yet)</li>
+  </ul>
+</div>
